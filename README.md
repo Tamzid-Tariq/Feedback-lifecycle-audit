@@ -2,7 +2,6 @@
 
 RevGround studies whether an earlier diagnostic programming hint remains valid after a learner's next authentic code revision.
 
-> Repository status: keep private while annotation and method development are active. This repository is a curated research view; raw CodeStream CSVs and credentials are not tracked.
 
 ## Research Questions
 
