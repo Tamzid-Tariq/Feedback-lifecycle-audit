@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environments and credentials
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+
+# Raw and locally rebuilt data
+data/raw/
+data/derived/
+Dataset/
+
+# New run outputs and runner scratch space
+artifacts/runs/
+scripts/utils/.runner_tmp/
+*.log
+tmp/
+temp/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

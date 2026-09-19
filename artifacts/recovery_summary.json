@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_records": 50,
+  "hint_complete_records": 50,
+  "lifecycle_claim_eligible_records": 50,
+  "no_focal_claim_records": 0,
+  "curated_replacement_records": [
+    "DEV_003",
+    "DEV_023",
+    "DEV_027",
+    "DEV_032",
+    "DEV_035",
+    "DEV_040"
+  ],
+  "scope_note": "The six curated replacement claims are source-grounded amendment records; retained rows preserve their existing OpenRouter provenance."
+}

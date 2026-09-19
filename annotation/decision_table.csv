@@ -1,0 +1,6 @@
+original_validity,target_state_t1,lifecycle_label,action,required_reason
+REFUTED,NOT_APPLICABLE,RETRACT,withdraw diagnosis,original diagnosis refuted
+SUPPORTED,PRESENT,KEEP,retain diagnosis,target persists
+SUPPORTED,RESOLVED,RETIRE,stop presenting as outstanding,target resolved
+SUPPORTED,INDETERMINATE,UNSURE,withhold automatic action,evidence incomplete or conflicting
+INDETERMINATE,INDETERMINATE,UNSURE,withhold automatic action,evidence incomplete or claim ambiguous

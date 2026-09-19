@@ -1,0 +1,14 @@
+field,meaning
+item_id,Stable primary key for one development case
+transition_id,Stable earlier-to-later code transition identifier
+packet_id,Identifier of the fixed evidence packet shown to the annotator
+annotator_id,Pseudonymous independent annotator identifier A01 or A02
+rubric_version,Rubric version used for this pass
+original_validity,Whether the focal claim is SUPPORTED REFUTED or INDETERMINATE at S_t
+target_state_t1,Whether the same target is PRESENT RESOLVED INDETERMINATE or NOT_APPLICABLE at S_t+1
+lifecycle_label,KEEP RETIRE RETRACT or UNSURE
+instructional_priority,HIGH LOW or UNKNOWN at S_t+1; separate from lifecycle
+leakage_label,ABSENT PRESENT or NOT_EVALUATED; separate from lifecycle and priority
+evidence_ids,Pipe-separated in CSV and array-valued in JSON; only evidence actually used
+confidence,Integer 1 to 5
+short_reason,Short plain-English justification
