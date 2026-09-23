@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RevGround — Development Pilot Adjudication</title>
+<style>
+:root { color-scheme: light; --ink:#172033; --muted:#5d6678; --line:#d8dde7; --paper:#fff; --bg:#f4f6f9; --accent:#164e9b; --soft:#eef5ff; --warn:#fff7df; --good:#e9f7ef; }
+* { box-sizing:border-box; }
+body { font-family:Arial,sans-serif; margin:0; background:var(--bg); color:var(--ink); line-height:1.45; }
+header { position:sticky; top:0; z-index:10; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; box-shadow:0 1px 4px #0001; }
+main { max-width:1220px; margin:16px auto; padding:0 16px 80px; }
+.toolbar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.toolbar .spacer { flex:1; }
+.card { background:var(--paper); border:1px solid var(--line); border-radius:9px; padding:16px; margin:12px 0; }
+.focus { background:var(--soft); border-color:#a9c7ef; }
+.notice { background:var(--warn); }
+.success { background:var(--good); }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.comparison { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; background:#fff; }
+th,td { border:1px solid var(--line); padding:9px; text-align:left; vertical-align:top; }
+th { background:#f2f4f7; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f2f4f7; padding:12px; border-radius:7px; overflow:auto; margin:8px 0; }
+code,pre { font-family:Consolas,"Courier New",monospace; }
+button,select { font:inherit; padding:7px 10px; }
+button { cursor:pointer; }
+button:disabled { cursor:not-allowed; opacity:.5; }
+button.tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+fieldset { margin:14px 0; border:1px solid var(--line); border-radius:7px; }
+legend { font-weight:700; }
+label.choice { display:inline-block; margin:5px 16px 5px 0; }
+textarea { width:100%; min-height:90px; font:inherit; padding:8px; }
+.small { font-size:.84rem; color:var(--muted); }
+.meta { display:flex; flex-wrap:wrap; gap:8px 18px; }
+.id { font-family:Consolas,"Courier New",monospace; overflow-wrap:anywhere; }
+.evidence-list { max-height:260px; overflow:auto; padding:10px; border:1px solid var(--line); background:#fafbfc; }
+.evidence-list label { display:block; margin:4px 0; }
+.test { border:1px solid var(--line); border-radius:7px; margin:8px 0; background:#fff; }
+.test summary { cursor:pointer; padding:10px; font-weight:700; }
+.test-body { padding:0 10px 10px; }
+.status { font-weight:700; }
+.message-label { margin-top:8px; font-weight:700; }
+blockquote { border-left:4px solid var(--accent); margin:8px 0; padding:8px 12px; background:#fff; }
+h2,h3 { margin-top:0; }
+.required { color:#a33; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } header { position:static; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="toolbar">
+    <b>REVGROUND — DEVELOPMENT PILOT ADJUDICATION</b>
+    <span id="progress" class="small"></span>
+    <button id="prev" type="button" onclick="move(-1)">Previous</button>
+    <button id="next" type="button" onclick="move(1)">Next</button>
+    <label>Case <select id="jump" onchange="jumpTo(this.value)"></select></label>
+    <span class="spacer"></span>
+    <button type="button" onclick="exportJSON()">Export revground_adjudication.json</button>
+  </div>
+  <div class="small">Decisions are saved locally in this browser. The frozen A01/A02 exports are read-only and are never overwritten.</div>
+</header>
+<main>
+  <div class="card notice">
+    <div class="grid">
+      <div><b>Development cases:</b> 50<br><b>Independent annotators:</b> 2<br><b>Lifecycle agreement:</b> 96%</div>
+      <div><b>Lifecycle disagreements:</b> 2<br><b>Rubric:</b> v2.0<br><b>Export:</b> <span class="id">revground_adjudication.json</span></div>
+    </div>
+  </div>
+  <div class="toolbar">
+    <button id="tab-lifecycle" class="tab" type="button" onclick="setFilter('lifecycle')">Lifecycle Disagreements</button>
+    <button id="tab-fields" class="tab" type="button" onclick="setFilter('fields')">All Field Disagreements</button>
+    <button id="tab-all" class="tab" type="button" onclick="setFilter('all')">All 50 Cases</button>
+  </div>
+  <div id="load-status" class="card notice">Loading <span class="id">adjudication_cases.json</span>…</div>
+  <div id="case"></div>
+</main>
+<script>
+const storagePrefix = "revground_adjudication_v2_";
+const rubricVersion = "v2.0";
+const fieldDefinitions = [
+  ["original_validity", "Original validity"],
+  ["target_state_t1", "Target state"],
+  ["lifecycle_label", "Lifecycle"],
+  ["instructional_priority", "Instructional priority"],
+  ["leakage_label", "Leakage"]
+];
+const optionValues = {
+  original_validity: ["SUPPORTED", "REFUTED", "INDETERMINATE"],
+  target_state_t1: ["PRESENT", "RESOLVED", "INDETERMINATE", "NOT_APPLICABLE"],
+  lifecycle_label: ["KEEP", "RETIRE", "RETRACT", "UNSURE"],
+  instructional_priority: ["HIGH", "LOW", "UNKNOWN"],
+  leakage_label: ["ABSENT", "PRESENT", "NOT_EVALUATED"]
+};
+let cases = [];
+let visibleCases = [];
+let filterMode = "lifecycle";
+let idx = 0;
+
+function esc(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+}
+function message(value) { return value === "" || value == null ? "(empty)" : value; }
+function decision(itemId) {
+  try { return JSON.parse(localStorage.getItem(storagePrefix + itemId)) || {}; }
+  catch (_) { return {}; }
+}
+function fieldDisagreements(item) {
+  return item.field_disagreements || fieldDefinitions.filter(([key]) => item.A01[key] !== item.A02[key]).map(([key]) => key);
+}
+function lifecycleDisagreement(item) {
+  return item.lifecycle_disagreement ?? item.A01.lifecycle_label !== item.A02.lifecycle_label;
+}
+function filteredCases() {
+  if (filterMode === "lifecycle") return cases.filter(lifecycleDisagreement);
+  if (filterMode === "fields") return cases.filter(item => fieldDisagreements(item).length);
+  return cases;
+}
+function setFilter(mode) {
+  filterMode = mode;
+  visibleCases = filteredCases();
+  idx = 0;
+  ["lifecycle", "fields", "all"].forEach(name => document.getElementById("tab-" + name).classList.toggle("active", name === mode));
+  render();
+  window.scrollTo(0, 0);
+}
+function renderOptions(key, selected) {
+  return `<option value="">— select —</option>` + optionValues[key].map(value => `<option value="${esc(value)}" ${selected === value ? "selected" : ""}>${esc(value)}</option>`).join("");
+}
+function renderCompiler(label, compiler) {
+  return `<div><h3>${esc(label)}</h3>
+    <div><b>Evidence ID:</b> <span class="id">${esc(compiler.evidence_id)}</span></div>
+    <div><b>Status:</b> <span class="status">${esc(compiler.status)}</span> · <b>exit:</b> ${esc(compiler.exit_code)} · <b>timed out:</b> ${esc(compiler.timed_out)}</div>
+    <div class="small">${esc(compiler.compiler)}</div>
+    <div class="message-label">Compiler stdout</div><pre>${esc(message(compiler.stdout))}</pre>
+    <div class="message-label">Compiler stderr</div><pre>${esc(message(compiler.stderr))}</pre></div>`;
+}
+function renderRun(label, run) {
+  return `<div><b>${esc(label)}</b>
+    <div><b>Evidence ID:</b> <span class="id">${esc(run.evidence_id)}</span></div>
+    <div><b>Status:</b> <span class="status">${esc(run.status)}</span> · <b>exit:</b> ${esc(run.exit_code)} · <b>timed out:</b> ${esc(run.timed_out)}</div>
+    ${run.runtime_error ? `<div><b>Runtime error:</b> ${esc(run.runtime_error)}</div>` : ""}
+    <div class="message-label">stdout</div><pre>${esc(message(run.stdout))}</pre>
+    <div class="message-label">stderr</div><pre>${esc(message(run.stderr))}</pre></div>`;
+}
+function renderTests(tests) {
+  if (!tests.length) return "<p>No official tests are present in this fixed packet.</p>";
+  return tests.map(test => `<details class="test">
+    <summary>${esc(test.test_case_id)} · earlier ${esc(test.earlier.status)} · later ${esc(test.later.status)}</summary>
+    <div class="test-body"><div><b>Official test ID:</b> <span class="id">${esc(test.official_evidence_id)}</span></div>
+      <div class="grid"><div><b>Input</b><pre>${esc(message(test.input))}</pre></div><div><b>Expected output</b><pre>${esc(message(test.expected_output))}</pre></div></div>
+      <div class="grid">${renderRun("Earlier S_t", test.earlier)}${renderRun("Later S_t+1", test.later)}</div>
+    </div></details>`).join("");
+}
+function renderTraces(traces) {
+  return ["earlier", "later"].map(state => {
+    const trace = traces[state];
+    return `<div><b>${state === "earlier" ? "Earlier S_t" : "Later S_t+1"}:</b> <span class="id">${esc(trace.evidence_id)}</span><pre>${esc(JSON.stringify({final_verdict:trace.final_verdict, verdict_sequence_trace:trace.verdict_sequence_trace}, null, 2))}</pre></div>`;
+  }).join("");
+}
+function renderIndependentAnnotations(item) {
+  const rows = fieldDefinitions.map(([key, label]) => `<tr><th>${esc(label)}</th><td>${esc(item.A01[key])}</td><td>${esc(item.A02[key])}</td></tr>`).join("");
+  return `<div class="comparison"><table><thead><tr><th>Field</th><th>A01</th><th>A02</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="grid"><div><h3>A01 reason</h3><p>${esc(item.A01.reason)}</p><div class="small">Confidence: ${esc(item.A01.confidence)} · Evidence IDs: <span class="id">${esc(item.A01.evidence_ids.join(" | "))}</span></div></div>
+    <div><h3>A02 reason</h3><p>${esc(item.A02.reason)}</p><div class="small">Confidence: ${esc(item.A02.confidence)} · Evidence IDs: <span class="id">${esc(item.A02.evidence_ids.join(" | "))}</span></div></div></div>`;
+}
+function renderDecision(item) {
+  const saved = decision(item.item_id);
+  const evidenceIds = item.evidence.evidence_ids || [];
+  const selectedEvidence = new Set(saved.evidence_ids || []);
+  const evidenceChoices = evidenceIds.map(id => `<label><input type="checkbox" name="decision-evidence" value="${esc(id)}" ${selectedEvidence.has(id) ? "checked" : ""}> <span class="id">${esc(id)}</span></label>`).join("");
+  return `<fieldset><legend>Adjudicator decision</legend>
+    <div class="grid">
+      <label>Original validity<select id="decision-original">${renderOptions("original_validity", saved.original_validity)}</select></label>
+      <label>Target state<select id="decision-target">${renderOptions("target_state_t1", saved.target_state_t1)}</select></label>
+      <label>Lifecycle<select id="decision-lifecycle">${renderOptions("lifecycle_label", saved.lifecycle_label)}</select></label>
+      <label>Priority<select id="decision-priority">${renderOptions("instructional_priority", saved.instructional_priority)}</select></label>
+      <label>Leakage<select id="decision-leakage">${renderOptions("leakage_label", saved.leakage_label)}</select></label>
+      <label>Confidence<select id="decision-confidence"><option value="">— select —</option>${[1,2,3,4,5].map(value => `<option value="${value}" ${Number(saved.confidence) === value ? "selected" : ""}>${value}</option>`).join("")}</select></label>
+    </div>
+    <p><b>Evidence relied on</b></p><div class="evidence-list">${evidenceChoices}</div>
+    <label for="decision-reason"><b>Adjudication reason</b></label><textarea id="decision-reason">${esc(saved.adjudication_reason || "")}</textarea>
+    <p><button id="save-decision" type="button" onclick="saveDecision()">Save Decision</button> <span id="decision-status" class="small"></span></p>
+  </fieldset>`;
+}
+function collectDecision(item) {
+  return {
+    item_id: item.item_id,
+    transition_id: item.transition_id,
+    packet_id: item.packet_id,
+    rubric_version: rubricVersion,
+    original_validity: document.getElementById("decision-original").value,
+    target_state_t1: document.getElementById("decision-target").value,
+    lifecycle_label: document.getElementById("decision-lifecycle").value,
+    instructional_priority: document.getElementById("decision-priority").value,
+    leakage_label: document.getElementById("decision-leakage").value,
+    confidence: Number(document.getElementById("decision-confidence").value) || null,
+    evidence_ids: [...document.querySelectorAll('input[name="decision-evidence"]:checked')].map(node => node.value),
+    adjudication_reason: document.getElementById("decision-reason").value.trim()
+  };
+}
+function missingDecision(row) {
+  const missing = fieldDefinitions.filter(([key]) => !row[key]).map(([, label]) => label.toLowerCase());
+  if (!row.confidence) missing.push("confidence");
+  if (!row.evidence_ids.length) missing.push("at least one evidence ID");
+  if (!row.adjudication_reason) missing.push("adjudication reason");
+  return missing;
+}
+function saveDecision() {
+  const item = visibleCases[idx];
+  if (!item) return;
+  const row = collectDecision(item);
+  const missing = missingDecision(row);
+  if (missing.length) {
+    document.getElementById("decision-status").textContent = "Complete: " + missing.join(", ") + ".";
+    return;
+  }
+  row.saved_at = new Date().toISOString();
+  localStorage.setItem(storagePrefix + item.item_id, JSON.stringify(row));
+  document.getElementById("decision-status").textContent = "Saved locally.";
+  updateProgress();
+}
+function savedRows() {
+  return cases.map(item => {
+    const row = decision(item.item_id);
+    return {item_id:item.item_id, transition_id:item.transition_id, packet_id:item.packet_id, rubric_version:rubricVersion, status:missingDecision({...fieldDefaults(), ...row}).length ? "pending" : "complete", ...row};
+  });
+}
+function fieldDefaults() {
+  return {original_validity:"", target_state_t1:"", lifecycle_label:"", instructional_priority:"", leakage_label:"", confidence:null, evidence_ids:[], adjudication_reason:""};
+}
+function exportJSON() {
+  const payload = {rubric_version:rubricVersion, export_type:"pre-adjudication development-pilot decisions", generated_at:new Date().toISOString(), cases:savedRows()};
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:"application/json;charset=utf-8"});
+  const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "revground_adjudication.json"; link.click();
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+}
+function rebuildJump() {
+  const select = document.getElementById("jump");
+  select.innerHTML = visibleCases.map((item, index) => `<option value="${index}" ${index === idx ? "selected" : ""}>${esc(item.item_id)}${missingDecision({...fieldDefaults(), ...decision(item.item_id)}).length ? "" : " ✓"}</option>`).join("");
+}
+function updateProgress() {
+  const complete = cases.filter(item => missingDecision({...fieldDefaults(), ...decision(item.item_id)}).length === 0).length;
+  document.getElementById("progress").textContent = `${visibleCases.length ? idx + 1 : 0}/${visibleCases.length} shown · ${complete}/50 saved`;
+}
+function render() {
+  rebuildJump();
+  updateProgress();
+  document.getElementById("prev").disabled = idx === 0;
+  document.getElementById("next").disabled = idx >= visibleCases.length - 1;
+  const item = visibleCases[idx];
+  if (!item) {
+    document.getElementById("case").innerHTML = `<div class="card notice">No cases are available in this view.</div>`;
+    return;
+  }
+  const saved = decision(item.item_id);
+  const fieldDiffs = fieldDisagreements(item);
+  document.getElementById("case").innerHTML = `
+    <div class="card"><h2>CASE: ${esc(item.item_id)}</h2>
+      <div class="meta small"><span>Problem: ${esc(item.problem_id)}</span><span>Language: ${esc(item.language)}</span><span>Transition: ${esc(item.transition_id)}</span><span>Packet: <span class="id">${esc(item.packet_id)}</span></span></div>
+      <div class="small">Lifecycle disagreement: ${lifecycleDisagreement(item) ? "yes" : "no"} · Differing fields: ${esc(fieldDiffs.join(", ") || "none")} · Packet SHA-256: <span class="id">${esc(item.packet_sha256)}</span></div>
+    </div>
+    <section class="card"><h3>1. Problem Specification</h3><pre>${esc(item.problem_specification)}</pre></section>
+    <section class="card focus"><h3>2. Fixed Focal Claim</h3><blockquote>${esc(item.focal_claim)}</blockquote><div class="small">Claim source: ${esc(item.claim_span.source_field)} · offsets ${esc(item.claim_span.start)}–${esc(item.claim_span.end)} (end exclusive).</div></section>
+    <section class="card"><h3>3. Original Hint</h3><blockquote>${esc(item.original_hint)}</blockquote></section>
+    <section class="card"><h3>4. Earlier Code S_t</h3><div class="small id">source:${esc(item.item_id)}:S_t · attempt ${esc(item.source_st_attempt)} · SHA-256 ${esc(item.source_st_sha256)}</div><pre><code>${esc(item.source_st)}</code></pre></section>
+    <section class="card"><h3>5. Later Code S_t+1</h3><div class="small id">source:${esc(item.item_id)}:S_t+1 · attempt ${esc(item.source_st1_attempt)} · SHA-256 ${esc(item.source_st1_sha256)}</div><pre><code>${esc(item.source_st1)}</code></pre></section>
+    <section class="card"><h3>6. Diff</h3><div class="small id">diff:${esc(item.item_id)}</div><pre>${esc(message(item.diff))}</pre></section>
+    <section class="card"><h3>7. Evidence</h3>
+      <h3>Compiler</h3><div class="grid">${renderCompiler("Earlier S_t", item.evidence.compiler.earlier)}${renderCompiler("Later S_t+1", item.evidence.compiler.later)}</div>
+      <h3>Tests and outputs</h3>${renderTests(item.evidence.tests)}
+      <h3>Traces</h3><div class="grid">${renderTraces(item.evidence.traces)}</div>
+      <h3>Claim-relevant trace</h3>${item.evidence.claim_relevant_trace ? `<pre>${esc(JSON.stringify(item.evidence.claim_relevant_trace, null, 2))}</pre>` : "<p>No separate claim-relevant trace is present.</p>"}
+      <h3>Evidence IDs</h3><div class="evidence-list">${item.evidence.evidence_ids.map(id => `<div class="id">${esc(id)}</div>`).join("")}</div>
+    </section>
+    <section class="card"><h3>8. Independent Annotations</h3>${renderIndependentAnnotations(item)}</section>
+    <section class="card"><h3>9. Adjudicator Decision</h3>${renderDecision(item)}</section>`;
+  if (saved.saved_at) document.getElementById("decision-status").textContent = "Previously saved locally at " + saved.saved_at + ".";
+}
+function move(delta) { idx = Math.max(0, Math.min(visibleCases.length - 1, idx + delta)); render(); window.scrollTo(0, 0); }
+function jumpTo(value) { idx = Number(value); render(); window.scrollTo(0, 0); }
+function showLoadError(error) {
+  document.getElementById("load-status").innerHTML = `<b>Could not load adjudication_cases.json.</b> Serve the annotation directory with a local web server, or choose the JSON file here. <input type="file" id="case-file" accept="application/json"> <span class="small">${esc(error.message || error)}</span>`;
+  document.getElementById("case-file").addEventListener("change", event => {
+    const file = event.target.files[0]; if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => { try { cases = JSON.parse(reader.result); document.getElementById("load-status").className = "card success"; document.getElementById("load-status").textContent = "Loaded adjudication_cases.json from the selected file."; visibleCases = filteredCases(); render(); } catch (err) { showLoadError(err); } };
+    reader.readAsText(file, "utf-8");
+  });
+}
+async function loadCases() {
+  try {
+    const response = await fetch("adjudication_cases.json", {cache:"no-store"});
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    cases = await response.json();
+    if (!Array.isArray(cases) || cases.length !== 50) throw new Error("Expected 50 adjudication cases");
+    document.getElementById("load-status").className = "card success";
+    document.getElementById("load-status").textContent = "Loaded 50 cases from adjudication_cases.json. Default view: lifecycle disagreements.";
+    visibleCases = filteredCases();
+    setFilter("lifecycle");
+  } catch (error) { showLoadError(error); }
+}
+loadCases();
+</script>
+</body>
+</html>

@@ -32,16 +32,47 @@ def recursive_keys(value: object) -> set[str]:
 class RepositoryIntegrityTests(unittest.TestCase):
     def test_public_structure_and_links_exist(self) -> None:
         for relative in (
-            "README.md", "STATUS.md", "requirements.txt", ".gitignore",
+            "README.md", "requirements.txt", ".gitignore",
             "docs/study_design.md", "docs/data_and_sampling.md", "data/README.md",
             "annotation/README.md", "annotation/annotation_schema.json",
+            "annotation/annotation_schema_v1.json", "annotation/LIFECYCLE_RUBRIC_v2.md",
+            "annotation/ANNOTATOR_TRAINING_AND_BLINDING.md",
+            "annotation/revground_annotations_A01.json", "annotation/revground_annotations_A02.json",
+            "annotation/disagreement_cases.csv", "annotation/adjudication_cases.json",
+            "annotation/pre_adjudication_summary.md",
+            "annotation/RevGround_Adjudicator.html",
             "annotation/tools/RevGround_Annotator_A01.html",
             "annotation/tools/RevGround_Annotator_A02.html",
+            "artifacts/screening_counts.csv", "artifacts/evidence_inventory.csv",
+            "artifacts/development_50_agreement.csv", "artifacts/lifecycle_confusion_matrix.csv",
+            "data/development_50_manifest.csv", "docs/SUPERVISOR_PROGRESS.md", "docs/MODEL_ACCESS.md",
             "scripts/profile_and_split.py", "scripts/rebuild_development_records.py",
             "scripts/generate_hints_openrouter.py", "scripts/replay_development_50.py",
-            "scripts/evaluate_claims.py", "artifacts/current_status.json",
+            "scripts/evaluate_claims.py", "scripts/compute_agreement.py", "artifacts/current_status.json",
+            "baselines/condition_B/.env.example", "baselines/condition_B/outputs/.gitkeep",
         ):
             self.assertTrue((ROOT / relative).is_file(), relative)
+
+    def test_pre_adjudication_artifacts_match_the_frozen_exports(self) -> None:
+        with (ROOT / "artifacts" / "development_50_agreement.csv").open(encoding="utf-8", newline="") as handle:
+            agreement = list(csv.DictReader(handle))
+        self.assertEqual(
+            [(row["field"], row["raw_agreement"], row["kappa"]) for row in agreement],
+            [
+                ("original_validity", "48/50", "0.3243"),
+                ("target_state_t1", "48/50", "0.9228"),
+                ("lifecycle_label", "48/50", "0.9228"),
+                ("instructional_priority", "44/50", "0.7608"),
+                ("leakage_label", "45/50", "0.0000"),
+            ],
+        )
+        with (ROOT / "annotation" / "disagreement_cases.csv").open(encoding="utf-8-sig", newline="") as handle:
+            disagreements = list(csv.DictReader(handle))
+        self.assertEqual(len(disagreements), 10)
+        self.assertEqual(
+            [row["item_id"] for row in disagreements if "lifecycle_label" in row["differing_label_fields"]],
+            ["DEV_010", "DEV_012"],
+        )
 
     def test_manifest_counts_match_frozen_status(self) -> None:
         manifest_dir = ROOT / "data" / "manifests"

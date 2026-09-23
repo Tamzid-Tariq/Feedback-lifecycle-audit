@@ -1,0 +1,9 @@
+reason_code,meaning
+ORIGINAL_DIAGNOSIS_FALSE,Evidence refutes the original diagnosis
+TARGET_PERSISTS,"Same faulty behavior remains, even if relocated"
+TARGET_RESOLVED,Claim-specific evidence shows the target is resolved
+EVIDENCE_INCOMPLETE,Available evidence does not decide the claim
+EVIDENCE_CONFLICT,Admissible evidence points in different directions
+TARGET_MAPPING_AMBIGUOUS,Claim cannot be reliably mapped across revisions
+CLAIM_SCOPE_AMBIGUOUS,Wording or quantifier is unclear
+NON_DIAGNOSTIC,Hint does not state a factual diagnostic claim

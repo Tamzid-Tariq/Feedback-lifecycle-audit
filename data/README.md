@@ -31,4 +31,4 @@ Get-FileHash 'data/raw/Problem Data.csv' -Algorithm SHA256
 
 ## Tracked data
 
-Only frozen sampling and partition manifests are tracked under `data/manifests/`. Locally rebuilt records belong under `data/derived/` and are ignored. The sanitized 50-case annotation evidence is tracked separately under `annotation/` because it is the fixed human-rating artifact.
+The compact development annotation manifest is tracked at `data/development_50_manifest.csv`. Existing frozen sampling and partition manifests remain under `data/manifests/`; locally rebuilt records belong under `data/derived/` and are ignored. The sanitized 50-case annotation evidence is tracked separately under `annotation/` because it is the fixed human-rating artifact.

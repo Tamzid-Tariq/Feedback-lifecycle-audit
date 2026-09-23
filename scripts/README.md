@@ -46,3 +46,11 @@ python scripts/evaluate_claims.py predictions.csv results.json
 ```
 
 The evaluator rejects empty inputs, duplicate claim/method rows, and unmatched claim sets. No evaluation should be run before human gold labels and method predictions exist.
+
+## 6. Recompute annotation agreement
+
+```bash
+python scripts/compute_agreement.py
+```
+
+This reads the two frozen A01/A02 JSON exports and regenerates the agreement table, lifecycle confusion matrix, and all-field disagreement index. It never modifies either input export.

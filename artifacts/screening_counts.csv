@@ -1,0 +1,11 @@
+stage,count
+total_submissions,5482
+participants,202
+problems,46
+participant_problem_trajectories,1848
+consecutive_transitions,3632
+eligible_C_transitions_after_filters,978
+development_partition,590
+validation_partition,191
+test_partition,197
+development_annotation_sample,50

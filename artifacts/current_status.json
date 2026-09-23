@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-19",
+  "as_of": "2026-09-23",
   "stage4_profile": "complete_and_verified",
   "stage5_split": "complete_and_verified",
   "development_record_rebuild": "complete_and_verified",
@@ -12,6 +12,10 @@
   "provider_api_requests_attempted": 94,
   "provider_model_responses_received": 55,
   "human_gold_claims": 0,
+  "independent_annotation_exports": 2,
+  "pre_adjudication_lifecycle_agreement": "48/50 (96%)",
+  "pre_adjudication_lifecycle_kappa": 0.9228,
+  "lifecycle_disagreements": ["DEV_010", "DEV_012"],
   "student_programs_executed": 112,
   "method_predictions": 0,
   "research_results": 0,
@@ -49,7 +53,7 @@
     "diagnostic_claims": "available for all 50 records",
     "execution_evidence": "complete for all 50 records with official tests, code diffs, compiler/output/termination evidence, and source-bound replacement replays",
     "execution_replay": "complete: retained evidence for 44 cases plus 12 replacement source-state replays",
-    "human_labels": "not_collected",
+    "human_labels": "independently collected in frozen A01/A02 exports; adjudication pending",
     "stage6_generation_use": "prohibited because these records contain S_t+1"
   },
   "gemini_hint_generation_state": {
@@ -77,13 +81,13 @@
     "exact_claim_extraction": "complete: 3 complete JSON claim strings were extracted without paraphrase from truncated primary outputs",
     "technical_claim_recovery": "complete: 5 isolated technical failures rerun once with the same S_t-only prompt/model, 360-token response cap, and 120-second timeout; all 5 returned claims",
     "annotation_worklist": "original worklist is preserved; amended hint-complete worklist has 50 screening rows, each with a focal claim eligible for human lifecycle annotation",
-    "human_labels": "not_collected",
+    "human_labels": "independently collected in frozen A01/A02 exports; adjudication pending",
     "provider_retention_notice": "The selected stealth-model page says prompts and completions may be retained by its third-party provider and are not used for training."
   },
   "blocked_by": [
-    "two independent trained annotators and adjudicator",
-    "two-rater focal-claim/lifecycle annotation",
+    "supervisor or qualified adjudicator for DEV_010 and DEV_012",
+    "rubric review and fresh calibration before scale-up",
     "formal protocol amendment before extending the OpenRouter development-only workflow to calibration, validation, or test"
   ],
-  "truthful_summary": "The original audited 50-item OpenRouter development-only generation run and its bounded technical recovery are preserved. A documented post-screen usability amendment replaced six no-hint cases with six source-grounded curated replacements, yielding a current 50-case worklist with 50 learner-facing hints and 50 focal claims. Locked-down execution evidence is complete for the amended set. No human labels, lifecycle accuracy, or performance result exists. Gemini pilot outcomes are excluded from the primary set."
+  "truthful_summary": "The original audited 50-item OpenRouter development-only generation run and its bounded technical recovery are preserved. A documented post-screen usability amendment replaced six no-hint cases with six source-grounded curated replacements, yielding a current 50-case worklist with 50 learner-facing hints and 50 focal claims. Locked-down execution evidence is complete for the amended set. Independent A01/A02 development annotations are frozen with 48/50 lifecycle agreement and two lifecycle disagreements; adjudicated gold labels, lifecycle accuracy, and performance results do not yet exist. Gemini pilot outcomes are excluded from the primary set."
 }
