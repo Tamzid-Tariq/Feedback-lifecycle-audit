@@ -23,13 +23,16 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Lifecycle Cohen's kappa | 0.9228 |
 | Adjudication | Pending |
 | Fresh calibration | Pending |
-| Condition B implementation | Ready; API access/model freeze pending |
+| Condition B GLM-5.3 development run | Complete; canonical 50-record output retained in the local audit workspace |
+| Condition C controlled extension | Complete; 50/50 accepted outputs |
+| B/C matched evidence | Complete; 50/50 evidence hashes matched |
 
 ### Current lifecycle disagreements
 
 DEV_010 and DEV_012.
 
 See [docs/SUPERVISOR_PROGRESS.md](docs/SUPERVISOR_PROGRESS.md) for the current research checkpoint.
+See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-condition run status and retention boundary.
 
 ## Key Dataset Counts
 
@@ -47,6 +50,11 @@ See [docs/SUPERVISOR_PROGRESS.md](docs/SUPERVISOR_PROGRESS.md) for the current r
 - [Raw-data setup and checksums](data/README.md)
 - [Human annotation](annotation/README.md)
 - [Supervisor progress](docs/SUPERVISOR_PROGRESS.md)
+- [Experiment status](docs/EXPERIMENT_STATUS.md)
+- [Condition B baseline](baselines/condition_B/README.md)
+- [Condition C audit extension](baselines/condition_C/README.md)
+- [Shared condition evaluator](evaluation/normalize_conditions.py)
+- [Development results summary](artifacts/development_results_summary.md)
 - [Adjudicator packet](annotation/RevGround_Adjudicator.html)
 - [Reproduction entry points](scripts/)
 - [Machine-readable status](artifacts/current_status.json)

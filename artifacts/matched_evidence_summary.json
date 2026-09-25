@@ -1,0 +1,12 @@
+{
+  "status": "MATCHED",
+  "comparison_items": 50,
+  "matched_items": 50,
+  "unmatched_items": 0,
+  "match_rate": 1.0,
+  "evidence_packet": "annotation/development_50_evidence_frozen_v1.jsonl",
+  "condition_b": "glm-5.3 evidence-matched baseline",
+  "condition_c": "glm-5.3 RevGround audit extension",
+  "verification": "B_evidence_sha256 == C_evidence_sha256 for every DEV item",
+  "raw_run_outputs": "Not copied into the repository; retained in the local audit workspace."
+}
