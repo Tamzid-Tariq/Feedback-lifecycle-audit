@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "status_date": "2026-09-26",
+  "status_date": "2026-09-27",
   "scope": "Models and provider settings actually used in RevGround diagnostics",
   "credentials": "No credentials are stored in the repository",
   "runs": [
@@ -11,6 +11,14 @@
       "partition": "validation calibration-20",
       "settings": {"max_tokens": 512, "timeout_seconds": 90, "fallback": false, "automatic_retries": false},
       "outcome": "20 calls; 16 usable hints; 4 failures preserved"
+    },
+    {
+      "role": "Stage-A held-out TEST-50 hint generation",
+      "model": "stealth/space-bunny-alpha",
+      "provider": "OpenRouter",
+      "partition": "held-out TEST-50",
+      "settings": {"max_tokens": 512, "timeout_seconds": 90, "fallback": false, "automatic_retries": false},
+      "outcome": "50 calls; 44 usable hints; 6 failures preserved; no Qwen B/C run"
     },
     {
       "role": "Development Condition B and C",

@@ -2,6 +2,11 @@
 
 ## Completed
 
+- Source-language QC completed on the full strict-C pool using only source syntax. The audit contains 978 rows: 954 `CONFIRMED_C`, 13 `NON_C_CPP`, 9 `NON_C_JAVA`, and 2 `AMBIGUOUS`.
+- Objective exclusions were preserved rather than deleted: Development `DEV_010` is Java and `DEV_012` is C++; frozen TEST-50 exclusions are `726478f13ad8e011c4a0cfa2` (Java) and `bda05da230eecfb67fa3a104` (C++).
+- Calibration-20 language QC found 20/20 `CONFIRMED_C` cases.
+- TEST-50 Stage A eligibility was calculated without rerunning generations: 50 frozen cases minus 2 language exclusions leaves 48 eligible C cases; all 6 Stage-A failures are among eligible cases, leaving 42 analyzable natural cases.
+
 - Data profiling completed.
 - Primary study language selected: C.
 - Development evidence packets prepared.
@@ -30,6 +35,8 @@ Lifecycle disagreements:
 - DEV_010
 - DEV_012
 
+The historical Development-50 lifecycle result remains 48/50 (96%), κ=0.9228. The source-language sensitivity analysis excluding the two objective mismatch cases is 48/48, κ=1.0000; this is additional sensitivity analysis, not a replacement of the primary result.
+
 Cases differing on any decision field:
 DEV_004, DEV_007, DEV_010, DEV_012, DEV_027,
 DEV_029, DEV_038, DEV_048, DEV_049, DEV_050.
@@ -55,7 +62,7 @@ DEV_029, DEV_038, DEV_048, DEV_049, DEV_050.
 1. Supervisor/qualified adjudication of disagreement cases.
 2. Review of rubric before fresh calibration.
 3. Preserve the frozen evidence boundary before any validation/test-scale extension.
-4. Begin independent A01/A02 calibration annotation from `annotation/calibration_20/`.
+4. Begin independent A01/A02 calibration annotation from `annotation/calibration_20/`; all 20 cases passed source-language QC.
 5. Do not run Qwen B/C on calibration or held-out TEST yet.
 
 ## Next Stage
@@ -65,5 +72,5 @@ DEV_029, DEV_038, DEV_048, DEV_049, DEV_050.
 3. Complete the validation-based Calibration-20 A01/A02 pass
 4. Freeze rubric
 5. Freeze study splits
-6. Natural gold annotation
+6. Natural gold annotation after the recorded TEST-50 Stage-A eligibility filter.
 7. Compare the completed development outputs after adjudication.

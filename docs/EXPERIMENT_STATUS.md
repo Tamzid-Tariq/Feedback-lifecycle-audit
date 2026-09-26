@@ -1,6 +1,6 @@
 # Experiment Status
 
-Updated: 2026-09-26
+Updated: 2026-09-27
 
 ## Current state
 
@@ -15,11 +15,13 @@ The frozen 50-item development evidence set has been evaluated under both primar
 | Matched evidence verification | Complete; 50/50 TRUE |
 | C packet validation | Complete; 50/50 passed |
 | C lifecycle decision validation | Complete; 0 violations |
+| Source-language QC | Complete; 978 strict-C rows classified from source syntax only |
 | Adjudicated human gold | Pending |
 | Validation-based Calibration-20 Stage A | 20 attempted; 16 usable hints; 4 failures preserved |
 | Calibration A01/A02 annotation | Not started |
 | Synthetic Stress-20 human review | 20 reviewed by A02; 10 RETRACT / 10 UNSURE; not adjudicated consensus |
 | Synthetic Stress-20 Qwen B/C | Complete; B 14/20, C 16/20; reported separately |
+| Held-out TEST-50 Stage A | Complete; 44 usable hints and 6 preserved failures |
 | Calibration/test-scale Qwen B/C | Not run |
 
 ## Conditions
@@ -33,6 +35,14 @@ Both conditions enter the evaluator through the same normalized schema. B is rep
 Condition C produced 50 accepted outputs with no errors, no packet abstentions, and no decision-rule violations. Its lifecycle distribution was `KEEP=21`, `RETIRE=29`. The B/C evidence hash comparison matched all 50 items.
 
 These are technical development results only. They do not establish agreement or accuracy against A01/A02 or adjudicated gold labels.
+
+## Source-language QC and eligibility impact
+
+The full strict-C pool was classified using only source syntax in `code_t` and `code_t1`; lifecycle labels, annotator results, and model performance were not inputs to the classifier. The 978 rows produced 954 `CONFIRMED_C`, 13 `NON_C_CPP`, 9 `NON_C_JAVA`, and 2 `AMBIGUOUS` records. The audit files and hashes are in [`data/qc/`](../data/qc/).
+
+The Development-50 history is unchanged: lifecycle agreement remains 48/50 (96%), κ=0.9228. A separate sensitivity analysis excluding objective `DEV_010` (Java) and `DEV_012` (C++) gives 48/48 lifecycle agreement, κ=1.0000.
+
+The frozen TEST-50 has exactly two objective language exclusions (`726478f13ad8e011c4a0cfa2` Java and `bda05da230eecfb67fa3a104` C++), leaving 48 eligible C cases. The six Stage-A failures are all among those eligible cases, yielding 42 final analyzable natural cases. No Qwen B/C TEST run has occurred.
 
 ## Synthetic Stress-20 result
 
@@ -48,6 +58,9 @@ See:
 - [Development results summary](../results/development_50/development_results_summary.md)
 - [Matched evidence summary](../results/development_50/matched_evidence_summary.json)
 - [Calibration results](../results/calibration_20/README.md)
+- [Source-language QC](../data/qc/language_qc_summary.json)
+- [Development QC sensitivity](../results/development_50/language_qc_sensitivity.md)
+- [Held-out QC eligibility](../results/heldout_test_50/language_qc_eligibility.md)
 - [Results highlights](../results/RESULTS_HIGHLIGHTS.md)
 - [Synthetic Stress-20 results](../results/stress_20/stress_20_results_summary.md)
 - [Supervisor progress](SUPERVISOR_PROGRESS.md)

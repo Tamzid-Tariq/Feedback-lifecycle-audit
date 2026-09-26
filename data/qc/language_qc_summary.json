@@ -1,0 +1,151 @@
+{
+  "protocol": "source_language_qc_v1",
+  "source_file": "D:\\Thesis for LAK'26\\CodeStream_Stage4_5_Research_Bundle\\data\\primary_language_transitions_all_splits.csv",
+  "source_sha256": "7bda4eb2d238fe2338fabb1a696a279f2cb62b851f3f8336ab7325b2129dcc0e",
+  "classification_rule": "source syntax only from code_t and code_t1; no lifecycle labels, annotator fields, model predictions, or model performance",
+  "strict_pool_definition": {
+    "split_primary": [
+      "development",
+      "validation",
+      "test"
+    ],
+    "language_t": "C",
+    "language_t1": "C",
+    "evidence_ready": true,
+    "cross_split_code_duplicate": false
+  },
+  "strict_c_pool_n": 978,
+  "status_counts": {
+    "CONFIRMED_C": 954,
+    "NON_C_CPP": 13,
+    "NON_C_JAVA": 9,
+    "AMBIGUOUS": 2
+  },
+  "partition_status_counts": {
+    "development": {
+      "CONFIRMED_C": 577,
+      "NON_C_CPP": 10,
+      "AMBIGUOUS": 2,
+      "NON_C_JAVA": 1
+    },
+    "test": {
+      "CONFIRMED_C": 188,
+      "NON_C_JAVA": 8,
+      "NON_C_CPP": 1
+    },
+    "validation": {
+      "CONFIRMED_C": 189,
+      "NON_C_CPP": 2
+    }
+  },
+  "objective_exclusions_n": 24,
+  "known_cases": {
+    "DEV_010": {
+      "transition_id": "d57d0a03e97d2754f8106308",
+      "declared_language": "C",
+      "detected_source_language": "Java",
+      "qc_status": "NON_C_JAVA",
+      "reason": "Java-only source signatures: Java import; Java class declaration; Java main signature; System output/input",
+      "partition": "development",
+      "development_item_id": "DEV_010",
+      "calibration_id": "",
+      "test_id": ""
+    },
+    "DEV_012": {
+      "transition_id": "0eac990505f5297323827967",
+      "declared_language": "C",
+      "detected_source_language": "C++",
+      "qc_status": "NON_C_CPP",
+      "reason": "C++-only source signatures: C++ standard header; C++ namespace directive; C++ stream operator",
+      "partition": "development",
+      "development_item_id": "DEV_012",
+      "calibration_id": "",
+      "test_id": ""
+    },
+    "726478f13ad8e011c4a0cfa2": {
+      "transition_id": "3535e70824ecc2ca075aba68",
+      "declared_language": "C",
+      "detected_source_language": "Java",
+      "qc_status": "NON_C_JAVA",
+      "reason": "Java-only source signatures: Java class declaration; Java main signature; System output/input; Java Scanner",
+      "partition": "test",
+      "development_item_id": "",
+      "calibration_id": "",
+      "test_id": "726478f13ad8e011c4a0cfa2"
+    },
+    "bda05da230eecfb67fa3a104": {
+      "transition_id": "7175b67d2b14c5a711017c91",
+      "declared_language": "C",
+      "detected_source_language": "C++",
+      "qc_status": "NON_C_CPP",
+      "reason": "C++-only source signatures: C++ standard header; C++ namespace directive; C++ stream operator",
+      "partition": "test",
+      "development_item_id": "",
+      "calibration_id": "",
+      "test_id": "bda05da230eecfb67fa3a104"
+    }
+  },
+  "development": {
+    "strict_rows": 590,
+    "mapped_development_50_n": 50,
+    "objective_exclusions_in_development_50": [
+      {
+        "transition_id": "0eac990505f5297323827967",
+        "declared_language": "C",
+        "detected_source_language": "C++",
+        "qc_status": "NON_C_CPP",
+        "reason": "C++-only source signatures: C++ standard header; C++ namespace directive; C++ stream operator",
+        "partition": "development",
+        "development_item_id": "DEV_012",
+        "calibration_id": "",
+        "test_id": ""
+      },
+      {
+        "transition_id": "d57d0a03e97d2754f8106308",
+        "declared_language": "C",
+        "detected_source_language": "Java",
+        "qc_status": "NON_C_JAVA",
+        "reason": "Java-only source signatures: Java import; Java class declaration; Java main signature; System output/input",
+        "partition": "development",
+        "development_item_id": "DEV_010",
+        "calibration_id": "",
+        "test_id": ""
+      }
+    ]
+  },
+  "calibration": {
+    "strict_rows": 191,
+    "mapped_calibration_20_n": 20,
+    "objective_exclusions_in_calibration_20": [],
+    "all_20_confirmed_c": true
+  },
+  "heldout_test_50": {
+    "frozen_sample_n": 50,
+    "mapped_test_n": 50,
+    "objective_exclusions_in_frozen_test_50": [
+      {
+        "transition_id": "3535e70824ecc2ca075aba68",
+        "declared_language": "C",
+        "detected_source_language": "Java",
+        "qc_status": "NON_C_JAVA",
+        "reason": "Java-only source signatures: Java class declaration; Java main signature; System output/input; Java Scanner",
+        "partition": "test",
+        "development_item_id": "",
+        "calibration_id": "",
+        "test_id": "726478f13ad8e011c4a0cfa2"
+      },
+      {
+        "transition_id": "7175b67d2b14c5a711017c91",
+        "declared_language": "C",
+        "detected_source_language": "C++",
+        "qc_status": "NON_C_CPP",
+        "reason": "C++-only source signatures: C++ standard header; C++ namespace directive; C++ stream operator",
+        "partition": "test",
+        "development_item_id": "",
+        "calibration_id": "",
+        "test_id": "bda05da230eecfb67fa3a104"
+      }
+    ],
+    "eligible_confirmed_c_n": 48
+  }
+}

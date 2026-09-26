@@ -61,6 +61,9 @@ class RepositoryIntegrityTests(unittest.TestCase):
             "scripts/profile_and_split.py", "scripts/rebuild_development_records.py",
             "scripts/generate_hints_openrouter.py", "scripts/replay_development_50.py",
             "scripts/evaluate_claims.py", "scripts/compute_agreement.py", "artifacts/current_status.json",
+            "scripts/language_qc.py", "scripts/compute_language_qc_impact.py",
+            "data/qc/language_qc_all_strict_c.csv", "data/qc/language_qc_summary.json",
+            "data/qc/language_qc_exclusions.csv", "data/qc/language_qc_experiment_impact.json", "data/qc/SHA256SUMS.txt",
             "baselines/condition_B/.env.example", "baselines/condition_B/outputs/.gitkeep",
         ):
             self.assertTrue((ROOT / relative).is_file(), relative)
@@ -220,6 +223,27 @@ class RepositoryIntegrityTests(unittest.TestCase):
         self.assertEqual(status["stress_20"]["qwen_b_c"], "complete_verified")
         self.assertEqual(status["calibration_20"]["qwen_b_c"], "not_run")
         self.assertEqual(status["heldout_test_50"]["qwen_b_c"], "not_run")
+
+    def test_source_language_qc_is_complete_and_preserves_objective_exclusions(self) -> None:
+        with (ROOT / "data" / "qc" / "language_qc_all_strict_c.csv").open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 978)
+        self.assertEqual(
+            {status: sum(row["qc_status"] == status for row in rows) for status in ("CONFIRMED_C", "NON_C_CPP", "NON_C_JAVA", "AMBIGUOUS")},
+            {"CONFIRMED_C": 954, "NON_C_CPP": 13, "NON_C_JAVA": 9, "AMBIGUOUS": 2},
+        )
+        self.assertEqual(len({row["transition_id"] for row in rows}), 978)
+        by_item = {row["development_item_id"] or row["test_id"]: row for row in rows if row["development_item_id"] or row["test_id"]}
+        self.assertEqual(by_item["DEV_010"]["qc_status"], "NON_C_JAVA")
+        self.assertEqual(by_item["DEV_012"]["qc_status"], "NON_C_CPP")
+        self.assertEqual(by_item["726478f13ad8e011c4a0cfa2"]["qc_status"], "NON_C_JAVA")
+        self.assertEqual(by_item["bda05da230eecfb67fa3a104"]["qc_status"], "NON_C_CPP")
+        with (ROOT / "data" / "qc" / "language_qc_exclusions.csv").open(encoding="utf-8", newline="") as handle:
+            exclusions = list(csv.DictReader(handle))
+        self.assertEqual(len(exclusions), 24)
+        summary = json.loads((ROOT / "data" / "qc" / "language_qc_summary.json").read_text(encoding="utf-8"))
+        self.assertEqual(summary["heldout_test_50"]["eligible_confirmed_c_n"], 48)
+        self.assertTrue(summary["calibration"]["all_20_confirmed_c"])
 
 
 if __name__ == "__main__":

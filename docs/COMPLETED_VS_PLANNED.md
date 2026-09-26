@@ -1,6 +1,6 @@
 # Completed versus planned
 
-Status date: 2026-09-26
+Status date: 2026-09-27
 
 This file distinguishes verified work from planned or deliberately unrun work. Development and Stress-20 metrics are diagnostics; they are not final natural prevalence or held-out effect estimates.
 
@@ -17,13 +17,17 @@ This file distinguishes verified work from planned or deliberately unrun work. D
 - Synthetic Stress-20 human review: 20 A02-reviewed rows, 10 `RETRACT` and 10 `UNSURE`; not independent consensus or adjudicated gold.
 - Synthetic Stress-20 Qwen B/C run: identical settings, B 14/20 and C 16/20 operational accuracy, with evidence SHA match 20/20.
 - Non-destructive annotation/results repository reorganization and byte-preservation checks for the original development A01/A02 exports.
+- Source-language QC of the full 978-row strict-C pool using code syntax only: 954 `CONFIRMED_C`, 13 `NON_C_CPP`, 9 `NON_C_JAVA`, and 2 `AMBIGUOUS`.
+- Development sensitivity analysis preserving the historical 48/50 (96%), κ=0.9228 result and reporting 48/48, κ=1.0000 after excluding objective `DEV_010` and `DEV_012` language mismatches.
+- Frozen TEST-50 eligibility accounting: two objective exclusions leave 48 C-eligible cases; the six recorded Stage-A failures are all eligible, leaving 42 final analyzable natural cases.
+- Calibration-20 source-language QC: all 20 selected validation cases are `CONFIRMED_C`.
 
 ## Prepared but not empirically complete
 
 - Calibration-20 A01/A02 annotation has not started.
 - Calibration packet compiler/test replay was unavailable at freeze time; those fields are explicitly `NOT_REPLAYED`.
 - Development disagreement adjudication remains pending qualified supervisor/adjudicator review.
-- The final natural test partition remains locked and has not been evaluated.
+- The final natural TEST-50 has completed Stage A only; Qwen B/C evaluation remains locked and unrun.
 
 ## Deliberately not done; do not describe as results
 

@@ -2,6 +2,7 @@ requirement,repository_artifact,status,note
 Narrow the study to three RQs,docs/study_design.md;README.md,COMPLETE,"RQ1 agreement; RQ2 natural lifecycle frequencies; RQ3 matched model/verifier comparison"
 Use one primary language,data/README.md;docs/data_and_sampling.md,COMPLETE,"C selected under the documented eligibility/diversity rule"
 Use a fixed S_t-only Stage-A generator,docs/generation_policy.json;results/calibration_20,COMPLETE_WITH_FAILURES,"Stealth Stage A completed for Calibration-20 with 4 preserved failures; no fallback or automatic retry"
+Run objective source-language QC,data/qc/language_qc_all_strict_c.csv;data/qc/language_qc_summary.json,COMPLETE,"978 strict-C rows classified from source syntax only; no lifecycle, annotator, or model-performance inputs; exclusions retained"
 Use 50 development items and a fresh validation calibration set,data/manifests/calibration_20_manifest.csv;data/sampling_plan.json,DONE_20_CASE_CALIBRATION,"50 development items and 20 fresh validation cases; old 25-case proposal archived as superseded"
 Rebuild complete development evidence pairs,annotation/development_50/development_50_evidence_frozen_v1.jsonl,COMPLETE,"Frozen S_t/S_t+1 evidence and claim packets are present"
 Preserve independent annotation exports,annotation/development_50/revground_annotations_A01.json;annotation/development_50/revground_annotations_A02.json,COMPLETE_BYTE_PRESERVED,"Original export hashes are enforced by repository tests"
@@ -13,4 +14,5 @@ Freeze calibration focal claims,results/calibration_20/frozen_focal_claims.jsonl
 Obtain independent calibration annotation,annotation/calibration_20,NOT_STARTED,"A01/A02 calibration annotation remains pending"
 Replay calibration compiler/tests,results/calibration_20/calibration_20_packet_status.json,NOT_AVAILABLE_AT_FREEZE,"Compiler/test statuses are explicitly NOT_REPLAYED"
 Keep held-out test untouched,annotation/heldout_test_50;results/heldout_test_50,LOCKED,"No annotation or Qwen B/C run"
+Account for TEST-50 language exclusions,results/heldout_test_50/language_qc_eligibility.md;data/qc/language_qc_experiment_impact.json,COMPLETE_WITH_EXCLUSIONS,"50 frozen minus 2 objective exclusions leaves 48 eligible C; six Stage-A failures leave 42 analyzable cases"
 Produce final natural estimates,docs/COMPLETED_VS_PLANNED.md,NOT_DONE,"Requires calibration, adjudication, and held-out test work"

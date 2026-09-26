@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "status_date": "2026-09-26",
+  "status_date": "2026-09-27",
   "credential_policy": "API keys are supplied through environment variables and are never committed",
   "stage_a_calibration": {
     "model": "stealth/space-bunny-alpha",
@@ -14,6 +14,19 @@
     "usable_hints": 16,
     "failures_preserved": 4,
     "focal_claim_extractor": "first_explicit_diagnostic_assertion_v1"
+  },
+  "stage_a_heldout_test_50": {
+    "model": "stealth/space-bunny-alpha",
+    "provider": "OpenRouter",
+    "input_boundary": "S_t only",
+    "max_tokens": 512,
+    "timeout_seconds": 90,
+    "fallback": false,
+    "automatic_retries": false,
+    "calls": 50,
+    "usable_hints": 44,
+    "failures_preserved": 6,
+    "status": "complete_with_failures; Qwen B/C not run"
   },
   "development_evaluations": {
     "glm": {
@@ -43,6 +56,13 @@
     "same_provider_and_routing_policy": true,
     "same_retry_policy": true,
     "status": "complete_verified"
+  },
+  "source_language_qc": {
+    "rule": "source syntax only from code_t and code_t1",
+    "strict_pool_n": 978,
+    "status_counts": {"CONFIRMED_C": 954, "NON_C_CPP": 13, "NON_C_JAVA": 9, "AMBIGUOUS": 2},
+    "fallback_or_model_use": "none; labels, annotator results, and model performance are not read by the QC classifier",
+    "artifacts": "data/qc/"
   },
   "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50"]
 }

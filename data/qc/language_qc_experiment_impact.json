@@ -1,0 +1,72 @@
+{
+  "protocol": "language_qc_experiment_impact_v1",
+  "development": {
+    "historical_primary_lifecycle_agreement": "48/50 (96%)",
+    "historical_primary_lifecycle_kappa": 0.9228,
+    "sensitivity_excluding_objective_language_exclusions": {
+      "n": 48,
+      "excluded_item_ids": [
+        "DEV_010",
+        "DEV_012"
+      ],
+      "original_validity": {
+        "raw_agreement": "48/48",
+        "kappa": 1.0
+      },
+      "target_state_t1": {
+        "raw_agreement": "48/48",
+        "kappa": 1.0
+      },
+      "lifecycle_label": {
+        "raw_agreement": "48/48",
+        "kappa": 1.0
+      },
+      "instructional_priority": {
+        "raw_agreement": "44/48",
+        "kappa": 0.831
+      },
+      "leakage_label": {
+        "raw_agreement": "44/48",
+        "kappa": 0.0
+      },
+      "joint_five_field_agreement": {
+        "raw_agreement": "40/48"
+      }
+    }
+  },
+  "heldout_test_50": {
+    "frozen_sample_n": 50,
+    "objective_language_exclusions_n": 2,
+    "objective_language_exclusion_ids": [
+      "726478f13ad8e011c4a0cfa2",
+      "bda05da230eecfb67fa3a104"
+    ],
+    "eligible_confirmed_c_n": 48,
+    "stage_a_run": "stealth/space-bunny-alpha; 50 provider calls; 44 usable hints; 6 failures; automatic retry disabled",
+    "stage_a_failure_ids": [
+      "2adbbe637a52e7848d58c447",
+      "4f8f67765c537a000e2f9cf0",
+      "aac92680b8b6ccb9185de748",
+      "b8df1eb5b21229d5c85896af",
+      "bdf04cfc9ef448458e7d7ab7",
+      "de2fbc16af761c95ad2f2f51"
+    ],
+    "stage_a_failures_among_eligible": [
+      "2adbbe637a52e7848d58c447",
+      "4f8f67765c537a000e2f9cf0",
+      "aac92680b8b6ccb9185de748",
+      "b8df1eb5b21229d5c85896af",
+      "bdf04cfc9ef448458e7d7ab7",
+      "de2fbc16af761c95ad2f2f51"
+    ],
+    "stage_a_failures_among_eligible_n": 6,
+    "final_analyzable_n": 42,
+    "stage_a_errors_source": "D:\\Thesis for LAK'26\\RevGround_Supervisor_Aligned_Package_v2\\evaluation\\stage_a_stealth_space_bunny_alpha\\test_natural50_max512\\errors.jsonl"
+  },
+  "calibration_20": {
+    "selected_n": 20,
+    "confirmed_c_n": 20,
+    "objective_language_exclusions_n": 0,
+    "annotation_status": "not_started"
+  }
+}

@@ -23,6 +23,14 @@ For the 48 primary-run cases with outputs from both Qwen conditions, lifecycle a
 
 The original Qwen B/C development runs used different output limits (B=5,000 and C=12,000 tokens); this is a development-stage implementation caveat. Later work uses identical frozen settings.
 
+## Source-language QC and natural eligibility
+
+- The full strict-C pool was scanned with a source-syntax-only classifier, never using lifecycle labels, annotator results, or model performance.
+- Across 978 strict-C transitions: 954 are `CONFIRMED_C`, 13 are `NON_C_CPP`, 9 are `NON_C_JAVA`, and 2 are `AMBIGUOUS`.
+- Development-50 preserves the original lifecycle reliability result of 48/50 (96%), κ=0.9228. Excluding objective `DEV_010` (Java) and `DEV_012` (C++) as a sensitivity analysis gives 48/48, κ=1.0000.
+- The frozen TEST-50 excludes exactly `726478f13ad8e011c4a0cfa2` (Java) and `bda05da230eecfb67fa3a104` (C++), leaving 48 eligible C cases. The six completed Stage-A failures are all eligible, so 42 final natural cases are analyzable.
+- Calibration-20 has 20/20 `CONFIRMED_C` cases. These QC records and SHA-256 hashes are in [`data/qc/`](../data/qc/).
+
 ## Synthetic Stress-20
 
 The stress result is documented separately in [stress_20_results_summary.md](stress_20/stress_20_results_summary.md), and the completed human review is preserved in [annotation/stress_20/synthetic_stress_20_human_review.csv](../annotation/stress_20/synthetic_stress_20_human_review.csv).
@@ -39,7 +47,7 @@ The stress result is documented separately in [stress_20_results_summary.md](str
 
 - Calibration-20: 20 validation cases selected deterministically before labels; 16 usable Stage-A hints and 4 preserved failures; no human annotation completed yet.
 - No Qwen B/C calibration run has been performed.
-- Held-out TEST-50 remains locked; no annotation or Qwen B/C run has been performed.
+- Held-out TEST-50 Stage A is complete with 44 usable hints and 6 preserved failures; no annotation or Qwen B/C run has been performed.
 
 ## Bottom line
 

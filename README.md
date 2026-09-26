@@ -22,9 +22,11 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Lifecycle agreement | 48/50 (96%) |
 | Lifecycle Cohen's kappa | 0.9228 |
 | Adjudication | Pending |
+| Source-language QC | Complete; 978 strict-C rows classified from source syntax only; Development-50 and TEST-50 each have 2 objective exclusions; Calibration-20 has 20/20 confirmed C |
 | Fresh calibration | Validation-based 20-case selection prepared; 16 annotation-eligible packets and 4 preserved Stage-A failures |
 | Condition B/C development runs | Existing development artifacts retained; no calibration or held-out Qwen B/C run |
 | Calibration Stage A | 20 validation cases attempted with `stealth/space-bunny-alpha`; 16 usable hints, 4 preserved failures |
+| Held-out TEST-50 Stage A | Complete; 50 attempts, 44 usable hints, 6 preserved failures; 48 C-eligible after QC and 42 final analyzable |
 | Calibration compiler/test replay | Not performed; packet fields are explicitly marked `NOT_REPLAYED` |
 | Calibration annotation | Not started |
 | Synthetic Stress-20 | Human review preserved; Qwen B/C results verified and reported separately from natural prevalence |
@@ -44,6 +46,8 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - 978 eligible strict C transitions after duplicate controls
 - Development: 590; validation: 191; test: 197
 - Development-rubric set: 50; fresh calibration selection: 20 from validation (16 usable annotation packets)
+- Source-language QC: 954 `CONFIRMED_C`, 13 `NON_C_CPP`, 9 `NON_C_JAVA`, and 2 `AMBIGUOUS` in the 978-row strict-C pool
+- Frozen TEST-50 QC: 48 eligible C cases; after the completed Stage-A failures, 42 natural cases are analyzable
 
 ## Repository Guide
 
@@ -59,6 +63,9 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - [Development results summary](results/development_50/development_results_summary.md)
 - [Results highlights](results/RESULTS_HIGHLIGHTS.md)
 - [Synthetic Stress-20 results](results/stress_20/stress_20_results_summary.md)
+- [Source-language QC](data/qc/language_qc_summary.json)
+- [Development QC sensitivity](results/development_50/language_qc_sensitivity.md)
+- [Held-out TEST-50 QC eligibility](results/heldout_test_50/language_qc_eligibility.md)
 - [Completed versus planned](docs/COMPLETED_VS_PLANNED.md)
 - [Readiness gates](docs/readiness_gates.csv)
 - [Supervisor requirements traceability](docs/SUPERVISOR_REQUIREMENTS_TRACEABILITY.csv)
@@ -83,7 +90,8 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 10. Begin the validation-based 20-case calibration using the isolated A01/A02 package.
 11. Freeze the final protocol.
 12. Report the completed Synthetic Stress-20 diagnostic separately from natural results.
-13. Do not run Qwen B/C on calibration or held-out TEST until separately authorized.
+13. Apply source-language QC before annotation or held-out analysis; preserve objective exclusions.
+14. Do not run Qwen B/C on calibration or held-out TEST until separately authorized.
 
 ## Important Scope
 

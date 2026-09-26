@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-26",
+  "as_of": "2026-09-27",
   "checkpoint_commit": "2b690a4",
   "annotation_layout": {
     "status": "reorganized_non_destructively",
@@ -30,6 +30,35 @@
     "qwen_primary_overlap": "48 cases; lifecycle agreement 46/48",
     "qwen_evidence_sha_match": "50/50",
     "qwen_original_budget_caveat": "Primary B=5000 and C=12000 max tokens; later runs use identical settings"
+  },
+  "source_language_qc": {
+    "status": "complete",
+    "protocol": "source syntax only from code_t and code_t1; lifecycle labels, annotator results, and model performance excluded",
+    "strict_c_pool_n": 978,
+    "status_counts": {"CONFIRMED_C": 954, "NON_C_CPP": 13, "NON_C_JAVA": 9, "AMBIGUOUS": 2},
+    "objective_exclusions_total": 24,
+    "development_50": {
+      "objective_exclusions": ["DEV_010", "DEV_012"],
+      "historical_lifecycle_agreement": "48/50 (96%)",
+      "historical_lifecycle_kappa": 0.9228,
+      "sensitivity_eligible_n": 48,
+      "sensitivity_lifecycle_agreement": "48/48 (100%)",
+      "sensitivity_lifecycle_kappa": 1.0
+    },
+    "calibration_20": {
+      "objective_exclusions": [],
+      "confirmed_c": 20,
+      "annotation": "not_started"
+    },
+    "heldout_test_50": {
+      "frozen_n": 50,
+      "objective_exclusions": ["726478f13ad8e011c4a0cfa2", "bda05da230eecfb67fa3a104"],
+      "eligible_confirmed_c_n": 48,
+      "stage_a_failures_among_eligible_n": 6,
+      "final_analyzable_n": 42,
+      "qwen_b_c": "not_run"
+    },
+    "artifacts": "data/qc/"
   },
   "calibration_20": {
     "source_partition": "validation",
@@ -73,8 +102,9 @@
   },
   "heldout_test_50": {
     "annotation": "not_started",
+    "stage_a": {"model": "stealth/space-bunny-alpha", "requests": 50, "usable_hints": 44, "failures": 6, "fallback_disabled": true, "automatic_retries": false},
     "qwen_b_c": "not_run",
-    "test_access": "locked; not authorized or performed"
+    "test_access": "source-QC complete; Qwen evaluation remains locked and not performed"
   },
   "pending_gates": ["development adjudication", "Calibration-20 A01/A02 annotation", "Calibration compiler/test replay", "held-out TEST-50 evaluation"],
   "human_gold_claims": 0,
@@ -91,8 +121,9 @@
     "development_qwen_c_primary": 50,
     "development_qwen_targeted_recovery": 3,
     "calibration_stage_a": 20,
+    "heldout_test_stage_a": 50,
     "stress_qwen_b": 20,
     "stress_qwen_c": 20
   },
-  "truthful_summary": "Development A01/A02 exports are preserved; pre-adjudication lifecycle agreement is 48/50 with kappa 0.9228, and adjudication remains pending. GLM-5.3 B/C development diagnostics are complete. Qwen3.8-27B development diagnostics include primary-run gaps, targeted recovery, and a documented original output-budget mismatch. A fresh 20-case calibration selection was frozen from validation before labels; Stage A used stealth/space-bunny-alpha with S_t-only input, no fallback, and no automatic retry, producing 16 usable hints and four preserved failures. The calibration packet has 16 eligible rows and compiler/test fields marked NOT_REPLAYED. Synthetic Stress-20 has an A02-only human review and a verified identical-settings Qwen B/C diagnostic; it is separate from natural prevalence. No Qwen B/C calibration or held-out TEST-50 run has occurred."
+  "truthful_summary": "Development A01/A02 exports are preserved; pre-adjudication lifecycle agreement remains 48/50 with kappa 0.9228, and adjudication remains pending. Source-language QC classified the full 978-row strict-C pool from source syntax only, preserving objective exclusions. DEV_010 and DEV_012 are excluded in the separate Development sensitivity analysis, which is 48/48 lifecycle agreement with kappa 1.0; the original 48/50 result remains unchanged. Calibration-20 has 20/20 confirmed-C cases. Held-out TEST-50 Stage A produced 44 usable hints and six preserved failures; two objective language exclusions leave 48 eligible C cases and 42 analyzable natural cases. No Qwen B/C calibration or held-out TEST-50 run has occurred."
 }

@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "status_date": "2026-09-26",
+  "status_date": "2026-09-27",
   "source_dataset": "CodeStream",
   "primary_language": "C",
   "partition_counts": {"development": 590, "validation": 191, "test": 197},
@@ -21,7 +21,8 @@
     "created_before_labels": true,
     "stage_a_usable_hints": 16,
     "stage_a_failures_preserved": 4,
-    "annotation_eligible_packets": 16
+    "annotation_eligible_packets": 16,
+    "source_language_qc": "20/20 CONFIRMED_C; QC completed before annotation"
   },
   "stress_20": {
     "n": 20,
@@ -35,6 +36,16 @@
     "selection": "census of strict retained partitions",
     "lifecycle_labels_used_for_selection": false
   },
-  "heldout_test_policy": "TEST-50 remains locked; no annotation or model evaluation has been performed",
+  "heldout_test_policy": "TEST-50 Stage A complete (44 usable hints, 6 failures); source QC leaves 48 eligible C cases and 42 analyzable cases; Qwen B/C remains locked",
+  "source_language_qc": {
+    "pool": "all strict-C transitions after evidence-ready and duplicate controls",
+    "pool_n": 978,
+    "rule": "source syntax in code_t and code_t1 only; no lifecycle labels, annotator results, or model performance",
+    "status_counts": {"CONFIRMED_C": 954, "NON_C_CPP": 13, "NON_C_JAVA": 9, "AMBIGUOUS": 2},
+    "development_50_objective_exclusions": ["DEV_010", "DEV_012"],
+    "test_50_objective_exclusions": ["726478f13ad8e011c4a0cfa2", "bda05da230eecfb67fa3a104"],
+    "calibration_20_confirmed_c": 20,
+    "artifacts": "data/qc/"
+  },
   "focal_claim_rule": "first_explicit_diagnostic_assertion_v1; no S_t+1 or lifecycle-label selection"
 }

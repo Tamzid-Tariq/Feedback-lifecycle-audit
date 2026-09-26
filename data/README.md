@@ -32,3 +32,7 @@ Get-FileHash 'data/raw/Problem Data.csv' -Algorithm SHA256
 ## Tracked data
 
 The compact development annotation manifest is tracked at `data/development_50_manifest.csv`. The official fresh calibration manifest is `data/manifests/calibration_20_manifest.csv` with its JSON companion and `calibration_20_manifest.SHA256SUMS`; it is a deterministic sample from validation, created before labels. The older development-based 25-case proposal is retained under `data/manifests/archive/` and marked SUPERSEDED. Locally rebuilt records belong under `data/derived/` and are ignored. Annotation packets are partitioned under `annotation/`; derived results are partitioned under `results/`.
+
+## Source-language QC
+
+`data/qc/` contains the complete source-syntax-only classification of the 978-row strict-C pool. It preserves the declared C metadata, detected language, status, reason, partition, and mapped Development/Calibration/TEST identifiers. The classifier does not read lifecycle labels, annotator results, or model outputs. `language_qc_exclusions.csv` records objective non-C/ambiguous rows without deleting or replacing them, and `SHA256SUMS.txt` covers the QC audit files.
