@@ -1,0 +1,43 @@
+{
+  "verification_date": "2026-09-26",
+  "verdict": "substantially_consistent_with_scoped_caveats",
+  "gold_source": {
+    "source_path": "C:\\Users\\User\\Downloads\\revground_adjudication_final.jsonl",
+    "repository_copy": "annotation/revground_adjudication_final.jsonl",
+    "sha256": "8FBCEBE1E0E200F8D4AE52F30DF597DA086330E20BE3493C80B4E603BCD5B07D",
+    "rows": 50,
+    "unique_ids": 50,
+    "missing_ids": [],
+    "duplicate_ids": [],
+    "lifecycle_counts": {"KEEP": 21, "RETIRE": 29, "RETRACT": 0, "UNSURE": 0},
+    "status_counts": {"consensus_carry_forward": 40, "adjudicated": 10},
+    "provenance_counts": {"human_annotator_consensus": 40, "adjudication_review": 10}
+  },
+  "human_reliability": {
+    "original_validity": {"agreement": "48/50", "raw_percent": 96.0, "cohen_kappa": 0.3243},
+    "target_state": {"agreement": "48/50", "raw_percent": 96.0, "cohen_kappa": 0.9228},
+    "lifecycle": {"agreement": "48/50", "raw_percent": 96.0, "cohen_kappa": 0.9228},
+    "priority": {"agreement": "44/50", "raw_percent": 88.0, "cohen_kappa": 0.7608},
+    "leakage": {"agreement": "45/50", "raw_percent": 90.0, "cohen_kappa": 0.0},
+    "joint_agreement": "40/50",
+    "lifecycle_disagreements": ["DEV_010", "DEV_012"]
+  },
+  "lifecycle_results": {
+    "GLM-5.3 B": {"accepted": 50, "correct": 50, "end_to_end_correct": "50/50"},
+    "GLM-5.3 C": {"accepted": 50, "correct": 50, "end_to_end_correct": "50/50"},
+    "Qwen3.8-27B B primary": {"accepted": 48, "correct_accepted": "48/48", "end_to_end_correct": "48/50", "decision_coverage": "48/50", "keep_recall": "19/21"},
+    "Qwen3.8-27B C operational": {"accepted": 49, "correct_accepted": "46/49", "end_to_end_correct": "46/50", "decision_coverage": "47/50", "selective_risk": "1/47", "keep_recall": "17/21", "wrongful_removal": "1/21", "system_or_model_no_decision": 3}
+  },
+  "qwen_primary_comparison": {
+    "overlap": "48/48",
+    "lifecycle_agreement": "46/48",
+    "difference_ids": ["DEV_004", "DEV_012"],
+    "evidence_sha_match": "50/50"
+  },
+  "caveats": [
+    "Local recovery artifacts are present; recovered Qwen B is 49/50 lifecycle-correct because DEV_046 is RETIRE against gold KEEP.",
+    "Original Qwen max_tokens differ: B=5000 and C=12000.",
+    "GLM 100% refers to lifecycle accuracy, not five-field exact match.",
+    "Older repository status files still say adjudication is pending."
+  ]
+}
