@@ -19,11 +19,11 @@ Problems and near-duplicate problem families are assigned atomically. This is no
 ## Research subsets
 
 - Development-rubric set: 50 cases for definition and interface refinement
-- Fresh calibration: 25 disjoint cases for the post-revision reliability gate
+- Fresh calibration: 20 validation-partition cases selected with seed `20260926` before labels; 16 annotation-eligible after preserved Stage-A failures
 - Validation census: 191 transitions
 - Final test census: 197 transitions, locked
 - Conditional long-horizon extension: 20 reserved development trajectories
 
 The development 50 is deliberately varied and is not a prevalence sample. Natural lifecycle-frequency claims belong to the later census partitions after the protocol is frozen.
 
-Authoritative manifests are in [`data/manifests/`](../data/manifests/). Raw-data setup and checksums are documented in [`data/README.md`](../data/README.md).
+Authoritative manifests are in [`data/manifests/`](../data/manifests/). The superseded development-based 25-case proposal is retained under [`data/manifests/archive/`](../data/manifests/archive/). Raw-data setup and checksums are documented in [`data/README.md`](../data/README.md).

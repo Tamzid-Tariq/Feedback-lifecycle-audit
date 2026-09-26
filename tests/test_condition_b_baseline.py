@@ -23,7 +23,7 @@ def recursive_keys(value: object) -> set[str]:
 class ConditionBBaselineTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        source = ROOT / "annotation" / "development_50_evidence_frozen_v1.jsonl"
+        source = ROOT / "annotation" / "development_50" / "development_50_evidence_frozen_v1.jsonl"
         cls.packet = json.loads(source.read_text(encoding="utf-8").splitlines()[0])
 
     def test_projection_uses_only_condition_b_evidence(self) -> None:

@@ -15,8 +15,8 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ANNOTATION_DIR = ROOT / "annotation"
-ARTIFACTS_DIR = ROOT / "artifacts"
+ANNOTATION_DIR = ROOT / "annotation" / "development_50"
+ARTIFACTS_DIR = ROOT / "results" / "development_50"
 
 FIELDS = (
     "original_validity",

@@ -20,8 +20,8 @@ from utils.safe_execute_c import IMAGE, run_state, temporary_directory
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-INPUT = REPO_ROOT / "annotation" / "development_50_evidence_frozen_v1.jsonl"
-OUTPUT = REPO_ROOT / "artifacts" / "runs" / "development_50_execution_results.jsonl"
+INPUT = REPO_ROOT / "annotation" / "development_50" / "development_50_evidence_frozen_v1.jsonl"
+OUTPUT = REPO_ROOT / "results" / "development_50" / "runs" / "development_50_execution_results.jsonl"
 FORMAT_VERSION = "revground-development-execution-v1.1.0"
 
 

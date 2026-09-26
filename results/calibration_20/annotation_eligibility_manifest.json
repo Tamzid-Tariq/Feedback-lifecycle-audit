@@ -1,0 +1,146 @@
+{
+  "selected_count": 20,
+  "annotation_eligible_count": 16,
+  "records": [
+    {
+      "item_id": "CAL_001",
+      "generation_case_id": "1f49a229514187075403b700",
+      "stage_a_status": "empty",
+      "claim_status": null,
+      "annotation_eligible": false
+    },
+    {
+      "item_id": "CAL_002",
+      "generation_case_id": "b02b1d766a935b71677a0def",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_003",
+      "generation_case_id": "16bec2f59d2c35d8a69486f9",
+      "stage_a_status": "success",
+      "claim_status": "composite_requires_review",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_004",
+      "generation_case_id": "92c653f3e251f3fa6bb7740d",
+      "stage_a_status": "length_violation",
+      "claim_status": null,
+      "annotation_eligible": false
+    },
+    {
+      "item_id": "CAL_005",
+      "generation_case_id": "b96636bfd11423d4b9f10e3f",
+      "stage_a_status": "empty",
+      "claim_status": null,
+      "annotation_eligible": false
+    },
+    {
+      "item_id": "CAL_006",
+      "generation_case_id": "2ced3223cfe8831fa64b4475",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_007",
+      "generation_case_id": "ca3c8b40e26acf48ca94a889",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_008",
+      "generation_case_id": "bf0e64f29a5e0729f0e7549f",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_009",
+      "generation_case_id": "27a66b401aac27a9fd242d75",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_010",
+      "generation_case_id": "6b9dd1c1fda8640413c7330e",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_011",
+      "generation_case_id": "7d606d0e9b0e973679e2afb2",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_012",
+      "generation_case_id": "9e389c407678e023f4a375da",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_013",
+      "generation_case_id": "ff09a9d96f080b93de514877",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_014",
+      "generation_case_id": "aecf7428a939743bda19a5ec",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_015",
+      "generation_case_id": "d3d26bcfb4cd7185b3a63265",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_016",
+      "generation_case_id": "666f91fc917346c37a5746bb",
+      "stage_a_status": "empty",
+      "claim_status": null,
+      "annotation_eligible": false
+    },
+    {
+      "item_id": "CAL_017",
+      "generation_case_id": "c51f457a02f1bd09faca08a1",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_018",
+      "generation_case_id": "6066ec72de6e5d8fe1e76b3a",
+      "stage_a_status": "success",
+      "claim_status": "composite_requires_review",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_019",
+      "generation_case_id": "c52ed569900720c8765625d9",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    },
+    {
+      "item_id": "CAL_020",
+      "generation_case_id": "7342994e73766079cc99fd4b",
+      "stage_a_status": "success",
+      "claim_status": "success",
+      "annotation_eligible": true
+    }
+  ]
+}

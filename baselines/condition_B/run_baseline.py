@@ -24,7 +24,7 @@ from typing import Any
 BASELINE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASELINE_DIR.parents[1]
 PROMPT_PATH = BASELINE_DIR / "prompt.txt"
-DEFAULT_INPUT = REPO_ROOT / "annotation" / "development_50_evidence_frozen_v1.jsonl"
+DEFAULT_INPUT = REPO_ROOT / "annotation" / "development_50" / "development_50_evidence_frozen_v1.jsonl"
 DEFAULT_OUTPUT = BASELINE_DIR / "outputs" / "condition_B_dev_predictions.jsonl"
 DEFAULT_RUN_ROOT = BASELINE_DIR / "outputs" / "runs"
 DEFAULT_ENDPOINT = "https://api.z.ai/api/coding/paas/v4/chat/completions"

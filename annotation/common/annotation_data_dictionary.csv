@@ -1,5 +1,5 @@
 field,meaning
-item_id,Stable primary key for one development case
+item_id,Stable primary key for one annotation case (DEV_### or CAL_###)
 transition_id,Stable earlier-to-later code transition identifier
 packet_id,Identifier of the fixed evidence packet shown to the annotator
 annotator_id,Pseudonymous independent annotator identifier A01 or A02

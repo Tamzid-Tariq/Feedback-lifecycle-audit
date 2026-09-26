@@ -1,0 +1,21 @@
+item_id,annotator_id,original_validity,target_state_t1,lifecycle_label,evidence_ids,confidence,short_reason
+STR_001,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_001:S_t;diff:STR_001,HIGH,"Refuted: source uses scanf(""%c"", &Ch), not %s, in both earlier and later versions."
+STR_002,A_02,INDETERMINATE,INDETERMINATE,UNSURE,source:STR_002:S_t;diff:STR_002,HIGH,"Indeterminate: problem statement gives no n1/n2 bound at all, and no judge stack-limit evidence is supplied."
+STR_003,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_003:S_t;diff:STR_003,HIGH,"Refuted: earlier source already has `if(x==11) printf(""eleven"")`; the value 11 was handled (10 was the actual gap)."
+STR_004,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_004:S_t;diff:STR_004;execution:STR_004:st:compile,HIGH,"Refuted: earlier source already has `#include<stdlib.h>`; the diff only reformats it, doesn't add it."
+STR_005,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_005:S_t;diff:STR_005,HIGH,Refuted: the three triangle inequalities are joined with `||`; `&&` only joins the separate positivity checks.
+STR_006,A_02,INDETERMINATE,NOT_APPLICABLE,UNSURE,source:STR_006:S_t;execution:STR_006:st:prob_020_T1,HIGH,Indeterminate: target mapping ambiguous
+STR_007,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_007:S_t;diff:STR_007,HIGH,Refuted: earlier source already has `top = -1; // reset stack` as the first line of evaluate().
+STR_008,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_008:S_t;diff:STR_008,HIGH,"Refuted: earlier source already has `if(!n%400) return 1;`; precedence makes it buggy, but the 400-case exists."
+STR_009,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_009:S_t;execution_compile_recovery:STR_009:st:compile,HIGH,"Refuted: the else-branch printing ""Invalid"" already exists; the diff only adds a missing closing brace/return."
+STR_010,A_02,INDETERMINATE,INDETERMINATE,UNSURE,execution:STR_010:st:prob_025_T1;source:STR_010:S_t,HIGH,Indeterminate: both supplied tests are far above the top slab (~33M/131M vs 3M ceiling); no test evidence isolates a near-boundary error as rounding vs formula.
+STR_011,A_02,INDETERMINATE,INDETERMINATE,UNSURE,stored_trace:STR_011:S_t;stored_trace:STR_011:S_t+1;source:STR_011:S_t,HIGH,"Indeterminate: no judge time limit is stated anywhere, and both versions fail to compile, so no execution/timing evidence exists at all."
+STR_012,A_02,INDETERMINATE,INDETERMINATE,UNSURE,execution_compile_recovery:STR_012:st1:prob_031_T1;source:STR_012:S_t+1,MEDIUM,"Indeterminate: later output also has extra leading/trailing/double spaces ("" 1  2  3 ""), at least as salient as the missing newline; specific cause isn't isolated."
+STR_013,A_02,INDETERMINATE,INDETERMINATE,UNSURE,source:STR_013:S_t,HIGH,Indeterminate: no judge memory limit is stated anywhere in the problem statement or evidence packet.
+STR_014,A_02,INDETERMINATE,INDETERMINATE,UNSURE,source:STR_014:S_t,HIGH,"Indeterminate: problem gives no magnitude bound for X, so whether valid inputs exceed int range can't be established."
+STR_015,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_015:S_t;diff:STR_015,HIGH,"Refuted: earlier source already exempts medical allowance up to 60,000 (`if(med*12<=60000){med=0;}else{med=(med*12)-60000;}`) before computing annual income."
+STR_016,A_02,INDETERMINATE,INDETERMINATE,UNSURE,source:STR_016:S_t,HIGH,Indeterminate: the problem never states whether timestamp 2 must be later than timestamp 1; ordering is unspecified.
+STR_017,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_017:S_t,HIGH,Refuted: earlier source already calls clearData() at the start of isPalindrome() in both versions.
+STR_018,A_02,INDETERMINATE,INDETERMINATE,UNSURE,source:STR_018:S_t,HIGH,"Indeterminate: n<=1e6 and x in [0,1e5] permit deep degenerate recursion, but no stack-limit/runtime evidence is supplied."
+STR_019,A_02,REFUTED,NOT_APPLICABLE,RETRACT,source:STR_019:S_t;diff:STR_019,HIGH,"Refuted: earlier source calls scanf(""%d"",&n) before printf(""%b"",n); n is read first."
+STR_020,A_02,INDETERMINATE,INDETERMINATE,UNSURE,source:STR_020:S_t,HIGH,"Indeterminate: problem statement gives no expression-length bound at all; supplied tests are short, so a >100-entry-stack input can't be confirmed valid."

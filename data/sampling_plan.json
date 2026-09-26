@@ -1,0 +1,40 @@
+{
+  "version": "3.0.0",
+  "status_date": "2026-09-26",
+  "source_dataset": "CodeStream",
+  "primary_language": "C",
+  "partition_counts": {"development": 590, "validation": 191, "test": 197},
+  "development_50": {
+    "n": 50,
+    "purpose": "rubric and interface development",
+    "manifest": "data/development_50_manifest.csv",
+    "labels_read_before_selection": false,
+    "annotation": "A01 and A02 complete; adjudication pending"
+  },
+  "calibration_20": {
+    "n": 20,
+    "source_partition": "validation",
+    "selection_rule": "fixed deterministic selection without replacement; output restored to source order",
+    "seed": 20260926,
+    "manifest_csv": "data/manifests/calibration_20_manifest.csv",
+    "manifest_json": "data/manifests/calibration_20_manifest.json",
+    "created_before_labels": true,
+    "stage_a_usable_hints": 16,
+    "stage_a_failures_preserved": 4,
+    "annotation_eligible_packets": 16
+  },
+  "stress_20": {
+    "n": 20,
+    "source": "synthetic cases derived from development packets",
+    "prevalence_role": "excluded from natural prevalence",
+    "human_review": "A02 only; 10 RETRACT and 10 UNSURE; not adjudicated consensus"
+  },
+  "natural_census": {
+    "validation": 191,
+    "test": 197,
+    "selection": "census of strict retained partitions",
+    "lifecycle_labels_used_for_selection": false
+  },
+  "heldout_test_policy": "TEST-50 remains locked; no annotation or model evaluation has been performed",
+  "focal_claim_rule": "first_explicit_diagnostic_assertion_v1; no S_t+1 or lifecycle-label selection"
+}

@@ -26,7 +26,7 @@ The default input is the locally rebuilt `data/derived/development_50_records_un
 python scripts/generate_hints_openrouter.py --mode verify
 ```
 
-Do not regenerate the frozen development run. `--mode run` is for an explicitly authorized new partition, requires `OPENROUTER_API_KEY`, and writes ignored files under `artifacts/runs/`.
+Do not regenerate the frozen development run. `--mode run` is for an explicitly authorized new partition, requires `OPENROUTER_API_KEY`, and writes outputs under the corresponding `results/<set>/` directory.
 
 ## 4. Verify or replay execution evidence
 
@@ -37,7 +37,7 @@ docker build -t revground-c-runner:2.0 scripts/utils
 python scripts/replay_development_50.py --mode verify
 ```
 
-`--mode run` compiles each code state once, runs every test under an individual two-second program limit, and uses a separate 60-second host/Docker timeout. New outputs go under the ignored `artifacts/runs/` directory.
+`--mode run` compiles each code state once, runs every test under an individual two-second program limit, and uses a separate 60-second host/Docker timeout. New outputs go under the corresponding `results/<set>/` directory.
 
 ## 5. Evaluate matched predictions
 

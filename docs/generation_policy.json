@@ -1,0 +1,48 @@
+{
+  "version": "3.0.0",
+  "status_date": "2026-09-26",
+  "credential_policy": "API keys are supplied through environment variables and are never committed",
+  "stage_a_calibration": {
+    "model": "stealth/space-bunny-alpha",
+    "provider": "OpenRouter",
+    "input_boundary": "S_t only",
+    "max_tokens": 512,
+    "timeout_seconds": 90,
+    "fallback": false,
+    "automatic_retries": false,
+    "calls": 20,
+    "usable_hints": 16,
+    "failures_preserved": 4,
+    "focal_claim_extractor": "first_explicit_diagnostic_assertion_v1"
+  },
+  "development_evaluations": {
+    "glm": {
+      "model": "glm-5.3",
+      "condition_b_requests": 50,
+      "condition_c_requests": 50,
+      "evidence_sha_match": "50/50",
+      "status": "complete_diagnostic"
+    },
+    "qwen": {
+      "model": "qwen/qwen3.8-27b",
+      "primary_condition_b": {"requests": 50, "max_tokens": 5000, "accepted": 48},
+      "primary_condition_c": {"requests": 50, "max_tokens": 12000, "accepted": 49},
+      "targeted_recovery_calls": 3,
+      "fallback": false,
+      "status": "complete_with_documented_caveats",
+      "caveat": "The original primary B/C output budgets differed; later runs use identical settings."
+    }
+  },
+  "stress_20_qwen": {
+    "model": "qwen/qwen3.8-27b",
+    "condition_b_requests": 20,
+    "condition_c_requests": 20,
+    "max_tokens": 16000,
+    "timeout_seconds": 360,
+    "fallback": false,
+    "same_provider_and_routing_policy": true,
+    "same_retry_policy": true,
+    "status": "complete_verified"
+  },
+  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50"]
+}

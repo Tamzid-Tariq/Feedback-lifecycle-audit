@@ -1,0 +1,7 @@
+{
+  "selected_cases": 20,
+  "frozen_packet_rows": 16,
+  "annotation_eligible_cases": 16,
+  "execution_replay": "NOT_REPLAYED",
+  "stage_a_failures_preserved_in": "results/calibration_20"
+}

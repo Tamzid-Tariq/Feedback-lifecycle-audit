@@ -22,10 +22,12 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Lifecycle agreement | 48/50 (96%) |
 | Lifecycle Cohen's kappa | 0.9228 |
 | Adjudication | Pending |
-| Fresh calibration | Pending |
-| Condition B GLM-5.3 development run | Complete; canonical 50-record output retained in the local audit workspace |
-| Condition C controlled extension | Complete; 50/50 accepted outputs |
-| B/C matched evidence | Complete; 50/50 evidence hashes matched |
+| Fresh calibration | Validation-based 20-case selection prepared; 16 annotation-eligible packets and 4 preserved Stage-A failures |
+| Condition B/C development runs | Existing development artifacts retained; no calibration or held-out Qwen B/C run |
+| Calibration Stage A | 20 validation cases attempted with `stealth/space-bunny-alpha`; 16 usable hints, 4 preserved failures |
+| Calibration compiler/test replay | Not performed; packet fields are explicitly marked `NOT_REPLAYED` |
+| Calibration annotation | Not started |
+| Synthetic Stress-20 | Human review preserved; Qwen B/C results verified and reported separately from natural prevalence |
 
 ### Current lifecycle disagreements
 
@@ -41,21 +43,29 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - Primary language: C
 - 978 eligible strict C transitions after duplicate controls
 - Development: 590; validation: 191; test: 197
-- Development-rubric set: 50; fresh calibration set: 25
+- Development-rubric set: 50; fresh calibration selection: 20 from validation (16 usable annotation packets)
 
 ## Repository Guide
 
 - [Study design](docs/study_design.md)
 - [Data and sampling](docs/data_and_sampling.md)
 - [Raw-data setup and checksums](data/README.md)
-- [Human annotation](annotation/README.md)
+- [Annotation layout](annotation/README.md)
 - [Supervisor progress](docs/SUPERVISOR_PROGRESS.md)
 - [Experiment status](docs/EXPERIMENT_STATUS.md)
 - [Condition B baseline](baselines/condition_B/README.md)
 - [Condition C audit extension](baselines/condition_C/README.md)
 - [Shared condition evaluator](evaluation/normalize_conditions.py)
-- [Development results summary](artifacts/development_results_summary.md)
-- [Adjudicator packet](annotation/RevGround_Adjudicator.html)
+- [Development results summary](results/development_50/development_results_summary.md)
+- [Results highlights](results/RESULTS_HIGHLIGHTS.md)
+- [Synthetic Stress-20 results](results/stress_20/stress_20_results_summary.md)
+- [Completed versus planned](docs/COMPLETED_VS_PLANNED.md)
+- [Readiness gates](docs/readiness_gates.csv)
+- [Supervisor requirements traceability](docs/SUPERVISOR_REQUIREMENTS_TRACEABILITY.csv)
+- [Sampling plan](data/sampling_plan.json)
+- [Generation policy](docs/generation_policy.json)
+- [Model card](docs/model_card.json)
+- [Development adjudicator packet](annotation/development_50/RevGround_Adjudicator.html)
 - [Reproduction entry points](scripts/)
 - [Machine-readable status](artifacts/current_status.json)
 
@@ -70,9 +80,10 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 7. Freeze annotation packets.
 8. Collect two independent development annotations — **complete**.
 9. Adjudicate development disagreements and review the rubric — **current milestone**.
-10. Run the fresh 25-case calibration.
+10. Begin the validation-based 20-case calibration using the isolated A01/A02 package.
 11. Freeze the final protocol.
-12. Evaluate validation and access the final test only after authorization.
+12. Report the completed Synthetic Stress-20 diagnostic separately from natural results.
+13. Do not run Qwen B/C on calibration or held-out TEST until separately authorized.
 
 ## Important Scope
 

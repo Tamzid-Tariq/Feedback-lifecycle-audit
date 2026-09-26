@@ -25,6 +25,8 @@ Hints were not shown to learners and did not cause the observed revisions. Claim
 
 ## Annotation and evaluation sequence
 
-The 50-case development set supports rubric refinement. Two annotators label it independently before discussion. A fresh disjoint 25-case calibration set is the post-revision reliability gate. Validation contains the natural 191-case census. The 197-case final test remains locked until the rubric and methods are frozen and access is authorized.
+The 50-case development set supports rubric refinement. Two annotators label it independently before discussion. The fresh calibration selection is 20 cases sampled deterministically from the validation partition before labels are read. Stage-A generation attempted all 20 with the frozen S_t-only protocol; 16 hints were usable and four failures were preserved. The 16 eligible cases are packaged for independent A01/A02 calibration annotation. Validation contains the natural 191-case census. The 197-case final test remains locked, and no Qwen B/C calibration or held-out run has been performed.
+
+The separate Synthetic Stress-20 set is a controlled rare-label diagnostic derived from development packets. Its completed human review contains 10 `RETRACT` and 10 `UNSURE` cases from one annotator (`A_02`), not an independent consensus or adjudicated gold set. Qwen B/C results for this set are reported separately and are not used for natural prevalence estimates.
 
 Method comparisons must preserve identical claim sets and record abstention separately from predicted UNSURE. Evaluation emphasizes decision coverage, false KEEP decisions on RETIRE/RETRACT gold cases, wrongful removal of KEEP cases, selective risk, and per-class descriptive results.

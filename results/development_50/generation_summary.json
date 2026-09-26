@@ -1,0 +1,26 @@
+{
+  "audit_status": "PASS",
+  "source_record_count": 50,
+  "result_record_count": 50,
+  "requested_model": "stealth/union-alpha",
+  "returned_model_values": [
+    "stealth/union-alpha"
+  ],
+  "prompt_hash_recomputation": "PASS",
+  "request_hash_recomputation": "PASS",
+  "generation_status_counts": {
+    "diagnostic": 20,
+    "error": 8,
+    "length_violation": 19,
+    "non_diagnostic": 3
+  },
+  "raw_hint_count": 39,
+  "accepted_hint_count": 20,
+  "nonaccepted_hint_count": 19,
+  "non_hint_outcome_count": 11,
+  "source_sha256": "fde12016dab9e3df99a9d43bf170c58ef33ae83977220dfcb82971e5c22422d9",
+  "results_sha256": "f973f05b098d9a6865a74fbae0489b6ecec296c898cb1aa601d140012053bf3f",
+  "derived_raw_records": "development_50_records_with_openrouter_raw_hints.jsonl",
+  "derived_accepted_records": "development_50_records_with_openrouter_accepted_hints.jsonl",
+  "note": "Raw and accepted derived JSONLs preserve the immutable source fields. Provenance and nonaccepted outcomes remain in generated_hints.jsonl."
+}

@@ -1,6 +1,6 @@
 # Experiment Status
 
-Updated: 2026-09-25
+Updated: 2026-09-26
 
 ## Current state
 
@@ -16,7 +16,11 @@ The frozen 50-item development evidence set has been evaluated under both primar
 | C packet validation | Complete; 50/50 passed |
 | C lifecycle decision validation | Complete; 0 violations |
 | Adjudicated human gold | Pending |
-| Validation/test-scale evaluation | Not started |
+| Validation-based Calibration-20 Stage A | 20 attempted; 16 usable hints; 4 failures preserved |
+| Calibration A01/A02 annotation | Not started |
+| Synthetic Stress-20 human review | 20 reviewed by A02; 10 RETRACT / 10 UNSURE; not adjudicated consensus |
+| Synthetic Stress-20 Qwen B/C | Complete; B 14/20, C 16/20; reported separately |
+| Calibration/test-scale Qwen B/C | Not run |
 
 ## Conditions
 
@@ -30,6 +34,10 @@ Condition C produced 50 accepted outputs with no errors, no packet abstentions, 
 
 These are technical development results only. They do not establish agreement or accuracy against A01/A02 or adjudicated gold labels.
 
+## Synthetic Stress-20 result
+
+The controlled rare-label stress run used identical Qwen settings for B and C. On the 19 paired cases, B/C lifecycle agreement was 17/19 (89.5%); B was correct on 14/19 and C on 16/19. C raised reviewed-RETRACT recall from 80% to 100% and reduced false KEEP from 10% to 0%, while UNSURE recognition remained 60% for both. This is a diagnostic stress result, not a natural prevalence estimate. See [the full stress summary](../results/stress_20/stress_20_results_summary.md).
+
 ## Reproducibility and retention
 
 The repository contains the runners, prompts, evaluator, and aggregate summaries. Raw provider responses and per-run output trees are intentionally kept outside the public repository in the local audit workspace.
@@ -37,6 +45,9 @@ The repository contains the runners, prompts, evaluator, and aggregate summaries
 See:
 
 - [Condition C README](../baselines/condition_C/README.md)
-- [Development results summary](../artifacts/development_results_summary.md)
-- [Matched evidence summary](../artifacts/matched_evidence_summary.json)
+- [Development results summary](../results/development_50/development_results_summary.md)
+- [Matched evidence summary](../results/development_50/matched_evidence_summary.json)
+- [Calibration results](../results/calibration_20/README.md)
+- [Results highlights](../results/RESULTS_HIGHLIGHTS.md)
+- [Synthetic Stress-20 results](../results/stress_20/stress_20_results_summary.md)
 - [Supervisor progress](SUPERVISOR_PROGRESS.md)

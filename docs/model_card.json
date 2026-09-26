@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "status_date": "2026-09-26",
+  "scope": "Models and provider settings actually used in RevGround diagnostics",
+  "credentials": "No credentials are stored in the repository",
+  "runs": [
+    {
+      "role": "Stage-A calibration hint generation",
+      "model": "stealth/space-bunny-alpha",
+      "provider": "OpenRouter",
+      "partition": "validation calibration-20",
+      "settings": {"max_tokens": 512, "timeout_seconds": 90, "fallback": false, "automatic_retries": false},
+      "outcome": "20 calls; 16 usable hints; 4 failures preserved"
+    },
+    {
+      "role": "Development Condition B and C",
+      "model": "glm-5.3",
+      "provider": "OpenAI-compatible GLM Coding Plan endpoint",
+      "partition": "development-50",
+      "outcome": "50 requests per condition; both technical lifecycle results recorded as 50/50"
+    },
+    {
+      "role": "Development Condition B and C diagnostic",
+      "model": "qwen/qwen3.8-27b",
+      "provider": "OpenRouter",
+      "partition": "development-50",
+      "outcome": "Primary B/C runs plus three targeted recovery calls; original B/C output budgets differed and are reported as a caveat"
+    },
+    {
+      "role": "Synthetic Stress-20 Condition B and C",
+      "model": "qwen/qwen3.8-27b",
+      "provider": "OpenRouter",
+      "partition": "synthetic stress-20",
+      "settings": {"max_tokens": 16000, "timeout_seconds": 360, "fallback": false, "same_provider_and_routing_policy": true, "same_retry_policy": true},
+      "outcome": "20 requests per condition; B 14/20 and C 16/20 operational accuracy"
+    }
+  ],
+  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50"],
+  "interpretation_boundary": "These runs are development/calibration/stress diagnostics. No natural held-out prevalence or deployed-tutor effectiveness estimate is available."
+}

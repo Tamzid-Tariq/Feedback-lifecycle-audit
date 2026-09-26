@@ -20,7 +20,7 @@ import run_baseline as condition_b  # noqa: E402
 
 
 PROMPT_PATH = BASELINE_DIR / "prompt.txt"
-DEFAULT_INPUT = REPO_ROOT / "annotation" / "development_50_evidence_frozen_v1.jsonl"
+DEFAULT_INPUT = REPO_ROOT / "annotation" / "development_50" / "development_50_evidence_frozen_v1.jsonl"
 DEFAULT_RUN_ROOT = BASELINE_DIR / "outputs" / "runs"
 DEFAULT_ENDPOINT = condition_b.DEFAULT_ENDPOINT
 DEFAULT_MODEL = condition_b.DEFAULT_MODEL

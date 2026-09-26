@@ -31,4 +31,4 @@ Get-FileHash 'data/raw/Problem Data.csv' -Algorithm SHA256
 
 ## Tracked data
 
-The compact development annotation manifest is tracked at `data/development_50_manifest.csv`. Existing frozen sampling and partition manifests remain under `data/manifests/`; locally rebuilt records belong under `data/derived/` and are ignored. The sanitized 50-case annotation evidence is tracked separately under `annotation/` because it is the fixed human-rating artifact.
+The compact development annotation manifest is tracked at `data/development_50_manifest.csv`. The official fresh calibration manifest is `data/manifests/calibration_20_manifest.csv` with its JSON companion and `calibration_20_manifest.SHA256SUMS`; it is a deterministic sample from validation, created before labels. The older development-based 25-case proposal is retained under `data/manifests/archive/` and marked SUPERSEDED. Locally rebuilt records belong under `data/derived/` and are ignored. Annotation packets are partitioned under `annotation/`; derived results are partitioned under `results/`.

@@ -2,8 +2,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "RevGround independent human annotation export v2.0",
   "type": "array",
-  "minItems": 50,
-  "maxItems": 50,
   "items": {
     "type": "object",
     "additionalProperties": false,
@@ -23,7 +21,7 @@
       "short_reason"
     ],
     "properties": {
-      "item_id": {"type": "string", "pattern": "^DEV_[0-9]{3}$"},
+      "item_id": {"type": "string", "pattern": "^(DEV|CAL)_[0-9]{3}$"},
       "transition_id": {"type": "string", "minLength": 1},
       "packet_id": {"type": "string", "minLength": 1},
       "annotator_id": {"enum": ["A01", "A02"]},
