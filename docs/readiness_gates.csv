@@ -9,7 +9,7 @@ Development GLM B/C diagnostics,COMPLETE,results/development_50,"50-item technic
 Development Qwen B/C diagnostics,COMPLETE_WITH_CAVEATS,results/development_50/development_results_verification_20260926.md,"Primary output gaps, targeted recovery, validator abstention, and original B/C output-budget mismatch are documented"
 Calibration-20 validation manifest,COMPLETE,data/manifests/calibration_20_manifest.csv,"20 validation cases; deterministic seed 20260926; selected before labels"
 Calibration Stage A,COMPLETE_WITH_FAILURES,results/calibration_20/stage_a_stealth_space_bunny_alpha,"20 calls; 16 usable hints; 4 failures preserved; no retry/fallback"
-Calibration packet freeze,COMPLETE_WITH_LIMITATION,annotation/calibration_20/calibration_20_evidence_frozen_v1.jsonl,"16 eligible packets; compiler/test fields are NOT_REPLAYED"
+Calibration packet freeze,COMPLETE,annotation/calibration_20/calibration_20_evidence_frozen_v1.jsonl;results/calibration_20/calibration_20_build_manifest.json,"16 eligible blinded packets with S_t/S_t+1, diff, stored traces, official tests, and locked-runner compiler/test evidence"
 Calibration A01/A02 annotation,NOT_STARTED,annotation/calibration_20,"Independent annotation remains pending"
 Synthetic Stress-20 human review,COMPLETE_SINGLE_ANNOTATOR,annotation/stress_20/synthetic_stress_20_human_review.csv,"A02 reviewed 20 rows: 10 RETRACT and 10 UNSURE; not adjudicated consensus"
 Synthetic Stress-20 Qwen B/C,COMPLETE_VERIFIED,results/stress_20/stress_20_results_summary.md,"B 14/20; C 16/20; paired agreement 17/19; evidence SHA 20/20"

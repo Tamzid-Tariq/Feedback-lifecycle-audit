@@ -22,6 +22,7 @@
 - Official fresh calibration manifest replaced the older development-based proposal: 20 deterministic validation cases, seed `20260926`; the old 25-case manifest is retained under `data/manifests/archive/` as SUPERSEDED.
 - Calibration Stage A attempted all 20 validation cases with `stealth/space-bunny-alpha`, using only S_t fields, fallback disabled, and no automatic retries. Sixteen hints were usable and four failures were preserved.
 - Sixteen exact-span focal claims were frozen with extractor `first_explicit_diagnostic_assertion_v1`. The calibration packet contains the 16 annotation-eligible cases; no human annotation has started.
+- Calibration Stage-B evidence replay is complete for those 16 cases: 32 locked-runner state replays and 450 official test-state entries were attached using `revground-c-runner:2.0`. The four Stage-A failures remain preserved outside the packet.
 - Synthetic Stress-20 human review was preserved as a completed single-annotator (`A_02`) review: 10 `RETRACT` and 10 `UNSURE`; it is not adjudicated consensus.
 - Synthetic Stress-20 Qwen B/C results were verified under identical settings: B 14/20 and C 16/20 operational accuracy; paired agreement 17/19 (89.5%); evidence SHA match 20/20.
 
@@ -62,7 +63,7 @@ DEV_029, DEV_038, DEV_048, DEV_049, DEV_050.
 1. Supervisor/qualified adjudication of disagreement cases.
 2. Review of rubric before fresh calibration.
 3. Preserve the frozen evidence boundary before any validation/test-scale extension.
-4. Begin independent A01/A02 calibration annotation from `annotation/calibration_20/`; all 20 cases passed source-language QC.
+4. Begin independent A01/A02 calibration annotation from `annotation/calibration_20/`; all 20 cases passed source-language QC and the 16 usable packets now contain locked-runner evidence.
 5. Do not run Qwen B/C on calibration or held-out TEST yet.
 
 ## Next Stage

@@ -27,7 +27,7 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Condition B/C development runs | Existing development artifacts retained; no calibration or held-out Qwen B/C run |
 | Calibration Stage A | 20 validation cases attempted with `stealth/space-bunny-alpha`; 16 usable hints, 4 preserved failures |
 | Held-out TEST-50 Stage A | Complete; 50 attempts, 44 usable hints, 6 preserved failures; 48 C-eligible after QC and 42 final analyzable |
-| Calibration compiler/test replay | Not performed; packet fields are explicitly marked `NOT_REPLAYED` |
+| Calibration compiler/test replay | Complete in pinned locked runner; 32 state replays and 450 official test-state entries |
 | Calibration annotation | Not started |
 | Synthetic Stress-20 | Human review preserved; Qwen B/C results verified and reported separately from natural prevalence |
 

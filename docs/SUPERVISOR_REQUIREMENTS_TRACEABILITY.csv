@@ -12,7 +12,7 @@ Run Qwen development diagnostics,results/development_50/development_results_veri
 Run rare-label stress diagnostic,results/stress_20/stress_20_results_summary.md;annotation/stress_20/synthetic_stress_20_human_review.csv,COMPLETE_SEPARATE,"Qwen C improved RETRACT handling; Stress-20 is not natural prevalence and human review is A02-only"
 Freeze calibration focal claims,results/calibration_20/frozen_focal_claims.jsonl,COMPLETE_WITH_FAILURES,"16 exact-span claims frozen; four Stage-A failures remain preserved"
 Obtain independent calibration annotation,annotation/calibration_20,NOT_STARTED,"A01/A02 calibration annotation remains pending"
-Replay calibration compiler/tests,results/calibration_20/calibration_20_packet_status.json,NOT_AVAILABLE_AT_FREEZE,"Compiler/test statuses are explicitly NOT_REPLAYED"
+Replay calibration compiler/tests,results/calibration_20/calibration_20_build_manifest.json;results/calibration_20/runs/calibration_20_execution_results.jsonl,COMPLETE_LOCKED_RUNNER,"32 state replays and 450 official test-state entries attached to the frozen packets"
 Keep held-out test untouched,annotation/heldout_test_50;results/heldout_test_50,LOCKED,"No annotation or Qwen B/C run"
 Account for TEST-50 language exclusions,results/heldout_test_50/language_qc_eligibility.md;data/qc/language_qc_experiment_impact.json,COMPLETE_WITH_EXCLUSIONS,"50 frozen minus 2 objective exclusions leaves 48 eligible C; six Stage-A failures leave 42 analyzable cases"
 Produce final natural estimates,docs/COMPLETED_VS_PLANNED.md,NOT_DONE,"Requires calibration, adjudication, and held-out test work"

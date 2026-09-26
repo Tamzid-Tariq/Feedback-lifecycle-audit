@@ -18,6 +18,7 @@ The frozen 50-item development evidence set has been evaluated under both primar
 | Source-language QC | Complete; 978 strict-C rows classified from source syntax only |
 | Adjudicated human gold | Pending |
 | Validation-based Calibration-20 Stage A | 20 attempted; 16 usable hints; 4 failures preserved |
+| Calibration-20 Stage-B evidence replay | Complete; 32 locked-runner state replays; 23 compile successes and 9 compile errors |
 | Calibration A01/A02 annotation | Not started |
 | Synthetic Stress-20 human review | 20 reviewed by A02; 10 RETRACT / 10 UNSURE; not adjudicated consensus |
 | Synthetic Stress-20 Qwen B/C | Complete; B 14/20, C 16/20; reported separately |
@@ -43,6 +44,8 @@ The full strict-C pool was classified using only source syntax in `code_t` and `
 The Development-50 history is unchanged: lifecycle agreement remains 48/50 (96%), κ=0.9228. A separate sensitivity analysis excluding objective `DEV_010` (Java) and `DEV_012` (C++) gives 48/48 lifecycle agreement, κ=1.0000.
 
 The frozen TEST-50 has exactly two objective language exclusions (`726478f13ad8e011c4a0cfa2` Java and `bda05da230eecfb67fa3a104` C++), leaving 48 eligible C cases. The six Stage-A failures are all among those eligible cases, yielding 42 final analyzable natural cases. No Qwen B/C TEST run has occurred.
+
+Calibration-20 now has a complete frozen evidence packet for the 16 usable Stage-A hints. The packet includes S_t, S_t+1, the unified diff, stored traces, official tests, and locked-runner compiler/test evidence. The four Stage-A failures remain preserved and are not represented as annotation decisions.
 
 ## Synthetic Stress-20 result
 

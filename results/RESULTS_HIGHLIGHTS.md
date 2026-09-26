@@ -46,6 +46,7 @@ The stress result is documented separately in [stress_20_results_summary.md](str
 ## Calibration and held-out status
 
 - Calibration-20: 20 validation cases selected deterministically before labels; 16 usable Stage-A hints and 4 preserved failures; no human annotation completed yet.
+- Calibration-20 packet build: 16 focal claims frozen and 32 locked-runner state replays attached, with 450 official test-state evidence entries; four Stage-A failures remain outside the packet.
 - No Qwen B/C calibration run has been performed.
 - Held-out TEST-50 Stage A is complete with 44 usable hints and 6 preserved failures; no annotation or Qwen B/C run has been performed.
 

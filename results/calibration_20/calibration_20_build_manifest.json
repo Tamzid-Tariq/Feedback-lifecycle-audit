@@ -1,0 +1,61 @@
+{
+  "status": "COMPLETE_BLINDED_CALIBRATION_PACKAGE",
+  "language_qc": {
+    "summary": "data/qc/language_qc_summary.json",
+    "calibration_confirmed_c": 20
+  },
+  "manifest": {
+    "path": "data\\manifests\\calibration_20_manifest.csv",
+    "n": 20,
+    "partition": "validation",
+    "seed": 20260926,
+    "sha256": "79237bb30d4ac2588cd17863111cabb62ef7cd7c666bd92c171bd6d2774fb29b"
+  },
+  "stage_a": {
+    "requested": 20,
+    "usable_hints": 16,
+    "failures_preserved": 4,
+    "raw_hint_records": 20,
+    "raw_hints_sha256": "dc74f36f5414939fa8a2024a14fdc6846f7ca697efbfd18f8cad33c86bf3b19f",
+    "errors_sha256": "38e75cf1df8ad526e514c319831a5663e94dcf07fb4cbb1a9b142af5d64e0127"
+  },
+  "focal_claims": {
+    "frozen": 16,
+    "path": "results\\calibration_20\\frozen_focal_claims.jsonl",
+    "sha256": "81e6bcb85b18004b06a64010af6e6f043643087c51d1dc4a7eb8ba0a019ab2a4"
+  },
+  "evidence_packets": {
+    "rows": 16,
+    "path": "annotation\\calibration_20\\calibration_20_evidence_frozen_v1.jsonl",
+    "sha256": "c9601e2f350d598c0bc108540c049d3d1cec423f921c9bf05f0975fff2e5bbf9",
+    "same_top_level_schema_as_development": true,
+    "compiler_status_counts": {
+      "compile_success": 23,
+      "compile_error": 9
+    },
+    "test_status_counts": {
+      "FAIL": 235,
+      "NOT_RUN_COMPILE_ERROR": 108,
+      "PASS": 107
+    }
+  },
+  "execution_replay": {
+    "rows": 16,
+    "path": "results\\calibration_20\\runs\\calibration_20_execution_results.jsonl",
+    "sha256": "41d0bfe4b4f61d4f479765fe1b5f663cedb17482f7a8acab7496656ba69ef45f",
+    "runner_image": "revground-c-runner:2.0",
+    "runner_image_id": "sha256:155ed15997f15e46a478c4041ae738b696551779107a7ac5b4018e46f034b70a"
+  },
+  "annotation_package": {
+    "path": "annotation/calibration_20",
+    "entries": [
+      "LIFECYCLE_RUBRIC_v2.md",
+      "calibration_20_evidence_frozen_v1.jsonl",
+      "tools"
+    ],
+    "a01_a02_isolated": true,
+    "model_predictions_included": false
+  },
+  "stage_a_failures_remain_outside_annotation_packet": true,
+  "qwen_b_c_run": "not_run"
+}

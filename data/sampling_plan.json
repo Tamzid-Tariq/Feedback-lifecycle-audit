@@ -22,7 +22,8 @@
     "stage_a_usable_hints": 16,
     "stage_a_failures_preserved": 4,
     "annotation_eligible_packets": 16,
-    "source_language_qc": "20/20 CONFIRMED_C; QC completed before annotation"
+    "source_language_qc": "20/20 CONFIRMED_C; QC completed before annotation",
+    "stage_b_evidence": "complete_locked_runner; 16 usable packets; four Stage-A failures preserved"
   },
   "stress_20": {
     "n": 20,

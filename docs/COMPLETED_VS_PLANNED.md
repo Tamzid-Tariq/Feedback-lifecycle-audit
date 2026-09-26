@@ -14,6 +14,7 @@ This file distinguishes verified work from planned or deliberately unrun work. D
 - Validation-based Calibration-20 manifest: 20 cases selected deterministically before labels with seed `20260926`.
 - Calibration Stage A with `stealth/space-bunny-alpha`: 20 calls, 16 usable hints, and 4 preserved failures; no automatic retries or fallback.
 - Calibration focal-claim freezing with `first_explicit_diagnostic_assertion_v1`: 16 claims and 16 annotation-eligible packets.
+- Calibration-20 Stage-B evidence replay: 32 state replays and 450 official test-state entries through `revground-c-runner:2.0`; compiler/test outcomes are attached to the frozen packets.
 - Synthetic Stress-20 human review: 20 A02-reviewed rows, 10 `RETRACT` and 10 `UNSURE`; not independent consensus or adjudicated gold.
 - Synthetic Stress-20 Qwen B/C run: identical settings, B 14/20 and C 16/20 operational accuracy, with evidence SHA match 20/20.
 - Non-destructive annotation/results repository reorganization and byte-preservation checks for the original development A01/A02 exports.
@@ -25,7 +26,6 @@ This file distinguishes verified work from planned or deliberately unrun work. D
 ## Prepared but not empirically complete
 
 - Calibration-20 A01/A02 annotation has not started.
-- Calibration packet compiler/test replay was unavailable at freeze time; those fields are explicitly `NOT_REPLAYED`.
 - Development disagreement adjudication remains pending qualified supervisor/adjudicator review.
 - The final natural TEST-50 has completed Stage A only; Qwen B/C evaluation remains locked and unrun.
 

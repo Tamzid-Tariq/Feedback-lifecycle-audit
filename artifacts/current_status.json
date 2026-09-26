@@ -77,7 +77,8 @@
     "stage_a_automatic_retries": false,
     "focal_claim_extractor": "first_explicit_diagnostic_assertion_v1",
     "frozen_packet_rows": 16,
-    "compiler_test_replay": "not_replayed; fields explicitly marked NOT_REPLAYED",
+    "compiler_test_replay": "complete_locked_runner",
+    "execution_runner": {"image": "revground-c-runner:2.0", "image_id": "sha256:155ed15997f15e46a478c4041ae738b696551779107a7ac5b4018e46f034b70a", "state_replays": 32, "official_test_state_entries": 450},
     "human_annotation": "not_started",
     "qwen_b_c": "not_run"
   },
@@ -106,7 +107,7 @@
     "qwen_b_c": "not_run",
     "test_access": "source-QC complete; Qwen evaluation remains locked and not performed"
   },
-  "pending_gates": ["development adjudication", "Calibration-20 A01/A02 annotation", "Calibration compiler/test replay", "held-out TEST-50 evaluation"],
+  "pending_gates": ["development adjudication", "Calibration-20 A01/A02 annotation", "held-out TEST-50 evaluation"],
   "human_gold_claims": 0,
   "method_predictions": {
     "tracked_raw_predictions": 0,
@@ -125,5 +126,5 @@
     "stress_qwen_b": 20,
     "stress_qwen_c": 20
   },
-  "truthful_summary": "Development A01/A02 exports are preserved; pre-adjudication lifecycle agreement remains 48/50 with kappa 0.9228, and adjudication remains pending. Source-language QC classified the full 978-row strict-C pool from source syntax only, preserving objective exclusions. DEV_010 and DEV_012 are excluded in the separate Development sensitivity analysis, which is 48/48 lifecycle agreement with kappa 1.0; the original 48/50 result remains unchanged. Calibration-20 has 20/20 confirmed-C cases. Held-out TEST-50 Stage A produced 44 usable hints and six preserved failures; two objective language exclusions leave 48 eligible C cases and 42 analyzable natural cases. No Qwen B/C calibration or held-out TEST-50 run has occurred."
+  "truthful_summary": "Development A01/A02 exports are preserved; pre-adjudication lifecycle agreement remains 48/50 with kappa 0.9228, and adjudication remains pending. Source-language QC classified the full 978-row strict-C pool from source syntax only, preserving objective exclusions. DEV_010 and DEV_012 are excluded in the separate Development sensitivity analysis, which is 48/48 lifecycle agreement with kappa 1.0; the original 48/50 result remains unchanged. Calibration-20 has 20/20 confirmed-C cases, 16 usable Stage-A hints, 16 frozen focal claims, and complete locked-runner Stage-B evidence in isolated A01/A02 packages; four Stage-A failures remain preserved outside the annotation packet. Held-out TEST-50 Stage A produced 44 usable hints and six preserved failures; two objective language exclusions leave 48 eligible C cases and 42 analyzable natural cases. No Qwen B/C calibration or held-out TEST-50 run has occurred."
 }

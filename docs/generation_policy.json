@@ -28,6 +28,16 @@
     "failures_preserved": 6,
     "status": "complete_with_failures; Qwen B/C not run"
   },
+  "stage_b_calibration_20": {
+    "input": "16 usable Stage-A/focal-claim packets",
+    "runner_image": "revground-c-runner:2.0",
+    "runner_image_id": "sha256:155ed15997f15e46a478c4041ae738b696551779107a7ac5b4018e46f034b70a",
+    "network": "none",
+    "state_replays": 32,
+    "official_test_state_entries": 450,
+    "status": "complete_locked_runner",
+    "method_predictions": false
+  },
   "development_evaluations": {
     "glm": {
       "model": "glm-5.3",

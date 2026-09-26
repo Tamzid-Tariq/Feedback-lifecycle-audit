@@ -1,7 +1,14 @@
 {
   "selected_cases": 20,
+  "stage_a_usable_cases": 16,
+  "stage_a_failures_preserved": 4,
+  "focal_claims_frozen": 16,
   "frozen_packet_rows": 16,
   "annotation_eligible_cases": 16,
-  "execution_replay": "NOT_REPLAYED",
-  "stage_a_failures_preserved_in": "results/calibration_20"
+  "execution_replay": "COMPLETE_LOCKED_RUNNER",
+  "execution_results": "results\\calibration_20\\runs\\calibration_20_execution_results.jsonl",
+  "pre_replay_packet_backup": "results\\calibration_20\\runs\\calibration_20_evidence_pre_replay_v1.jsonl",
+  "runner_image": "revground-c-runner:2.0",
+  "runner_image_id": "sha256:155ed15997f15e46a478c4041ae738b696551779107a7ac5b4018e46f034b70a",
+  "method_predictions_included": false
 }

@@ -61,9 +61,11 @@ class RepositoryIntegrityTests(unittest.TestCase):
             "scripts/profile_and_split.py", "scripts/rebuild_development_records.py",
             "scripts/generate_hints_openrouter.py", "scripts/replay_development_50.py",
             "scripts/evaluate_claims.py", "scripts/compute_agreement.py", "artifacts/current_status.json",
-            "scripts/language_qc.py", "scripts/compute_language_qc_impact.py",
+            "scripts/language_qc.py", "scripts/compute_language_qc_impact.py", "scripts/replay_calibration_20.py", "scripts/merge_calibration_execution_evidence.py", "scripts/verify_calibration_package.py",
             "data/qc/language_qc_all_strict_c.csv", "data/qc/language_qc_summary.json",
             "data/qc/language_qc_exclusions.csv", "data/qc/language_qc_experiment_impact.json", "data/qc/SHA256SUMS.txt",
+            "results/calibration_20/calibration_20_packet_status.json", "results/calibration_20/calibration_20_build_manifest.json",
+            "results/calibration_20/runs/calibration_20_execution_results.jsonl", "results/calibration_20/runs/calibration_20_evidence_pre_replay_v1.jsonl",
             "baselines/condition_B/.env.example", "baselines/condition_B/outputs/.gitkeep",
         ):
             self.assertTrue((ROOT / relative).is_file(), relative)
@@ -154,8 +156,8 @@ class RepositoryIntegrityTests(unittest.TestCase):
             self.assertEqual(packet["packet_sha256"], hashlib.sha256(json.dumps(content, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest())
             self.assertTrue(packet["item_id"].startswith("CAL_"))
             self.assertEqual(packet["claim_span"]["text"], packet["original_hint"][packet["claim_span"]["start"]:packet["claim_span"]["end"]])
-            self.assertEqual(packet["compiler"]["earlier"]["status"], "NOT_REPLAYED")
-            self.assertEqual(packet["compiler"]["later"]["status"], "NOT_REPLAYED")
+            for state in ("earlier", "later"):
+                self.assertIn(packet["compiler"][state]["status"], {"compile_success", "compile_error", "infra_timeout"})
 
         for annotator in ("A01", "A02"):
             page = ROOT / "annotation" / "calibration_20" / "tools" / f"RevGround_Annotator_{annotator}.html"
@@ -163,6 +165,13 @@ class RepositoryIntegrityTests(unittest.TestCase):
             self.assertIn("const cases = [", text)
             self.assertNotRegex(text, r"model_requested|model_returned|provider_raw_response|predicted_label|system_prediction")
         self.assertEqual({path.name for path in (ROOT / "annotation" / "calibration_20").iterdir()}, {"LIFECYCLE_RUBRIC_v2.md", "calibration_20_evidence_frozen_v1.jsonl", "tools"})
+        build = json.loads((ROOT / "results" / "calibration_20" / "calibration_20_build_manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(build["status"], "COMPLETE_BLINDED_CALIBRATION_PACKAGE")
+        self.assertEqual(build["stage_a"]["usable_hints"], 16)
+        self.assertEqual(build["stage_a"]["failures_preserved"], 4)
+        self.assertEqual(build["evidence_packets"]["rows"], 16)
+        self.assertTrue(build["evidence_packets"]["same_top_level_schema_as_development"])
+        self.assertEqual(build["execution_replay"]["runner_image"], "revground-c-runner:2.0")
 
     def test_stress_human_review_is_preserved_and_not_mislabeled_as_consensus(self) -> None:
         review = ROOT / "annotation" / "stress_20" / "synthetic_stress_20_human_review.csv"
