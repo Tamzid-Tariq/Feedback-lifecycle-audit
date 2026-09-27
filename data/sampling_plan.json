@@ -9,7 +9,7 @@
     "purpose": "rubric and interface development",
     "manifest": "data/development_50_manifest.csv",
     "labels_read_before_selection": false,
-    "annotation": "A01 and A02 complete; adjudication pending for Development disagreements"
+    "annotation": "A01 and A02 complete; final supplied reference complete with 40 consensus carry-forwards and 10 adjudication_review rows"
   },
   "calibration_20": {
     "n": 20,
@@ -40,7 +40,13 @@
     "selection": "census of strict retained partitions",
     "lifecycle_labels_used_for_selection": false
   },
-  "heldout_test_policy": "TEST-50 Stage A complete (44 usable hints, 6 failures); source QC leaves 48 eligible C cases and 42 claim-bearing cases; A01/A02 packages released for annotation; Qwen/DeepSeek B/C remains locked",
+  "heldout_test_policy": {
+    "historical_batch1": "TEST-50 manifest preserved unchanged; 48 confirmed-C cases and 42 claim-bearing cases after six preserved Stage-A failures",
+    "final_amendment": "test197_full_eligible_cohort_v1; all 197 TEST transitions retained; 188 confirmed-C cases, 9 objective exclusions, 140 new Batch-2 Stage-A calls, 14 new failures, and 168 final claim-bearing packets",
+    "profile": {"cases": 168, "problems": 3, "trajectories": 49, "participants": 42},
+    "packages": "isolated A01/A02 packages built over identical packets",
+    "qwen_deepseek_bc": "locked and not run"
+  },
   "source_language_qc": {
     "pool": "all strict-C transitions after evidence-ready and duplicate controls",
     "pool_n": 978,

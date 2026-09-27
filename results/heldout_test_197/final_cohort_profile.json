@@ -1,0 +1,56 @@
+{
+  "status": "FROZEN_FINAL_NATURAL_TEST_COHORT_PROFILE",
+  "protocol_amendment": "test197_full_eligible_cohort_v1",
+  "source_partition": "test",
+  "counts": {
+    "all_test_partition": {
+      "cases": 197,
+      "problems": 5,
+      "trajectories": 57,
+      "participants": 49
+    },
+    "eligible_confirmed_c_after_objective_qc": {
+      "cases": 188,
+      "problems": 3,
+      "trajectories": 50,
+      "participants": 42
+    },
+    "successful_c_claim_bearing_after_stage_a": {
+      "cases": 168,
+      "problems": 3,
+      "trajectories": 49,
+      "participants": 42
+    }
+  },
+  "screening": {
+    "original_test_cases": 197,
+    "historical_batch1_cases": 50,
+    "remaining_batch2_cases": 147,
+    "objective_language_exclusions": 9,
+    "stage_a_failures": 20,
+    "successful_claim_bearing_cases": 168,
+    "replacements": 0
+  },
+  "stage_a_policy": {
+    "model": "stealth/space-bunny-alpha",
+    "prompt_sha256": "3916584eb94f1ffa7749bbc94a2b51e1584a9d2eca97d1f197780ee8d956eaee",
+    "max_tokens": 512,
+    "timeout_seconds": 90,
+    "fallback_disabled": true,
+    "automatic_retry": false,
+    "acceptance": "20-60 word accepted hint; accepted claim-bearing output required for packet construction"
+  },
+  "claim_extraction_rule": "first_explicit_diagnostic_assertion_v1",
+  "evidence_replay": {
+    "runner_image": "revground-c-runner:2.0",
+    "new_batch2_cases": 126,
+    "new_batch2_state_replays": 252,
+    "all_final_packet_rows_replayed": true
+  },
+  "model_evaluator_calls": {
+    "qwen_b": 0,
+    "qwen_c": 0,
+    "authorized_next_step": "not yet authorized by this preparation run"
+  },
+  "method_predictions_included": false
+}

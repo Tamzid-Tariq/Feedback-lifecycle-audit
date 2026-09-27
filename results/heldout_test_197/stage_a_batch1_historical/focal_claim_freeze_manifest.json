@@ -1,0 +1,459 @@
+{
+  "status": "CLAIMS_FROZEN_AUTOMATICALLY",
+  "input_hints": "RevGround_Supervisor_Aligned_Package_v2\\evaluation\\stage_a_stealth_space_bunny_alpha\\test_natural50_max512\\raw_hints.jsonl",
+  "output_claims": "RevGround_Supervisor_Aligned_Package_v2\\evaluation\\stage_a_stealth_space_bunny_alpha\\test_natural50_max512\\frozen_focal_claims.jsonl",
+  "claim_count": 44,
+  "extraction_status_counts": {
+    "success": 37,
+    "composite_requires_review": 7
+  },
+  "claim_type_counts": {
+    "diagnostic": 37,
+    "composite": 7
+  },
+  "human_checked_count": 0,
+  "records": [
+    {
+      "claim_id": "CLM-16f0e30806c9d6dfc6df695b",
+      "generation_case_id": "16f0e30806c9d6dfc6df695b",
+      "hint_id": "H-c9445e83443c4fa79df03025",
+      "hint_sha256": "681e07d68e2c0acb270e8c667d9fca0fd48b1100fa8161c40451374887280a9f",
+      "claim_text_sha256": "93a6699ad21d2e6f67248f5e7d041ad754587f686d9397378a9202f4949690a5",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-0d5121a5905275812f5f6275",
+      "generation_case_id": "0d5121a5905275812f5f6275",
+      "hint_id": "H-1386669e15bf415a24246be8",
+      "hint_sha256": "50c16d16503fad055d93797913b5bdeb234fd3635603dffaf5e2b87e8437edf6",
+      "claim_text_sha256": "046d1fa178555880bc61671082b9f69ff2b6e63e39639a3ad64ea12196f07ad3",
+      "extraction_status": "composite_requires_review",
+      "claim_type": "composite",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-07d61a09618f024b4a8ee377",
+      "generation_case_id": "07d61a09618f024b4a8ee377",
+      "hint_id": "H-10ec49b56352aec424b35329",
+      "hint_sha256": "c33bbd8debc00f9a4593242b80c17626494474c580c7ea9db00cabb127f9207d",
+      "claim_text_sha256": "00ceacd56c1090bbdca5d93cf99572ed6cc43b66a380f8100264aca22343d5b4",
+      "extraction_status": "composite_requires_review",
+      "claim_type": "composite",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-c88a1409ac83aa614f1f8340",
+      "generation_case_id": "c88a1409ac83aa614f1f8340",
+      "hint_id": "H-009d5b00ade4d053d510ac27",
+      "hint_sha256": "e7c74bf7aad1cb70d9a0762439a61e7d6f1bfac0a27f8ea602847fcc6c5711d1",
+      "claim_text_sha256": "c882e8f70ed1dac13b1dd433692a0a9e677eac4ff22a4f92ff828b211d817f33",
+      "extraction_status": "composite_requires_review",
+      "claim_type": "composite",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-4d030060edad6353bedf9947",
+      "generation_case_id": "4d030060edad6353bedf9947",
+      "hint_id": "H-ae08bc731599dfafd4abe358",
+      "hint_sha256": "e577896fde740301a8935a9bd7b3704e6687f0ea3cd8a9b4a3fb6d06bb5ddc03",
+      "claim_text_sha256": "b9364080dc8d09d9bfa6b3d8b23e93d71c44bb5cbfc15f54267e9eb634074b5c",
+      "extraction_status": "composite_requires_review",
+      "claim_type": "composite",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-3f6ffbeb8fbd9c132e0b3cc3",
+      "generation_case_id": "3f6ffbeb8fbd9c132e0b3cc3",
+      "hint_id": "H-83c8303de71d464fcda409e3",
+      "hint_sha256": "865ecad8b936ad9cd118e650353e5f39ccc68ac9a780cab107b7d512162b3794",
+      "claim_text_sha256": "d80b7f9c91795ae05e3a4925d12b00ed5d631a61d3bdc62e16609ed46671e145",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-d9668b54641bfff0f296f065",
+      "generation_case_id": "d9668b54641bfff0f296f065",
+      "hint_id": "H-12f6facb5a6cf9761f3d528e",
+      "hint_sha256": "a355b084be20f077bb5f1b9e13449a07e0dccc85ce718d8f4091731f25d55d98",
+      "claim_text_sha256": "679a75e54e46ab38348f84472395a443b220c7071abbfdfee97e7c6d6cdcf27c",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-0bb4322896af3b70cfc0ae9a",
+      "generation_case_id": "0bb4322896af3b70cfc0ae9a",
+      "hint_id": "H-62b2f427e189cc072d36e7ba",
+      "hint_sha256": "51bff96be661269cb0315074af16df42fd08559432ba4e9bf4790a9ded941f4b",
+      "claim_text_sha256": "e04316f2e80f4c0494d272ea550b84cb53a4d244c2c538e117b19810f5894422",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-27b6098b142a0ba5a75f72c4",
+      "generation_case_id": "27b6098b142a0ba5a75f72c4",
+      "hint_id": "H-0434ef8d9cabcc34b06f1cce",
+      "hint_sha256": "fa4f7a30d82d21742c9841eff6921d375d1b4588b15160328749511d0675011b",
+      "claim_text_sha256": "ea52cbb38a4666a3a78d634a7d60bedfd2b31df997093f24b7609797671f0b8c",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-7e5985f9547fec95e0fb5878",
+      "generation_case_id": "7e5985f9547fec95e0fb5878",
+      "hint_id": "H-31e38417e29496b98113f6c8",
+      "hint_sha256": "19a02d004e06e33516acf35885d2f159e184968666e1c922dfc0c11656bb5e96",
+      "claim_text_sha256": "64c284530c9765c938972c69d3c9a5d51757e0ee6d85e31b154d8bf034352f6b",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-a701b50d29b05e111e5f1683",
+      "generation_case_id": "a701b50d29b05e111e5f1683",
+      "hint_id": "H-104abc8b8d30248ce82fa185",
+      "hint_sha256": "d6c91093f9bbd70db499027c1b5e6d956cef01ad8e75b2d3966ba05a78d0f049",
+      "claim_text_sha256": "12e6b117d916c0622ec64e925ebe1f9843976163d1ed87995fb87e39398c59e5",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-506cde292d12fe8125922007",
+      "generation_case_id": "506cde292d12fe8125922007",
+      "hint_id": "H-199b4ee7efdd3c6da3705be5",
+      "hint_sha256": "cbf2ca66ac2af7296a13eb6f73bb0fdd7cf298210f4c68aa2c4605343c32842a",
+      "claim_text_sha256": "be5a0984562ad0e19652d58980c4560cd4fd22c30c21f5b4b6f6b4d94e0d4e64",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-4c14f03e0f19f97fd3a4361f",
+      "generation_case_id": "4c14f03e0f19f97fd3a4361f",
+      "hint_id": "H-2effceb08c6f5afba59c7d24",
+      "hint_sha256": "9c301cfd20676575b125fffc3e0180224ac3c3778cf487c9b15e0bef20083e9a",
+      "claim_text_sha256": "1550e2ab88b4c2e3a21870887143e9eb7a8aa680a3d851aa9557c305193fe333",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-ebae19f10e328d75a9089ca7",
+      "generation_case_id": "ebae19f10e328d75a9089ca7",
+      "hint_id": "H-a53f17b00d406747414108d5",
+      "hint_sha256": "d9c0c31a61baaea8657da63b736eeee02a130472373d963fac6e87f26946c399",
+      "claim_text_sha256": "4b9e88903960de1a34ecc5833f6ae7d910f40e31e4cab4a2ab1b6713ab8d92fa",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-8a8ca0c982a6f194f2684043",
+      "generation_case_id": "8a8ca0c982a6f194f2684043",
+      "hint_id": "H-bc40e89f15da6a91b47ec4f2",
+      "hint_sha256": "866d963e7affc7b8826f2747b4362c3b476747f71801a99d96604aa41724e553",
+      "claim_text_sha256": "cd9775c8f72286958f6af5d9dbef68b642493ef36186b604a2cb1fb20379a654",
+      "extraction_status": "composite_requires_review",
+      "claim_type": "composite",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-f0492fda2d0f19cb7827423e",
+      "generation_case_id": "f0492fda2d0f19cb7827423e",
+      "hint_id": "H-a9e5edadf4e85621f4de34e6",
+      "hint_sha256": "93937c9cd8d3fd5a9945287dd82495243f307f1e73ddd060a9ecbe26b8c64326",
+      "claim_text_sha256": "9b86c780a778b02c1abaa4efdd229b0445f21f5e71f19329a52dd6ef4b11e346",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-0f642e6dbad0a1ea62e45c59",
+      "generation_case_id": "0f642e6dbad0a1ea62e45c59",
+      "hint_id": "H-58c6b09ba1d464aa817989e3",
+      "hint_sha256": "4e37f3655798aa0eb934fefca3c927d2f29561618e56bd198a30edce5b1f7397",
+      "claim_text_sha256": "f4be30c675e22248b0eddd1ba62f8289bb04901d735328cc4cf588e13eeb3b44",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-685cd67da8a0127b39ad9ce3",
+      "generation_case_id": "685cd67da8a0127b39ad9ce3",
+      "hint_id": "H-7a365d354a93593dff31bf20",
+      "hint_sha256": "d9c606800bc35fe0fd20df7324e379506c19ef10936289aa4e92ca442222e211",
+      "claim_text_sha256": "65cb1b194fdbd926f83f558806351cb4606a1bd1df0de5c97a1452471977a18a",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-b76c0afbcfcf1113b546c973",
+      "generation_case_id": "b76c0afbcfcf1113b546c973",
+      "hint_id": "H-e1b5df1df4f1e9f95cb09d27",
+      "hint_sha256": "986873d13de1e7802db8c353040f4baefe1a2bcc3c88900bd3aa402a24d88469",
+      "claim_text_sha256": "defdc2c7c23e2cfb709a59e31edfad1140afc8f4e9e8931bf7ad15c6a473d12e",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-d364837b085bfeead10e7b3b",
+      "generation_case_id": "d364837b085bfeead10e7b3b",
+      "hint_id": "H-dacb2effaabc80a802fb3f11",
+      "hint_sha256": "3b57573d56dc05620985d7d46d0a9b2d1b18f637d3a0bc515208c71493aa4652",
+      "claim_text_sha256": "9d4c35f21c87f3b3a4c667ba4112a6ce1050126844ef6bf6bb7277726ee8270b",
+      "extraction_status": "composite_requires_review",
+      "claim_type": "composite",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-44377de5bbe74e96871eff0a",
+      "generation_case_id": "44377de5bbe74e96871eff0a",
+      "hint_id": "H-cd4300830c6eef8850af0c78",
+      "hint_sha256": "a42497dd59be55aab8c7847874fc1ce7ba714173f069aeac2fa0fb977e2f122e",
+      "claim_text_sha256": "0570e6f21767484e883202b28a803fd6a196879e69d688b81d25bfd0e8e4fadb",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-c695f9fd5a7bffdee19dddaa",
+      "generation_case_id": "c695f9fd5a7bffdee19dddaa",
+      "hint_id": "H-b89add321160c742cc72cea7",
+      "hint_sha256": "1c1cf2fe4e525b03241f6061479b28fafeee831ddf8bd4c784cd492dfb6613fe",
+      "claim_text_sha256": "cab6e020336f2f5fe76c594cc16e12366916f0b5e785a2612b8238260081d539",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-cb09e761a61340a77fb298e3",
+      "generation_case_id": "cb09e761a61340a77fb298e3",
+      "hint_id": "H-582f8359b03722b81513ba59",
+      "hint_sha256": "61bec6f16918b88515b82aa6cad5cca34374803ecc7b0873e9a8990cb7a4960e",
+      "claim_text_sha256": "dc5bf7a3f26888aec01660daabbce28ad27dffbca63e5e6ced57c95eab3920ec",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-99617637ce7857bc8248a2ca",
+      "generation_case_id": "99617637ce7857bc8248a2ca",
+      "hint_id": "H-f9812339189fe0ecaa11ca39",
+      "hint_sha256": "b317f90a7bfa111db4998dffec566dbeaff7ba9feff060a3aeac951c04e256c5",
+      "claim_text_sha256": "08ebedda1eaf0d1cecae2224bfd843ba662c193cf629b45ced90324fde100426",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-388bc1ded58589544717cfb7",
+      "generation_case_id": "388bc1ded58589544717cfb7",
+      "hint_id": "H-266d9c5f02c5aee54ae4264e",
+      "hint_sha256": "447a9b06cd7e66bd0c58eb70742a28feb9654b73b5411d37714145a1b9809010",
+      "claim_text_sha256": "8b483614e2a9111923681f431458095fa708200d2f15f67c0c3f2ad8886d2adb",
+      "extraction_status": "composite_requires_review",
+      "claim_type": "composite",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-4116d08d91eb7261baf9690d",
+      "generation_case_id": "4116d08d91eb7261baf9690d",
+      "hint_id": "H-058e9086306d1b69b33e214e",
+      "hint_sha256": "bca2c803b4e50311511b1d157be6db2b809769f4c46f9b478d2834c09a05e33f",
+      "claim_text_sha256": "32fd09c77e1da577716af064303290ff45450bcbb6b95e0e446202a763cff5b5",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-2a49891c1eae81f8a13e495e",
+      "generation_case_id": "2a49891c1eae81f8a13e495e",
+      "hint_id": "H-6708d523342b89c6ca7ef1f0",
+      "hint_sha256": "c668c12cf78ce4a73aa1d5d115dc3c9a621a9f77e38f413eef743e61f9be1398",
+      "claim_text_sha256": "2f186c9a03381dc43b152d23ea3e0b53d0974ff6cf133787545d3ea78d861809",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-b1b48fc116bd7550bfb25d8b",
+      "generation_case_id": "b1b48fc116bd7550bfb25d8b",
+      "hint_id": "H-c9f5742a93103c4bf6451016",
+      "hint_sha256": "4978b7cc8def27c5c5fdc5818b6e67516b08b17f25e4b2d6feab2da2551b0958",
+      "claim_text_sha256": "75e7200e04814511fcbce90498f95b06c2e53d1651ee8f2fc571c27af213a872",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-6c6f063eeba70dbf29bae2f7",
+      "generation_case_id": "6c6f063eeba70dbf29bae2f7",
+      "hint_id": "H-9067fb439dd9547504504f66",
+      "hint_sha256": "3210291d390d3712eb47d7dda81b8727ed7e69a2af7877b3bd9a34fb6cea764c",
+      "claim_text_sha256": "96ac89983142a17d2a02f141dbf34340f98fcec8eacc724404d765275cfb33a1",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-749e911d832efbbb5f5b8e72",
+      "generation_case_id": "749e911d832efbbb5f5b8e72",
+      "hint_id": "H-c02e7b0374c1406381abb13d",
+      "hint_sha256": "f4403b1f67f6fd5d7810cc8d2eefaff402072de9b8885141ac97cc763f0bc4db",
+      "claim_text_sha256": "b77ee4a72274c94b5438651653418eddf82d32b5191af2b8f0171634272feda8",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-5421631b1c6b6015acc52a28",
+      "generation_case_id": "5421631b1c6b6015acc52a28",
+      "hint_id": "H-b3e184c93a53cc645c91e7e4",
+      "hint_sha256": "141b4069aec31fe0e981dd81394a0418524b8577bb2530d46bf898d9acebe233",
+      "claim_text_sha256": "d09047ae9393139f36f5fbb503cd0941ed0e46aa9b8ccbc4172de0fb34e6df5b",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-726478f13ad8e011c4a0cfa2",
+      "generation_case_id": "726478f13ad8e011c4a0cfa2",
+      "hint_id": "H-9120c9387606a6014c46f3dc",
+      "hint_sha256": "473edbbcd4504d5ad39cc164fa7969edb206586d2b3e7d881b8616d6cf8c1c6a",
+      "claim_text_sha256": "5bb61272a1207fc3f349771a6d5ccf0a101ecfc5e37a827b074c50421a86ab25",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-0637d0023f5203aed00ba8a2",
+      "generation_case_id": "0637d0023f5203aed00ba8a2",
+      "hint_id": "H-a43d499367ccabf34785cdae",
+      "hint_sha256": "cd80f1e836542b87a71064e44b70b8fbb3a3bc9f48a73d4fe5ab71e5e50dfce0",
+      "claim_text_sha256": "1eecf3e9346b040a91eadefa828f8feae6826a043ba53d5235621b7b514f85f5",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-8c48951bfdfe6ba2a7238bcb",
+      "generation_case_id": "8c48951bfdfe6ba2a7238bcb",
+      "hint_id": "H-96fa14a1b254f6291359763a",
+      "hint_sha256": "01213042256ec6ac885e1b9e61391ce3d979ebdf5f142ce522530b5693e244a7",
+      "claim_text_sha256": "161cfa13b62c22bbffa05ba4053d5c79a3de37b8dfa2aa341fe20a2bebf70949",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-7822e96022aea352522cae47",
+      "generation_case_id": "7822e96022aea352522cae47",
+      "hint_id": "H-48b0f497216cc2d6a261de6b",
+      "hint_sha256": "be4e67057ce9c5fe79e9e2e28114f0d54072388e0b7e737bc02e7bffe43bff3e",
+      "claim_text_sha256": "a5ae8072811bd2a2618609023373280ea248331108b3a15a70122d72d3cab813",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-bda05da230eecfb67fa3a104",
+      "generation_case_id": "bda05da230eecfb67fa3a104",
+      "hint_id": "H-c9d432c3793bcf235d0e55f5",
+      "hint_sha256": "6162ea7920b5b288956085d40758870d83fe1df0ca9fa43cc4111a6c14181c2c",
+      "claim_text_sha256": "0db43988f86410b38741c389505e483f51822d994180cc88e853ae82390a4c2e",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-080ff63aa16eaaf9bf2b3e0f",
+      "generation_case_id": "080ff63aa16eaaf9bf2b3e0f",
+      "hint_id": "H-c4418f54aaba73a6108b6688",
+      "hint_sha256": "7bec35d209db57cd02b4730ff9bc6217df794075be15b37c23701f88577130bc",
+      "claim_text_sha256": "8f3930faa5e940674f1eaaea8f6202b6542f82802d3845d1355ec56658298bf9",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-18c07b36a40056465a0355c4",
+      "generation_case_id": "18c07b36a40056465a0355c4",
+      "hint_id": "H-fb52066ebde9327f3abb3c4b",
+      "hint_sha256": "f476d30577dbb4925d9b929da55b0562b00f73999eaf7dcfc0dc2d84fdef171e",
+      "claim_text_sha256": "fb9b9fd9b38a7ac7bc0bfd0f219b4a2de72bd7d34f1127146758c8865a8b15eb",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-3d401346ef495c9ac714cf13",
+      "generation_case_id": "3d401346ef495c9ac714cf13",
+      "hint_id": "H-c5e0b326f5f4ae938f29c521",
+      "hint_sha256": "a45ca6a56989754ff662f46ec7128f9cf20ccac91ffaba31a0cab3ce677c87f5",
+      "claim_text_sha256": "7693d5830049fa7277f81ccd3f76cecb5de5b0ca14100b714ff59ba138249e8e",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-7ea21ddc7d26eeb29af923e9",
+      "generation_case_id": "7ea21ddc7d26eeb29af923e9",
+      "hint_id": "H-a8f5a52ed7802d9fa7d65371",
+      "hint_sha256": "fc8ecaaa332c8fe09904dd92be65b6aa4698bbce411a53cabdfdd443abe10ded",
+      "claim_text_sha256": "2b85446ea936951feeba769034b6655b201fff8f39b1495d48c4fa3c9b31feb4",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-a36daa7dcc94c7b17ad4cd43",
+      "generation_case_id": "a36daa7dcc94c7b17ad4cd43",
+      "hint_id": "H-de20abca24259262231ae44a",
+      "hint_sha256": "e03b376da06c8c18cb25a5f4647b990729d12d51d6189caa9ea27c68fecbb5be",
+      "claim_text_sha256": "fa4db83d099dae6f8fc9e43e2e19041cd08fe3377a01108337fd3ccfff78a07d",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-3ba19f7050464f6e9b717d67",
+      "generation_case_id": "3ba19f7050464f6e9b717d67",
+      "hint_id": "H-811288ecf7ba7132da053071",
+      "hint_sha256": "4fe39e6e7c1a50cbf1fc11047171d3605c16fedbfdabf148f4ea8a71d86c15bd",
+      "claim_text_sha256": "839aa15c8039544ab043de7dc02ef3912e97afee2b148e5cf01f2139331f4d1a",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-8a90c0d54e4a2d7b59e2f83e",
+      "generation_case_id": "8a90c0d54e4a2d7b59e2f83e",
+      "hint_id": "H-2199440dbd051b07a660b385",
+      "hint_sha256": "bc92238f9c9f26433b415a85bbfb5aa30f252b162186ccf9aa6a96be5401005d",
+      "claim_text_sha256": "387b4b85537c896959a0e84fa3cb8350ac8960555839fa9e4de5ba7b1ab79a5e",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    },
+    {
+      "claim_id": "CLM-270a7e429d1cf5bc737214c9",
+      "generation_case_id": "270a7e429d1cf5bc737214c9",
+      "hint_id": "H-f633ca7811819db8d220aabe",
+      "hint_sha256": "e307ff4173877f6d24fd5137ff383051aec21e72b2f7e0c3b5ce52d786e4dbcf",
+      "claim_text_sha256": "597efd0bef344ee9ce21bdf72552f2f99754f8db1d3ef25c78a5b9faa17b0c3c",
+      "extraction_status": "success",
+      "claim_type": "diagnostic",
+      "human_checked": false
+    }
+  ],
+  "protocol": "benchmark_protocol_v2/CLAIM_EXTRACTION_PROTOCOL.md",
+  "future_fields_read": false
+}

@@ -1,0 +1,43 @@
+{
+  "status": "FROZEN_SUCCESSFUL_C_CLAIM_BEARING_COHORT",
+  "protocol_amendment": "test197_full_eligible_cohort_v1",
+  "source_partition": "test",
+  "profile_basis": "successful C claim-bearing transitions after objective QC and Stage-A acceptance; exclusions and failures remain in screening_ledger.csv",
+  "counts": {
+    "test_partition_cases": 197,
+    "historical_batch1_cases": 50,
+    "remaining_batch2_cases": 147,
+    "confirmed_c": 188,
+    "objective_language_exclusions": 9,
+    "stage_a_accepted": 170,
+    "stage_a_failures": 20,
+    "no_focal_claim": 0,
+    "successful_c_claim_bearing": 168,
+    "batch2_packets_pre_replay": 126,
+    "replacements": 0
+  },
+  "successful_claim_bearing": {
+    "cases": 168,
+    "problems": 3,
+    "trajectories": 49,
+    "participants": 42
+  },
+  "all_eligible_confirmed_c": {
+    "cases": 188,
+    "problems": 3,
+    "trajectories": 50,
+    "participants": 42
+  },
+  "stage_a_policy": {
+    "model": "stealth/space-bunny-alpha",
+    "max_tokens": 512,
+    "timeout_seconds": 90,
+    "fallback_disabled": true,
+    "automatic_retry": false,
+    "replacement": false
+  },
+  "claim_extraction_rule": "first_explicit_diagnostic_assertion_v1",
+  "method_predictions_included": false,
+  "screening_ledger_sha256": "4c463e8fd4ac19f817557e5fa7b97aa2feaf528677e082978ef3c9aa1d11c95c",
+  "batch2_packet_sha256": "3aa98da93e210dbd763c8fffb78735fe48d9d17508d80804a2fa99321e7cdb15"
+}

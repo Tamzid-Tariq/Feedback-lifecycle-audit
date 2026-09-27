@@ -31,7 +31,7 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Calibration annotation | Complete for 16 eligible rows; zero substantive disagreements; no adjudication required |
 | Rubric v2.0 | Frozen as final after Calibration-20 |
 | DeepSeek V4.1 Flash substitution | Development-50 and Stress-20 complete; 140 primary calls, 137 accepted, 3 preserved failures |
-| Held-out natural annotation | Packages released for 42 claim-bearing cases; annotation pending |
+| Held-out natural preparation | TEST-197 amendment frozen: 188 eligible C, 20 preserved Stage-A failures, 168 claim-bearing packets; isolated A01/A02 packages built, annotation pending |
 | Synthetic Stress-20 | Human review preserved; Qwen B/C results verified and reported separately from natural prevalence |
 
 ### Historical pre-adjudication lifecycle disagreements
@@ -52,7 +52,9 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - Development: 590; validation: 191; test: 197
 - Development-rubric set: 50; fresh calibration selection: 20 from validation (16 usable annotation packets)
 - Source-language QC: 954 `CONFIRMED_C`, 13 `NON_C_CPP`, 9 `NON_C_JAVA`, and 2 `AMBIGUOUS` in the 978-row strict-C pool
-- Frozen TEST-50 QC: 48 eligible C cases; after the completed Stage-A failures, 42 natural cases are analyzable
+- Historical TEST-50 Batch 1 is preserved unchanged: 48 eligible C cases and 42 claim-bearing cases after six Stage-A failures
+- Final TEST-197 natural cohort: 197 source transitions; 188 confirmed C, 9 objective language exclusions, 190 Stage-A calls, 170 accepted hints, 20 preserved failures, and 168 claim-bearing packets
+- Final claim-bearing profile: 168 cases across 3 problems, 49 trajectories, and 42 participants
 
 ## Repository Guide
 
@@ -70,6 +72,7 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - [Calibration-20 results](results/calibration_20/README.md)
 - [DeepSeek V4.1 Flash results](results/deepseek_v4_1_flash/README.md)
 - [Held-out TEST-50 release](results/heldout_test_50/README.md)
+- [Held-out TEST-197 preparation](results/heldout_test_197/README.md)
 - [Synthetic Stress-20 results](results/stress_20/stress_20_results_summary.md)
 - [Source-language QC](data/qc/language_qc_summary.json)
 - [Development QC sensitivity](results/development_50/language_qc_sensitivity.md)
@@ -97,10 +100,10 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 9. Complete Development-50 adjudication and preserve the historical pre-adjudication result.
 10. Complete the validation-based 20-case calibration: 16 usable packets were independently annotated; four Stage-A failures were preserved.
 11. Freeze Rubric v2.0 after calibration; no rubric change was required.
-12. Release the label-independent held-out natural annotation packages for the 42 eligible claim-bearing TEST cases.
+12. Preserve historical TEST-50 Batch 1, then freeze the TEST-197 full-cohort amendment and prepare the 168-case label-independent natural annotation packages.
 13. Report DeepSeek and Synthetic Stress-20 diagnostics separately from natural prevalence results.
 14. Apply source-language QC before annotation or held-out analysis; preserve objective exclusions.
-15. Keep final Qwen/DeepSeek B/C evaluation on Calibration-20 and held-out TEST outside the completed scope.
+15. Keep final Qwen/DeepSeek B/C evaluation on Calibration-20 and held-out TEST-197 outside the completed scope.
 
 ## Important Scope
 

@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "checks": {
+    "manifest_197_unique_test_ids": true,
+    "source_language_qc_counts": {
+      "test_partition_cases": 197,
+      "historical_batch1_cases": 50,
+      "remaining_batch2_cases": 147,
+      "confirmed_c": 188,
+      "objective_language_exclusions": 9,
+      "stage_a_failures": 20,
+      "successful_c_claim_bearing": 168,
+      "replacements": 0
+    },
+    "batch1_stage_a_calls_preserved": 50,
+    "batch2_stage_a_calls": 140,
+    "batch2_stage_a_failures_preserved": 14,
+    "final_packet_rows": 168,
+    "locked_docker_state_replays_batch2": 252,
+    "all_final_packets_replayed": true,
+    "A01_A02_identical_packet_bytes": true,
+    "isolated_packages_contain_no_predictions_or_labels": true
+  },
+  "hashes": {
+    "final_cohort_manifest_sha256": "f599b96282937d5d206f8d0601add9d7ceb9282cab5acffa80115d81c6cb7348",
+    "final_packet_sha256": "43d03ede21f900ad42f570e61a4832f0ec0ef54e3b5774db93366f0dbc8e0095",
+    "claims_sha256": "5aaae0375c5814eee0815377ab5f7f2389b07fbbc78df8786cfb3fcf073f1b85",
+    "batch2_execution_sha256": "25eace741863d94b739aafafc9b1dffafbcf44e357d2e772bad1c482e6101e29"
+  },
+  "package_files": {
+    "A01": [
+      "LIFECYCLE_RUBRIC_v2.md",
+      "RevGround_Annotator_A01.html",
+      "heldout_test197_evidence_frozen_v1.jsonl"
+    ],
+    "A02": [
+      "LIFECYCLE_RUBRIC_v2.md",
+      "RevGround_Annotator_A02.html",
+      "heldout_test197_evidence_frozen_v1.jsonl"
+    ]
+  }
+}

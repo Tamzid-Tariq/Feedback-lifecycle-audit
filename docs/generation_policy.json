@@ -28,6 +28,30 @@
     "failures_preserved": 6,
     "status": "complete_with_failures; Qwen B/C not run"
   },
+  "stage_a_final_test_197": {
+    "protocol_amendment": "test197_full_eligible_cohort_v1",
+    "historical_batch1_preserved": true,
+    "model": "stealth/space-bunny-alpha",
+    "provider": "OpenRouter",
+    "input_boundary": "S_t only",
+    "max_tokens": 512,
+    "timeout_seconds": 90,
+    "fallback": false,
+    "automatic_retries": false,
+    "replacement": false,
+    "source_partition_cases": 197,
+    "objective_language_exclusions": 9,
+    "remaining_batch2_cases": 147,
+    "batch2_calls": 140,
+    "batch2_usable_hints": 126,
+    "batch2_failures_preserved": 14,
+    "combined_calls": 190,
+    "combined_usable_hints": 170,
+    "combined_failures_preserved": 20,
+    "successful_claim_bearing_packets": 168,
+    "focal_claim_extractor": "first_explicit_diagnostic_assertion_v1",
+    "status": "complete_with_failures; A01/A02 packages built; Qwen/DeepSeek B/C not run"
+  },
   "stage_b_calibration_20": {
     "input": "16 usable Stage-A/focal-claim packets",
     "runner_image": "revground-c-runner:2.0",
@@ -107,5 +131,5 @@
     "fallback_or_model_use": "none; labels, annotator results, and model performance are not read by the QC classifier",
     "artifacts": "data/qc/"
   },
-  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-50"]
+  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-197", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-197"]
 }

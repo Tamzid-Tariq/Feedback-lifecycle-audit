@@ -26,17 +26,20 @@ This file distinguishes verified work from planned or deliberately unrun work. D
 - Calibration-20 independent annotation: A01 and A02 each supplied 16 eligible rows; all five decision fields agree on all 16 rows, so `rubric_change_required=false`, adjudication was not required, and no adjudication was performed.
 - Rubric v2.0 is frozen as the final annotation rubric after Calibration-20.
 - Held-out natural annotation packages were released for 42 successful, C-eligible TEST cases; they contain only the frozen packets, rubric, and annotator HTML.
+- TEST-197 protocol amendment is frozen before additional held-out labels or evaluator results: the historical TEST-50 manifest remains Batch 1, the complete TEST partition has 197 rows, source-only QC preserves 9 objective language exclusions, and Batch 2 contains 147 cases.
+- Final TEST-197 Stage-A preparation is complete with the frozen `stealth/space-bunny-alpha` policy: 140 new calls, 126 accepted hints, 14 preserved failures; combined with historical Batch 1 this is 190 calls, 170 accepted hints, 20 preserved failures, and 168 successful C claim-bearing packets.
+- Locked Docker replay is complete for the 126 new packet cases (252 state replays); the final claim-bearing profile is 168 cases, 3 problems, 49 trajectories, and 42 participants. Isolated A01/A02 packages contain only the identical frozen packet, Rubric v2.0, and annotator HTML.
 - DeepSeek V4.1 Flash substitution diagnostics are complete for Development-50 and Stress-20: 140 primary calls, 137 accepted outputs, and 3 preserved primary failures; no recovery pass was run. Stress Condition C has one recorded decision-rule violation (`STR_011`) represented as an abstention.
 
 ## Prepared but not empirically complete
 
-- The released held-out natural packages are ready for A01/A02 annotation; natural annotation is not yet complete.
-- The final natural TEST-50 B/C evaluation remains locked and unrun for both Qwen and DeepSeek.
+- The final TEST-197 A01/A02 natural annotation is prepared but not yet complete.
+- The final natural TEST-197 B/C evaluation remains locked and unrun for both Qwen and DeepSeek.
 
 ## Deliberately not done; do not describe as results
 
 - No Qwen or DeepSeek B/C run has been performed on Calibration-20.
-- No Qwen or DeepSeek B/C run has been performed on held-out TEST-50.
+- No Qwen or DeepSeek B/C run has been performed on held-out TEST-197.
 - No natural held-out prevalence/effect estimate is available.
 - No learner outcome, learning-gain, or deployed-tutor-effectiveness claim is supported.
 - The single-annotator Stress-20 review must not be described as adjudicated human gold.

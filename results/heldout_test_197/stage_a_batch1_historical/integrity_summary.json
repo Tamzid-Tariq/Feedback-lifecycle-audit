@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "manifest": "evaluation/heldout_natural50_manifest.json",
+  "checks": {
+    "manifest_n_50": true,
+    "manifest_ids_unique": true,
+    "all_selected_in_test": true,
+    "source_rows_unique": true,
+    "no_reference_fields_input": true,
+    "hints_one_per_case": true,
+    "raw_one_per_case": true,
+    "metadata_one_per_case": true,
+    "errors_subset": true,
+    "model_exact": true,
+    "max_tokens_exact": true,
+    "fallback_disabled": true,
+    "automatic_retry_disabled": true,
+    "manifest_order_matches_metadata": true
+  },
+  "counts": {
+    "selected": 50,
+    "hints": 50,
+    "raw_responses": 50,
+    "metadata": 50,
+    "errors": 6,
+    "successes": 44,
+    "empty": 4,
+    "length_violation": 2
+  },
+  "model": "stealth/space-bunny-alpha",
+  "max_tokens": 512,
+  "timeout_seconds": 90.0,
+  "fallback_disabled": true,
+  "automatic_retry": false,
+  "provider_calls": 50,
+  "prompt_sha256": "3916584eb94f1ffa7749bbc94a2b51e1584a9d2eca97d1f197780ee8d956eaee"
+}

@@ -21,6 +21,14 @@
       "outcome": "50 calls; 44 usable hints; 6 failures preserved; no Qwen B/C run"
     },
     {
+      "role": "Stage-A final natural TEST-197 cohort preparation",
+      "model": "stealth/space-bunny-alpha",
+      "provider": "OpenRouter",
+      "partition": "full TEST-197 amendment; historical TEST-50 Batch 1 plus remaining Batch 2",
+      "settings": {"max_tokens": 512, "timeout_seconds": 90, "fallback": false, "automatic_retries": false, "replacement": false},
+      "outcome": "190 total calls; 170 accepted hints; 20 failures preserved; 168 successful C claim-bearing packets; no evaluator B/C calls"
+    },
+    {
       "role": "Development Condition B and C",
       "model": "glm-5.3",
       "provider": "OpenAI-compatible GLM Coding Plan endpoint",
@@ -59,6 +67,6 @@
       "outcome": "40 primary calls; B 19/20 accepted and 9/20 operationally correct; C 20/20 accepted and 15/20 operationally correct; STR_008 failure and STR_011 decision-rule violation preserved"
     }
   ],
-  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-50"],
+  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-197", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-197"],
   "interpretation_boundary": "These runs are development/calibration/stress diagnostics. No natural held-out prevalence or deployed-tutor effectiveness estimate is available."
 }
