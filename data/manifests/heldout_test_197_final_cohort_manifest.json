@@ -1,0 +1,40 @@
+{
+  "protocol_amendment_id": "test197_full_eligible_cohort_v1",
+  "status": "FROZEN_BEFORE_ADDITIONAL_HELDOUT_LABELS_OR_MODEL_RESULTS",
+  "source_partition": "test",
+  "source_manifest": "data/manifests/final_test_197_manifest.csv",
+  "source_manifest_sha256": "ad26c782bc38d6e8771d03914ce49771322413497eec913cf6eac751bea33d18",
+  "historical_batch1_manifest": "data/manifests/archive/heldout_natural50_manifest_batch1.json",
+  "historical_batch1_manifest_sha256": "7f9c21db5fb9b4e03e14cdece610ceb04626534da268ea0da1577606a3d00f22",
+  "final_manifest": "data/manifests/heldout_test_197_final_cohort_manifest.csv",
+  "selection_rule": "census of the existing 197-case TEST partition; no sampling, deletion, replacement, or label-based filtering",
+  "created_before_labels": true,
+  "labels_read_during_selection": false,
+  "counts": {
+    "test_partition_cases": 197,
+    "historical_batch1_cases": 50,
+    "remaining_batch2_cases": 147,
+    "confirmed_c": 188,
+    "objective_exclusions": 9,
+    "batch1_confirmed_c": 48,
+    "batch1_objective_exclusions": 2,
+    "remaining_eligible_stage_a_cases": 140
+  },
+  "qc": {
+    "rule": "source syntax only from code_t and code_t1",
+    "qc_artifact": "data/qc/language_qc_all_strict_c.csv",
+    "qc_sha256": "597b1e5cc097840d6944ac4ca0ded28523d4c8ff4f38a8c71dc4e442c6943055"
+  },
+  "stage_a_policy": {
+    "model": "stealth/space-bunny-alpha",
+    "max_tokens": 512,
+    "timeout_seconds": 90,
+    "fallback": false,
+    "automatic_retry": false,
+    "prompt_sha256": "3916584eb94f1ffa7749bbc94a2b51e1584a9d2eca97d1f197780ee8d956eaee",
+    "remaining_calls_required": 140
+  },
+  "claim_extraction_rule": "first_explicit_diagnostic_assertion_v1",
+  "replacement_policy": "No replacement; all objective exclusions and Stage-A failures remain in the final ledger.",
+  "model_evaluator_calls_authorized": false
+}
