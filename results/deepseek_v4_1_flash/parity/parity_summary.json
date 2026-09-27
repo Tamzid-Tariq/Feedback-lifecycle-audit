@@ -1,0 +1,79 @@
+{
+  "status": "PASS_NO_CALL_DRY_RUN_PARITY",
+  "provider_calls": 0,
+  "llm_calls": 0,
+  "datasets": {
+    "development_50": {
+      "dataset": "development_50",
+      "packet_count": 50,
+      "packet_file_sha256": "c9b9987eb8b5b1908f17a402cc3894efe369735872a5eefd815e920f148548a0",
+      "qwen_B_request_metadata_sha256": "28a0b5abe1559b511aea6b0da4c4bd2504c358857e18ad59ec43ec5ea75514a7",
+      "qwen_C_request_metadata_sha256": "5a78d9a2ca6955a48f46d5e27daef4d40d3fe41fc69221aaeb8bd729996d1b7a",
+      "evidence_parity_count": 50,
+      "evidence_parity_required": 50,
+      "evidence_parity_pass": true,
+      "qwen_B_prompt_sha256": [
+        "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d"
+      ],
+      "qwen_C_prompt_sha256": [
+        "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe"
+      ],
+      "qwen_B_max_tokens": [
+        5000
+      ],
+      "qwen_C_max_tokens": [
+        12000
+      ]
+    },
+    "stress_20": {
+      "dataset": "stress_20",
+      "packet_count": 20,
+      "packet_file_sha256": "439c4cea170d1fe960791ef24d03b8900b3f2de7fd1d195ce37dd4824511a568",
+      "qwen_B_request_metadata_sha256": "3e077fd6235762a6974889f3dc34ac6b6a39efa56a1cfa8a7753aa18baca8981",
+      "qwen_C_request_metadata_sha256": "71837fecd893a9aa8278435f9a539df3f8620ba0ecf5a5b83fd427e271cb1372",
+      "evidence_parity_count": 20,
+      "evidence_parity_required": 20,
+      "evidence_parity_pass": true,
+      "qwen_B_prompt_sha256": [
+        "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d"
+      ],
+      "qwen_C_prompt_sha256": [
+        "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe"
+      ],
+      "qwen_B_max_tokens": [
+        16000
+      ],
+      "qwen_C_max_tokens": [
+        16000
+      ]
+    }
+  },
+  "development_evidence_parity": "50/50",
+  "stress_evidence_parity": "20/20",
+  "prompts": {
+    "condition_B": "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d",
+    "condition_C": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe"
+  },
+  "deepseek_frozen_settings": {
+    "requested_model": "deepseek/deepseek-v4.1-flash",
+    "max_tokens": 16000,
+    "temperature": 0,
+    "top_p": null,
+    "top_p_request_policy": "not sent because the existing Qwen request body omitted top_p",
+    "timeout_seconds": 360,
+    "automatic_retry": false,
+    "fallback_disabled": true,
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+  },
+  "saved_qwen_parameter_audit": {
+    "development_B_max_tokens": 5000,
+    "development_C_max_tokens": 12000,
+    "stress_B_max_tokens": 16000,
+    "stress_C_max_tokens": 16000,
+    "temperature": 0,
+    "top_p": "not recorded/sent in saved Qwen request metadata and request body",
+    "development_budget_deviation": "DeepSeek B/C are frozen at the user-requested common 16000; saved Qwen Development B/C were not matched because their actual metadata is 5000/12000."
+  },
+  "model_substitution_only": true,
+  "reference_labels_changed": false
+}

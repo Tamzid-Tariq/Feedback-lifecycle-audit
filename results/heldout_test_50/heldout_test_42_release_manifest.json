@@ -1,0 +1,59 @@
+{
+  "status": "RELEASED_AFTER_CALIBRATION_FREEZE",
+  "released_at_utc": "2026-09-27T10:46:15.491813+00:00",
+  "source_pending_workspace": "D:\\Thesis for LAK'26\\RevGround-HeldoutPrep-20260927",
+  "source_cohort_manifest": "RevGround-HeldoutPrep-20260927\\manifests\\heldout_test50_successful_c_cohort.json",
+  "original_test_cases_preserved": 50,
+  "confirmed_c_cases": 48,
+  "objective_language_exclusions": 2,
+  "stage_a_failures_preserved": 6,
+  "successful_c_claim_bearing_cases": 42,
+  "replacement_used": false,
+  "packages": {
+    "A01": "annotation/heldout_test_42_released/A01",
+    "A02": "annotation/heldout_test_42_released/A02"
+  },
+  "package_contents": [
+    "heldout_test50_evidence_frozen_v1.jsonl",
+    "LIFECYCLE_RUBRIC_v2.md",
+    "annotator HTML"
+  ],
+  "contains_reference_labels": false,
+  "contains_model_predictions": false,
+  "contains_other_annotator_outputs": false,
+  "contains_adjudication_information": false,
+  "distributable": true,
+  "files": {
+    "A01/heldout_test50_evidence_frozen_v1.jsonl": {
+      "path": "annotation\\heldout_test_42_released\\A01\\heldout_test50_evidence_frozen_v1.jsonl",
+      "sha256": "b118edc5ea481342e7b78c7ab80431327cecffe44e6294109ced2eeaebbcacf3",
+      "bytes": 445180
+    },
+    "A01/LIFECYCLE_RUBRIC_v2.md": {
+      "path": "annotation\\heldout_test_42_released\\A01\\LIFECYCLE_RUBRIC_v2.md",
+      "sha256": "0e77c2270ccb47fb9552a740982df40ac993d810e82cea1cf5ae2321fecba4c5",
+      "bytes": 2325
+    },
+    "A01/RevGround_Annotator_A01.html": {
+      "path": "annotation\\heldout_test_42_released\\A01\\RevGround_Annotator_A01.html",
+      "sha256": "0fcad7fbcf58989ed78307ade5ac7a79854f790fda445d0a1ae339bb198f3d6f",
+      "bytes": 470221
+    },
+    "A02/heldout_test50_evidence_frozen_v1.jsonl": {
+      "path": "annotation\\heldout_test_42_released\\A02\\heldout_test50_evidence_frozen_v1.jsonl",
+      "sha256": "b118edc5ea481342e7b78c7ab80431327cecffe44e6294109ced2eeaebbcacf3",
+      "bytes": 445180
+    },
+    "A02/LIFECYCLE_RUBRIC_v2.md": {
+      "path": "annotation\\heldout_test_42_released\\A02\\LIFECYCLE_RUBRIC_v2.md",
+      "sha256": "0e77c2270ccb47fb9552a740982df40ac993d810e82cea1cf5ae2321fecba4c5",
+      "bytes": 2325
+    },
+    "A02/RevGround_Annotator_A02.html": {
+      "path": "annotation\\heldout_test_42_released\\A02\\RevGround_Annotator_A02.html",
+      "sha256": "f70c28bb707adaa4031fdfd6471cb29fbd2cc134ad5a3f4dda2a06088d115b35",
+      "bytes": 470221
+    }
+  },
+  "packet_sha256": "b118edc5ea481342e7b78c7ab80431327cecffe44e6294109ced2eeaebbcacf3"
+}

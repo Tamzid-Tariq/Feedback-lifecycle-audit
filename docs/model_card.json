@@ -41,8 +41,24 @@
       "partition": "synthetic stress-20",
       "settings": {"max_tokens": 16000, "timeout_seconds": 360, "fallback": false, "same_provider_and_routing_policy": true, "same_retry_policy": true},
       "outcome": "20 requests per condition; B 14/20 and C 16/20 operational accuracy"
+    },
+    {
+      "role": "Development-50 Condition B and C substitution",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "OpenRouter",
+      "partition": "development-50",
+      "settings": {"max_tokens": 16000, "timeout_seconds": 360, "fallback": false, "recovery_pass": false, "same_provider_and_routing_policy": true, "same_retry_policy": true},
+      "outcome": "100 primary calls; B 49/50 accepted and 48/50 operationally correct; C 49/50 accepted and 48/50 operationally correct; DEV_024 failure preserved in both conditions"
+    },
+    {
+      "role": "Synthetic Stress-20 substitution",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "OpenRouter",
+      "partition": "synthetic stress-20",
+      "settings": {"max_tokens": 16000, "timeout_seconds": 360, "fallback": false, "recovery_pass": false, "same_provider_and_routing_policy": true, "same_retry_policy": true},
+      "outcome": "40 primary calls; B 19/20 accepted and 9/20 operationally correct; C 20/20 accepted and 15/20 operationally correct; STR_008 failure and STR_011 decision-rule violation preserved"
     }
   ],
-  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50"],
+  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-50"],
   "interpretation_boundary": "These runs are development/calibration/stress diagnostics. No natural held-out prevalence or deployed-tutor effectiveness estimate is available."
 }

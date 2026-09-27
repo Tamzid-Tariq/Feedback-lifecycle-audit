@@ -1,0 +1,5003 @@
+{
+  "methods": {
+    "B": {
+      "overall": {
+        "n": 50,
+        "gold_counts": {
+          "KEEP": 21,
+          "RETIRE": 29
+        },
+        "prediction_counts": {
+          "KEEP": 19,
+          "RETIRE": 29,
+          "RETRACT": 1,
+          "UNSURE": 1
+        },
+        "abstentions": 1,
+        "invalid_or_failed_statuses": 1,
+        "confusion_nonabstaining": {
+          "KEEP": {
+            "KEEP": 19,
+            "RETIRE": 0,
+            "RETRACT": 1,
+            "UNSURE": 0
+          },
+          "RETIRE": {
+            "KEEP": 0,
+            "RETIRE": 29,
+            "RETRACT": 0,
+            "UNSURE": 0
+          },
+          "RETRACT": {
+            "KEEP": 0,
+            "RETIRE": 0,
+            "RETRACT": 0,
+            "UNSURE": 0
+          },
+          "UNSURE": {
+            "KEEP": 0,
+            "RETIRE": 0,
+            "RETRACT": 0,
+            "UNSURE": 0
+          }
+        },
+        "per_class_precision": {
+          "KEEP": 1.0,
+          "RETIRE": 1.0,
+          "RETRACT": 0.0,
+          "UNSURE": null
+        },
+        "per_class_recall": {
+          "KEEP": 0.9047619047619048,
+          "RETIRE": 1.0,
+          "RETRACT": null,
+          "UNSURE": null
+        },
+        "per_class_f1": {
+          "KEEP": 0.95,
+          "RETIRE": 1.0,
+          "RETRACT": 0.0,
+          "UNSURE": null
+        },
+        "macro_f1_present_classes": 0.65,
+        "false_keep": {
+          "numerator": 0,
+          "denominator": 29,
+          "rate": 0.0,
+          "wilson_95": [
+            0,
+            0.11696979849974075
+          ]
+        },
+        "false_keep_by_gold": {
+          "RETIRE": {
+            "numerator": 0,
+            "denominator": 29
+          },
+          "RETRACT": {
+            "numerator": 0,
+            "denominator": 0
+          }
+        },
+        "decision_coverage": {
+          "numerator": 49,
+          "denominator": 50,
+          "rate": 0.98
+        },
+        "selective_risk": {
+          "numerator": 1,
+          "denominator": 49,
+          "rate": 0.02040816326530612
+        },
+        "keep_recall": {
+          "numerator": 19,
+          "denominator": 21,
+          "rate": 0.9047619047619048
+        },
+        "wrongful_removal": {
+          "numerator": 1,
+          "denominator": 21,
+          "rate": 0.047619047619047616
+        },
+        "retraction_precision": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "retraction_recall": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "gold_unsure_withheld": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "confident_factual_on_gold_unsure": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "mean_latency_ms": 16859.22,
+        "estimated_cost_usd": 0
+      },
+      "by_problem_family": {
+        "unavailable_for_this_diagnostic": {
+          "n": 50,
+          "gold_counts": {
+            "KEEP": 21,
+            "RETIRE": 29
+          },
+          "prediction_counts": {
+            "KEEP": 19,
+            "RETIRE": 29,
+            "RETRACT": 1,
+            "UNSURE": 1
+          },
+          "abstentions": 1,
+          "invalid_or_failed_statuses": 1,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 19,
+              "RETIRE": 0,
+              "RETRACT": 1,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 29,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 0.9047619047619048,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 0.95,
+            "RETIRE": 1.0,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 0.65,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 29,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.11696979849974075
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 29
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 49,
+            "denominator": 50,
+            "rate": 0.98
+          },
+          "selective_risk": {
+            "numerator": 1,
+            "denominator": 49,
+            "rate": 0.02040816326530612
+          },
+          "keep_recall": {
+            "numerator": 19,
+            "denominator": 21,
+            "rate": 0.9047619047619048
+          },
+          "wrongful_removal": {
+            "numerator": 1,
+            "denominator": 21,
+            "rate": 0.047619047619047616
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 16859.22,
+          "estimated_cost_usd": 0
+        }
+      },
+      "by_problem": {
+        "prob_012": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 23373.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_013": {
+          "n": 2,
+          "gold_counts": {
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "RETIRE": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 32322.5,
+          "estimated_cost_usd": 0
+        },
+        "prob_014": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 14456.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_016": {
+          "n": 3,
+          "gold_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 2,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 3,
+            "denominator": 3,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 24786.666666666668,
+          "estimated_cost_usd": 0
+        },
+        "prob_018": {
+          "n": 5,
+          "gold_counts": {
+            "RETIRE": 3,
+            "KEEP": 2
+          },
+          "prediction_counts": {
+            "RETIRE": 3,
+            "KEEP": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 2,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 3,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0,
+            "wilson_95": [
+              5.551115123125783e-17,
+              0.5614970317550454
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 3
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 5,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 6306.8,
+          "estimated_cost_usd": 0
+        },
+        "prob_020": {
+          "n": 2,
+          "gold_counts": {
+            "RETIRE": 1,
+            "KEEP": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1,
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 8870.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_021": {
+          "n": 8,
+          "gold_counts": {
+            "KEEP": 6,
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "KEEP": 5,
+            "UNSURE": 1,
+            "RETIRE": 2
+          },
+          "abstentions": 1,
+          "invalid_or_failed_statuses": 1,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 5,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 0.8333333333333334,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 0.9090909090909091,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 0.9545454545454546,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 7,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 5,
+            "denominator": 6,
+            "rate": 0.8333333333333334
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 25645.125,
+          "estimated_cost_usd": 0
+        },
+        "prob_022": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 4219.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_025": {
+          "n": 3,
+          "gold_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 2,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 3,
+            "denominator": 3,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 5321.333333333333,
+          "estimated_cost_usd": 0
+        },
+        "prob_029": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 4821.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_030": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 6347.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_031": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 2
+          },
+          "prediction_counts": {
+            "RETRACT": 1,
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 1,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 0.5,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 0.6666666666666666,
+            "RETIRE": null,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 0.3333333333333333,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null,
+            "wilson_95": [
+              null,
+              null
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 0
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 1,
+            "denominator": 2,
+            "rate": 0.5
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 2,
+            "rate": 0.5
+          },
+          "wrongful_removal": {
+            "numerator": 1,
+            "denominator": 2,
+            "rate": 0.5
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 30515.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_032": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 7725.5,
+          "estimated_cost_usd": 0
+        },
+        "prob_033": {
+          "n": 1,
+          "gold_counts": {
+            "KEEP": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null,
+            "wilson_95": [
+              null,
+              null
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 0
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 18041.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_036": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 11759.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_037": {
+          "n": 8,
+          "gold_counts": {
+            "RETIRE": 8
+          },
+          "prediction_counts": {
+            "RETIRE": 8
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 8,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 8,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.32440756488388023
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 8
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 8,
+            "denominator": 8,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 21599.125,
+          "estimated_cost_usd": 0
+        },
+        "prob_038": {
+          "n": 3,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 3,
+            "denominator": 3,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 16647.666666666668,
+          "estimated_cost_usd": 0
+        },
+        "prob_044": {
+          "n": 2,
+          "gold_counts": {
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "RETIRE": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 5683.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_045": {
+          "n": 1,
+          "gold_counts": {
+            "KEEP": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null,
+            "wilson_95": [
+              null,
+              null
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 0
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 4826.0,
+          "estimated_cost_usd": 0
+        }
+      },
+      "problem_family_count": 1,
+      "problem_count": 19
+    },
+    "C": {
+      "overall": {
+        "n": 50,
+        "gold_counts": {
+          "KEEP": 21,
+          "RETIRE": 29
+        },
+        "prediction_counts": {
+          "KEEP": 19,
+          "RETIRE": 29,
+          "RETRACT": 1,
+          "UNSURE": 1
+        },
+        "abstentions": 1,
+        "invalid_or_failed_statuses": 1,
+        "confusion_nonabstaining": {
+          "KEEP": {
+            "KEEP": 19,
+            "RETIRE": 0,
+            "RETRACT": 1,
+            "UNSURE": 0
+          },
+          "RETIRE": {
+            "KEEP": 0,
+            "RETIRE": 29,
+            "RETRACT": 0,
+            "UNSURE": 0
+          },
+          "RETRACT": {
+            "KEEP": 0,
+            "RETIRE": 0,
+            "RETRACT": 0,
+            "UNSURE": 0
+          },
+          "UNSURE": {
+            "KEEP": 0,
+            "RETIRE": 0,
+            "RETRACT": 0,
+            "UNSURE": 0
+          }
+        },
+        "per_class_precision": {
+          "KEEP": 1.0,
+          "RETIRE": 1.0,
+          "RETRACT": 0.0,
+          "UNSURE": null
+        },
+        "per_class_recall": {
+          "KEEP": 0.9047619047619048,
+          "RETIRE": 1.0,
+          "RETRACT": null,
+          "UNSURE": null
+        },
+        "per_class_f1": {
+          "KEEP": 0.95,
+          "RETIRE": 1.0,
+          "RETRACT": 0.0,
+          "UNSURE": null
+        },
+        "macro_f1_present_classes": 0.65,
+        "false_keep": {
+          "numerator": 0,
+          "denominator": 29,
+          "rate": 0.0,
+          "wilson_95": [
+            0,
+            0.11696979849974075
+          ]
+        },
+        "false_keep_by_gold": {
+          "RETIRE": {
+            "numerator": 0,
+            "denominator": 29
+          },
+          "RETRACT": {
+            "numerator": 0,
+            "denominator": 0
+          }
+        },
+        "decision_coverage": {
+          "numerator": 49,
+          "denominator": 50,
+          "rate": 0.98
+        },
+        "selective_risk": {
+          "numerator": 1,
+          "denominator": 49,
+          "rate": 0.02040816326530612
+        },
+        "keep_recall": {
+          "numerator": 19,
+          "denominator": 21,
+          "rate": 0.9047619047619048
+        },
+        "wrongful_removal": {
+          "numerator": 1,
+          "denominator": 21,
+          "rate": 0.047619047619047616
+        },
+        "retraction_precision": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "retraction_recall": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "gold_unsure_withheld": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "confident_factual_on_gold_unsure": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "mean_latency_ms": 20300.24,
+        "estimated_cost_usd": 0
+      },
+      "by_problem_family": {
+        "unavailable_for_this_diagnostic": {
+          "n": 50,
+          "gold_counts": {
+            "KEEP": 21,
+            "RETIRE": 29
+          },
+          "prediction_counts": {
+            "KEEP": 19,
+            "RETIRE": 29,
+            "RETRACT": 1,
+            "UNSURE": 1
+          },
+          "abstentions": 1,
+          "invalid_or_failed_statuses": 1,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 19,
+              "RETIRE": 0,
+              "RETRACT": 1,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 29,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 0.9047619047619048,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 0.95,
+            "RETIRE": 1.0,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 0.65,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 29,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.11696979849974075
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 29
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 49,
+            "denominator": 50,
+            "rate": 0.98
+          },
+          "selective_risk": {
+            "numerator": 1,
+            "denominator": 49,
+            "rate": 0.02040816326530612
+          },
+          "keep_recall": {
+            "numerator": 19,
+            "denominator": 21,
+            "rate": 0.9047619047619048
+          },
+          "wrongful_removal": {
+            "numerator": 1,
+            "denominator": 21,
+            "rate": 0.047619047619047616
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 20300.24,
+          "estimated_cost_usd": 0
+        }
+      },
+      "by_problem": {
+        "prob_012": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 8819.5,
+          "estimated_cost_usd": 0
+        },
+        "prob_013": {
+          "n": 2,
+          "gold_counts": {
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "RETIRE": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 8977.5,
+          "estimated_cost_usd": 0
+        },
+        "prob_014": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 18761.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_016": {
+          "n": 3,
+          "gold_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 2,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 3,
+            "denominator": 3,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 15333.333333333334,
+          "estimated_cost_usd": 0
+        },
+        "prob_018": {
+          "n": 5,
+          "gold_counts": {
+            "RETIRE": 3,
+            "KEEP": 2
+          },
+          "prediction_counts": {
+            "RETIRE": 3,
+            "KEEP": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 2,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 3,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0,
+            "wilson_95": [
+              5.551115123125783e-17,
+              0.5614970317550454
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 3
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 5,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 10274.2,
+          "estimated_cost_usd": 0
+        },
+        "prob_020": {
+          "n": 2,
+          "gold_counts": {
+            "RETIRE": 1,
+            "KEEP": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1,
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 8681.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_021": {
+          "n": 8,
+          "gold_counts": {
+            "KEEP": 6,
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "KEEP": 5,
+            "UNSURE": 1,
+            "RETIRE": 2
+          },
+          "abstentions": 1,
+          "invalid_or_failed_statuses": 1,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 5,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 0.8333333333333334,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 0.9090909090909091,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 0.9545454545454546,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 7,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 5,
+            "denominator": 6,
+            "rate": 0.8333333333333334
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 32775.75,
+          "estimated_cost_usd": 0
+        },
+        "prob_022": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 17429.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_025": {
+          "n": 3,
+          "gold_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 2,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 2,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 3,
+            "denominator": 3,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 8869.333333333334,
+          "estimated_cost_usd": 0
+        },
+        "prob_029": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 17288.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_030": {
+          "n": 1,
+          "gold_counts": {
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 4817.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_031": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 2
+          },
+          "prediction_counts": {
+            "RETRACT": 1,
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 1,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 0.5,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 0.6666666666666666,
+            "RETIRE": null,
+            "RETRACT": 0.0,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 0.3333333333333333,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null,
+            "wilson_95": [
+              null,
+              null
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 0
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 1,
+            "denominator": 2,
+            "rate": 0.5
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 2,
+            "rate": 0.5
+          },
+          "wrongful_removal": {
+            "numerator": 1,
+            "denominator": 2,
+            "rate": 0.5
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 46892.5,
+          "estimated_cost_usd": 0
+        },
+        "prob_032": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 6908.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_033": {
+          "n": 1,
+          "gold_counts": {
+            "KEEP": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null,
+            "wilson_95": [
+              null,
+              null
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 0
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 6050.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_036": {
+          "n": 2,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 1,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.7934506856227626
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 23277.5,
+          "estimated_cost_usd": 0
+        },
+        "prob_037": {
+          "n": 8,
+          "gold_counts": {
+            "RETIRE": 8
+          },
+          "prediction_counts": {
+            "RETIRE": 8
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 8,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 8,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.32440756488388023
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 8
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 8,
+            "denominator": 8,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 30354.375,
+          "estimated_cost_usd": 0
+        },
+        "prob_038": {
+          "n": 3,
+          "gold_counts": {
+            "KEEP": 1,
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "KEEP": 1,
+            "RETIRE": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 3,
+            "denominator": 3,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 3,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 27713.333333333332,
+          "estimated_cost_usd": 0
+        },
+        "prob_044": {
+          "n": 2,
+          "gold_counts": {
+            "RETIRE": 2
+          },
+          "prediction_counts": {
+            "RETIRE": 2
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 2,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": null,
+            "RETIRE": 1.0,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0,
+            "wilson_95": [
+              0,
+              0.6576197724933469
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 2
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 2,
+            "denominator": 2,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 12113.0,
+          "estimated_cost_usd": 0
+        },
+        "prob_045": {
+          "n": 1,
+          "gold_counts": {
+            "KEEP": 1
+          },
+          "prediction_counts": {
+            "KEEP": 1
+          },
+          "abstentions": 0,
+          "invalid_or_failed_statuses": 0,
+          "confusion_nonabstaining": {
+            "KEEP": {
+              "KEEP": 1,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETIRE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "RETRACT": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            },
+            "UNSURE": {
+              "KEEP": 0,
+              "RETIRE": 0,
+              "RETRACT": 0,
+              "UNSURE": 0
+            }
+          },
+          "per_class_precision": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_recall": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "per_class_f1": {
+            "KEEP": 1.0,
+            "RETIRE": null,
+            "RETRACT": null,
+            "UNSURE": null
+          },
+          "macro_f1_present_classes": 1.0,
+          "false_keep": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null,
+            "wilson_95": [
+              null,
+              null
+            ]
+          },
+          "false_keep_by_gold": {
+            "RETIRE": {
+              "numerator": 0,
+              "denominator": 0
+            },
+            "RETRACT": {
+              "numerator": 0,
+              "denominator": 0
+            }
+          },
+          "decision_coverage": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "selective_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "keep_recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "rate": 1.0
+          },
+          "wrongful_removal": {
+            "numerator": 0,
+            "denominator": 1,
+            "rate": 0.0
+          },
+          "retraction_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "retraction_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "gold_unsure_withheld": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "confident_factual_on_gold_unsure": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "mean_latency_ms": 7169.0,
+          "estimated_cost_usd": 0
+        }
+      },
+      "problem_family_count": 1,
+      "problem_count": 19
+    }
+  },
+  "design_notes": {
+    "primary_contrast": "C versus B",
+    "inference": "Descriptive paired results; approve clustered uncertainty plan before confirmatory claims.",
+    "abstention": "Stored independently of predicted label; all-abstain has zero coverage, not zero risk."
+  },
+  "primary_paired_false_keep": {
+    "eligible": 29,
+    "B_only_error": 0,
+    "C_only_error": 0,
+    "both_error": 0,
+    "neither_error": 29,
+    "warning": "Do not apply an ordinary McNemar test unless independence is justified; claims cluster by trajectory, participant and problem."
+  }
+}

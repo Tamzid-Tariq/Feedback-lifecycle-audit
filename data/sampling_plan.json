@@ -9,7 +9,7 @@
     "purpose": "rubric and interface development",
     "manifest": "data/development_50_manifest.csv",
     "labels_read_before_selection": false,
-    "annotation": "A01 and A02 complete; adjudication pending"
+    "annotation": "A01 and A02 complete; adjudication pending for Development disagreements"
   },
   "calibration_20": {
     "n": 20,
@@ -23,7 +23,10 @@
     "stage_a_failures_preserved": 4,
     "annotation_eligible_packets": 16,
     "source_language_qc": "20/20 CONFIRMED_C; QC completed before annotation",
-    "stage_b_evidence": "complete_locked_runner; 16 usable packets; four Stage-A failures preserved"
+    "stage_b_evidence": "complete_locked_runner; 16 usable packets; four Stage-A failures preserved",
+    "annotation": "A01 and A02 complete on 16 eligible rows; zero substantive disagreements; no adjudication required",
+    "rubric_version_frozen": "v2.0",
+    "rubric_change_required": false
   },
   "stress_20": {
     "n": 20,
@@ -37,7 +40,7 @@
     "selection": "census of strict retained partitions",
     "lifecycle_labels_used_for_selection": false
   },
-  "heldout_test_policy": "TEST-50 Stage A complete (44 usable hints, 6 failures); source QC leaves 48 eligible C cases and 42 analyzable cases; Qwen B/C remains locked",
+  "heldout_test_policy": "TEST-50 Stage A complete (44 usable hints, 6 failures); source QC leaves 48 eligible C cases and 42 claim-bearing cases; A01/A02 packages released for annotation; Qwen/DeepSeek B/C remains locked",
   "source_language_qc": {
     "pool": "all strict-C transitions after evidence-ready and duplicate controls",
     "pool_n": 978,

@@ -1,0 +1,11 @@
+metric,value,denominator_or_type,notes
+selected_calibration_cases,20,20,Validation-based Calibration-20 selection
+annotation_rows_A01,16,16,Successful claim-bearing cases only
+annotation_rows_A02,16,16,Successful claim-bearing cases only
+stage_a_failures_preserved,4,20,Not annotated; not deleted or replaced
+substantive_disagreements,0,80,All five decision fields agree
+rubric_change_required,false,boolean,Rubric v2.0 frozen as final
+adjudication_required,false,boolean,No substantive disagreements
+adjudication_performed,false,boolean,No adjudication manufactured
+heldout_successful_c_claim_bearing_cases_released,42,50,Two objective language exclusions and six Stage-A failures retained
+heldout_replacement_used,false,boolean,Original TEST-50 cases preserved

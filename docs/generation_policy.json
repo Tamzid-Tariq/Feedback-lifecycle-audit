@@ -67,6 +67,39 @@
     "same_retry_policy": true,
     "status": "complete_verified"
   },
+  "deepseek_v4_1_flash_development_50": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "provider": "OpenRouter",
+    "condition_b_requests": 50,
+    "condition_c_requests": 50,
+    "max_tokens": 16000,
+    "timeout_seconds": 360,
+    "fallback": false,
+    "same_provider_and_routing_policy": true,
+    "same_retry_policy": true,
+    "recovery_pass": false,
+    "evidence_parity": "50/50",
+    "accepted": {"B": 49, "C": 49},
+    "preserved_failures": {"B": ["DEV_024"], "C": ["DEV_024"]},
+    "status": "complete_primary_only"
+  },
+  "deepseek_v4_1_flash_stress_20": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "provider": "OpenRouter",
+    "condition_b_requests": 20,
+    "condition_c_requests": 20,
+    "max_tokens": 16000,
+    "timeout_seconds": 360,
+    "fallback": false,
+    "same_provider_and_routing_policy": true,
+    "same_retry_policy": true,
+    "recovery_pass": false,
+    "evidence_parity": "20/20",
+    "accepted": {"B": 19, "C": 20},
+    "preserved_failures": {"B": ["STR_008"], "C": []},
+    "decision_rule_violations": {"B": 0, "C": 1, "C_ids": ["STR_011"]},
+    "status": "complete_primary_only"
+  },
   "source_language_qc": {
     "rule": "source syntax only from code_t and code_t1",
     "strict_pool_n": 978,
@@ -74,5 +107,5 @@
     "fallback_or_model_use": "none; labels, annotator results, and model performance are not read by the QC classifier",
     "artifacts": "data/qc/"
   },
-  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50"]
+  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-50", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-50"]
 }

@@ -23,12 +23,15 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Lifecycle Cohen's kappa | 0.9228 |
 | Adjudication | Pending |
 | Source-language QC | Complete; 978 strict-C rows classified from source syntax only; Development-50 and TEST-50 each have 2 objective exclusions; Calibration-20 has 20/20 confirmed C |
-| Fresh calibration | Validation-based 20-case selection prepared; 16 annotation-eligible packets and 4 preserved Stage-A failures |
-| Condition B/C development runs | Existing development artifacts retained; no calibration or held-out Qwen B/C run |
+| Fresh calibration | 20 validation cases selected; 16 annotation-eligible packets and 4 preserved Stage-A failures |
+| Condition B/C development runs | GLM/Qwen history retained; DeepSeek substitution complete; no calibration or held-out Qwen/DeepSeek B/C run |
 | Calibration Stage A | 20 validation cases attempted with `stealth/space-bunny-alpha`; 16 usable hints, 4 preserved failures |
 | Held-out TEST-50 Stage A | Complete; 50 attempts, 44 usable hints, 6 preserved failures; 48 C-eligible after QC and 42 final analyzable |
 | Calibration compiler/test replay | Complete in pinned locked runner; 32 state replays and 450 official test-state entries |
-| Calibration annotation | Not started |
+| Calibration annotation | Complete for 16 eligible rows; zero substantive disagreements; no adjudication required |
+| Rubric v2.0 | Frozen as final after Calibration-20 |
+| DeepSeek V4.1 Flash substitution | Development-50 and Stress-20 complete; 140 primary calls, 137 accepted, 3 preserved failures |
+| Held-out natural annotation | Packages released for 42 claim-bearing cases; annotation pending |
 | Synthetic Stress-20 | Human review preserved; Qwen B/C results verified and reported separately from natural prevalence |
 
 ### Current lifecycle disagreements
@@ -62,6 +65,9 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - [Shared condition evaluator](evaluation/normalize_conditions.py)
 - [Development results summary](results/development_50/development_results_summary.md)
 - [Results highlights](results/RESULTS_HIGHLIGHTS.md)
+- [Calibration-20 results](results/calibration_20/README.md)
+- [DeepSeek V4.1 Flash results](results/deepseek_v4_1_flash/README.md)
+- [Held-out TEST-50 release](results/heldout_test_50/README.md)
 - [Synthetic Stress-20 results](results/stress_20/stress_20_results_summary.md)
 - [Source-language QC](data/qc/language_qc_summary.json)
 - [Development QC sensitivity](results/development_50/language_qc_sensitivity.md)
@@ -86,12 +92,13 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 6. Build fixed S_t → S_t+1 execution evidence.
 7. Freeze annotation packets.
 8. Collect two independent development annotations — **complete**.
-9. Adjudicate development disagreements and review the rubric — **current milestone**.
-10. Begin the validation-based 20-case calibration using the isolated A01/A02 package.
-11. Freeze the final protocol.
-12. Report the completed Synthetic Stress-20 diagnostic separately from natural results.
-13. Apply source-language QC before annotation or held-out analysis; preserve objective exclusions.
-14. Do not run Qwen B/C on calibration or held-out TEST until separately authorized.
+9. Adjudicate development disagreements and preserve the historical pre-adjudication result.
+10. Complete the validation-based 20-case calibration: 16 usable packets were independently annotated; four Stage-A failures were preserved.
+11. Freeze Rubric v2.0 after calibration; no rubric change was required.
+12. Release the label-independent held-out natural annotation packages for the 42 eligible claim-bearing TEST cases.
+13. Report DeepSeek and Synthetic Stress-20 diagnostics separately from natural prevalence results.
+14. Apply source-language QC before annotation or held-out analysis; preserve objective exclusions.
+15. Keep final Qwen/DeepSeek B/C evaluation on Calibration-20 and held-out TEST outside the completed scope.
 
 ## Important Scope
 

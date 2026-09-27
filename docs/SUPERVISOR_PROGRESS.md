@@ -21,8 +21,11 @@
 - Annotation tree reorganized into common, Development-50, Calibration-20, Stress-20, and held-out TEST-50 namespaces without changing the original A01/A02 development export bytes.
 - Official fresh calibration manifest replaced the older development-based proposal: 20 deterministic validation cases, seed `20260926`; the old 25-case manifest is retained under `data/manifests/archive/` as SUPERSEDED.
 - Calibration Stage A attempted all 20 validation cases with `stealth/space-bunny-alpha`, using only S_t fields, fallback disabled, and no automatic retries. Sixteen hints were usable and four failures were preserved.
-- Sixteen exact-span focal claims were frozen with extractor `first_explicit_diagnostic_assertion_v1`. The calibration packet contains the 16 annotation-eligible cases; no human annotation has started.
+- Sixteen exact-span focal claims were frozen with extractor `first_explicit_diagnostic_assertion_v1`. The calibration packet contains the 16 annotation-eligible cases.
 - Calibration Stage-B evidence replay is complete for those 16 cases: 32 locked-runner state replays and 450 official test-state entries were attached using `revground-c-runner:2.0`. The four Stage-A failures remain preserved outside the packet.
+- Calibration-20 A01 and A02 annotation is complete for all 16 eligible rows. All five decision fields agree on every row; `rubric_change_required=false`, adjudication was not required, and Rubric v2.0 is frozen as final.
+- Held-out TEST-50 annotation packages are released for the 42 successful claim-bearing C cases. They are label-independent and contain no model predictions, other-annotator outputs, intended labels, or adjudication information.
+- DeepSeek V4.1 Flash substitution is complete on Development-50 and Stress-20: 140 primary calls, 137 accepted outputs, 3 preserved primary failures, no recovery pass. Stress C has one recorded decision-rule violation (`STR_011`) represented as an abstention.
 - Synthetic Stress-20 human review was preserved as a completed single-annotator (`A_02`) review: 10 `RETRACT` and 10 `UNSURE`; it is not adjudicated consensus.
 - Synthetic Stress-20 Qwen B/C results were verified under identical settings: B 14/20 and C 16/20 operational accuracy; paired agreement 17/19 (89.5%); evidence SHA match 20/20.
 
@@ -50,6 +53,8 @@ DEV_029, DEV_038, DEV_048, DEV_049, DEV_050.
 - Aggregate B/C evaluation uses one shared normalized schema; B is represented with `abstain=false`.
 - These are technical development results, not adjudicated accuracy results.
 
+DeepSeek V4.1 Flash used the same frozen B/C settings (`max_tokens=16000`, timeout 360 seconds, fallback/recovery disabled) and completed 100 Development-50 primary calls. B and C each had 49 accepted outputs and 48/50 operational accuracy; B failed on `DEV_024` with a non-string response and C rejected `DEV_024` for an unsupported evidence ID. The complete aggregate, parity audit, sanitized run metadata, and failure taxonomy are in [`results/deepseek_v4_1_flash/`](../results/deepseek_v4_1_flash/).
+
 ## Synthetic Stress-20 Results
 
 - Condition B: 19/20 outputs, 14/20 operationally correct (70.0%).
@@ -58,20 +63,19 @@ DEV_029, DEV_038, DEV_048, DEV_049, DEV_050.
 - Both conditions recognized 6/10 UNSURE cases; this limitation remains.
 - These results are reported separately from natural CodeStream prevalence.
 
+DeepSeek Stress-20 used the same frozen settings for both conditions. B accepted 19/20 and reached 9/20 operational accuracy; C accepted 20/20 and reached 15/20 operational accuracy. DeepSeek C reduced false KEEP from 10% to 0% and raised reviewed-RETRACT recall from 70% to 90%, while six explicit UNSURE abstentions were recorded. One C decision-rule violation on `STR_011` is retained in the run record.
+
 ## Current Requirements
 
-1. Supervisor/qualified adjudication of disagreement cases.
-2. Review of rubric before fresh calibration.
-3. Preserve the frozen evidence boundary before any validation/test-scale extension.
-4. Begin independent A01/A02 calibration annotation from `annotation/calibration_20/`; all 20 cases passed source-language QC and the 16 usable packets now contain locked-runner evidence.
-5. Do not run Qwen B/C on calibration or held-out TEST yet.
+1. Supervisor/qualified adjudication of the two Development-50 disagreement cases remains pending.
+2. Rubric v2.0 is frozen after Calibration-20; no calibration adjudication was required.
+3. Complete independent A01/A02 annotation on the released held-out natural packages.
+4. Preserve the 50-case held-out sample and its 42-case claim-bearing cohort without replacement.
+5. Do not run Qwen or DeepSeek B/C on Calibration-20 or held-out TEST yet.
 
 ## Next Stage
 
-1. Adjudication
-2. Rubric refinement
-3. Complete the validation-based Calibration-20 A01/A02 pass
-4. Freeze rubric
-5. Freeze study splits
-6. Natural gold annotation after the recorded TEST-50 Stage-A eligibility filter.
-7. Compare the completed development outputs after adjudication.
+1. Complete qualified Development-50 adjudication, if authorized.
+2. Annotate the released 42-case held-out natural package independently with A01 and A02.
+3. Compare completed development and calibration outputs under the frozen Rubric v2.0.
+4. Only after annotation gates are complete, authorize final held-out B/C evaluation.

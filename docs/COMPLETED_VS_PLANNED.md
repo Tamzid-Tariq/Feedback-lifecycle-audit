@@ -22,17 +22,21 @@ This file distinguishes verified work from planned or deliberately unrun work. D
 - Development sensitivity analysis preserving the historical 48/50 (96%), κ=0.9228 result and reporting 48/48, κ=1.0000 after excluding objective `DEV_010` and `DEV_012` language mismatches.
 - Frozen TEST-50 eligibility accounting: two objective exclusions leave 48 C-eligible cases; the six recorded Stage-A failures are all eligible, leaving 42 final analyzable natural cases.
 - Calibration-20 source-language QC: all 20 selected validation cases are `CONFIRMED_C`.
+- Calibration-20 independent annotation: A01 and A02 each supplied 16 eligible rows; all five decision fields agree on all 16 rows, so `rubric_change_required=false`, adjudication was not required, and no adjudication was performed.
+- Rubric v2.0 is frozen as the final annotation rubric after Calibration-20.
+- Held-out natural annotation packages were released for 42 successful, C-eligible TEST cases; they contain only the frozen packets, rubric, and annotator HTML.
+- DeepSeek V4.1 Flash substitution diagnostics are complete for Development-50 and Stress-20: 140 primary calls, 137 accepted outputs, and 3 preserved primary failures; no recovery pass was run. Stress Condition C has one recorded decision-rule violation (`STR_011`) represented as an abstention.
 
 ## Prepared but not empirically complete
 
-- Calibration-20 A01/A02 annotation has not started.
 - Development disagreement adjudication remains pending qualified supervisor/adjudicator review.
-- The final natural TEST-50 has completed Stage A only; Qwen B/C evaluation remains locked and unrun.
+- The released held-out natural packages are ready for A01/A02 annotation; natural annotation is not yet complete.
+- The final natural TEST-50 B/C evaluation remains locked and unrun for both Qwen and DeepSeek.
 
 ## Deliberately not done; do not describe as results
 
-- No Qwen B/C run has been performed on Calibration-20.
-- No Qwen B/C run has been performed on held-out TEST-50.
+- No Qwen or DeepSeek B/C run has been performed on Calibration-20.
+- No Qwen or DeepSeek B/C run has been performed on held-out TEST-50.
 - No natural held-out prevalence/effect estimate is available.
 - No learner outcome, learning-gain, or deployed-tutor-effectiveness claim is supported.
 - The single-annotator Stress-20 review must not be described as adjudicated human gold.

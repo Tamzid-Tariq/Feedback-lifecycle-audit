@@ -45,11 +45,17 @@ The stress result is documented separately in [stress_20_results_summary.md](str
 
 ## Calibration and held-out status
 
-- Calibration-20: 20 validation cases selected deterministically before labels; 16 usable Stage-A hints and 4 preserved failures; no human annotation completed yet.
+- Calibration-20: 20 validation cases selected deterministically before labels; 16 usable Stage-A hints and 4 preserved failures. A01 and A02 each annotated all 16 eligible rows, with zero substantive disagreements across the five decision fields. `rubric_change_required=false`; no adjudication was required or performed, and Rubric v2.0 is frozen as final.
 - Calibration-20 packet build: 16 focal claims frozen and 32 locked-runner state replays attached, with 450 official test-state evidence entries; four Stage-A failures remain outside the packet.
 - No Qwen B/C calibration run has been performed.
-- Held-out TEST-50 Stage A is complete with 44 usable hints and 6 preserved failures; no annotation or Qwen B/C run has been performed.
+- Held-out TEST-50 Stage A is complete with 44 usable hints and 6 preserved failures; source QC leaves 42 claim-bearing C cases. Label-independent A01/A02 packages are released for annotation; no Qwen or DeepSeek B/C run has been performed.
+
+## DeepSeek V4.1 Flash substitution diagnostics
+
+- Development-50: 100 primary calls under identical B/C settings (`max_tokens=16000`, 360-second timeout, fallback/recovery disabled); B and C each accepted 49/50 and reached 48/50 operational accuracy. `DEV_024` failed in B with a non-string response and in C with an unsupported evidence-ID validator rejection.
+- Stress-20: 40 primary calls; B accepted 19/20 and reached 9/20 operational accuracy, while C accepted 20/20 and reached 15/20. False KEEP fell from 10% to 0%, reviewed-RETRACT recall rose from 70% to 90%, and C recorded six explicit UNSURE abstentions. The one C decision-rule violation (`STR_011`) is retained as a recorded abstention.
+- DeepSeek primary total: 140 calls, 137 accepted outputs, 3 preserved failures, and no recovery pass. See [`results/deepseek_v4_1_flash/`](deepseek_v4_1_flash/).
 
 ## Bottom line
 
-The development set supports strong pre-adjudication human lifecycle agreement and shows no GLM B/C lifecycle difference. Qwen C exhibits useful audit behavior but does not improve natural development accuracy. On the separate synthetic rare-label stress set, Qwen C is better at catching directly refutable claims and avoiding false KEEP decisions, while both conditions remain weak at recognizing evidence-insufficient `UNSURE` cases.
+The study now has a frozen calibration rubric and released held-out annotation packages. Development supports strong pre-adjudication human lifecycle agreement and shows no GLM B/C lifecycle difference. DeepSeek is documented as a model-substitution diagnostic, not a replacement of the original results. On the separate synthetic rare-label stress set, the verifier-style C condition reduces false KEEP decisions for both Qwen and DeepSeek, while UNSURE handling remains model-dependent. No natural held-out prevalence estimate is available until annotation and final B/C evaluation are complete.

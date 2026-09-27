@@ -1,0 +1,166 @@
+{
+  "status": "PASS",
+  "parity": {
+    "development": "50/50",
+    "stress": "20/20"
+  },
+  "runs": {
+    "development_50/condition_B": {
+      "dataset": "development_50",
+      "condition": "B",
+      "requested": 50,
+      "accepted": 49,
+      "failed": 1,
+      "provider_counts": {
+        "DeepInfra": 15,
+        "Parasail": 10,
+        "Together": 18,
+        "Venice": 1,
+        "Morph": 2,
+        "CoreWeave": 1,
+        "DekaLLM": 1,
+        "AtlasCloud": 1,
+        "Wafer": 1
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 50
+      },
+      "evidence_hash_count": 50,
+      "prompt_sha256": "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d",
+      "tokens": {
+        "completion_tokens": 117909,
+        "prompt_tokens": 312173,
+        "reasoning_tokens": 107322,
+        "requests_with_usage": 50,
+        "requests_without_usage": 0,
+        "total_tokens": 430082
+      },
+      "mean_latency_ms": 16859,
+      "artifacts": {
+        "errors.jsonl": "f547e077a29ed9985aa86f2e7abd7b9e11d1d50d23ffa5ad19603f0750bf6c02",
+        "predictions.jsonl": "3b68b773d161145d7a530d36b30878b449592f165836376d03ccd4f1ed9ad2bc",
+        "raw_responses.jsonl": "6cbc2f2f15fcea5fbfede684914f2314c97777316e804bdd0f9d510f625f18aa",
+        "request_metadata.jsonl": "eca5508f18ecdfbd191e197030820589fa7cf62b0706ffa7c60fb196b5d866b0",
+        "run_metadata.json": "d4de613177d255c1635d071c9df09aeb37e1ba06a2439ca27e7af545ba51ae69"
+      }
+    },
+    "development_50/condition_C": {
+      "dataset": "development_50",
+      "condition": "C",
+      "requested": 50,
+      "accepted": 49,
+      "failed": 1,
+      "provider_counts": {
+        "Together": 20,
+        "Parasail": 16,
+        "SiliconFlow": 1,
+        "Wafer": 2,
+        "DeepInfra": 9,
+        "Morph": 1,
+        "InferenceNet": 1
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 50
+      },
+      "evidence_hash_count": 50,
+      "prompt_sha256": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe",
+      "tokens": {
+        "completion_tokens": 128975,
+        "prompt_tokens": 323433,
+        "reasoning_tokens": 117103,
+        "requests_with_usage": 50,
+        "requests_without_usage": 0,
+        "total_tokens": 452408
+      },
+      "mean_latency_ms": 20300,
+      "artifacts": {
+        "errors.jsonl": "c8f59b45600eac72a4dc72f4ff5738d6f907dd9f989b20794e0230293e26adca",
+        "predictions.jsonl": "72698c522a873b6ccce2eb2c3eaa9a71e226d261d1d8475be081f144818867d0",
+        "raw_responses.jsonl": "b094c624a2d685e8a4d2953b584a9f41941b58af11a9218b00545c319ea28496",
+        "request_metadata.jsonl": "d83c0d5861d9cdf84397203db92e5c237ea8a762b22ac651d92db9a85934251f",
+        "run_metadata.json": "0b183dec52f3c754f38b1abfa31c661e5d5d98b73f14e3a8d63e804b1d20d7e0"
+      }
+    },
+    "stress_20/condition_B": {
+      "dataset": "stress_20",
+      "condition": "B",
+      "requested": 20,
+      "accepted": 19,
+      "failed": 1,
+      "provider_counts": {
+        "DeepInfra": 10,
+        "Parasail": 6,
+        "Together": 1,
+        "CoreWeave": 1,
+        "OpenInference": 1,
+        "Morph": 1
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 20
+      },
+      "evidence_hash_count": 20,
+      "prompt_sha256": "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d",
+      "tokens": {
+        "completion_tokens": 84303,
+        "prompt_tokens": 84810,
+        "reasoning_tokens": 80441,
+        "requests_with_usage": 20,
+        "requests_without_usage": 0,
+        "total_tokens": 169113
+      },
+      "mean_latency_ms": 64152,
+      "artifacts": {
+        "errors.jsonl": "e6114acfebf2cf1b2466b003a3b5b89668cda797387d7258a27e181ebdc6e3d1",
+        "predictions.jsonl": "d3d82b6b8e4e93143d331f9b0bbc2fca17e5220debc2fe689db37a695445b336",
+        "raw_responses.jsonl": "0bfb3b758ab49e765c9272697acaf41465b07f48549a18e85fadd768fc4d086d",
+        "request_metadata.jsonl": "293112c0a064fbce3d021ea8d939a7e7fbb91b99997eafda68af457a7b4a3abd",
+        "run_metadata.json": "aae9a671f7cf63d7f6728a1a24b15b442aadfc24882dc7b974f0b69ef90900df"
+      }
+    },
+    "stress_20/condition_C": {
+      "dataset": "stress_20",
+      "condition": "C",
+      "requested": 20,
+      "accepted": 20,
+      "failed": 0,
+      "provider_counts": {
+        "Parasail": 5,
+        "Together": 7,
+        "CoreWeave": 1,
+        "DeepInfra": 7
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 20
+      },
+      "evidence_hash_count": 20,
+      "prompt_sha256": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe",
+      "tokens": {
+        "completion_tokens": 51951,
+        "prompt_tokens": 89333,
+        "reasoning_tokens": 47764,
+        "requests_with_usage": 20,
+        "requests_without_usage": 0,
+        "total_tokens": 141284
+      },
+      "mean_latency_ms": 23000,
+      "artifacts": {
+        "errors.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "predictions.jsonl": "9a8e3b76c7c3c64da10a06f94915befadf52b796ca6cf558d4804977530f40a3",
+        "raw_responses.jsonl": "cb42e8efb0c22320fb40a24afbbde680e52edbe5d306645c3518a86fcc68827f",
+        "request_metadata.jsonl": "b0dbb5ca8271909d4b6f6ffbbd3383c9f0bd8e976dbd1b2454788d8e33b77bd7",
+        "run_metadata.json": "b35c4e346f5c14ea95deca4bb79c80abe89a6862d68fdd843a915885f8ae8d5c"
+      }
+    }
+  },
+  "total_requested": 140,
+  "total_accepted": 137,
+  "total_failed": 3,
+  "primary_calls": {
+    "development": 100,
+    "stress": 40,
+    "overall": 140
+  },
+  "reference_labels_changed": false,
+  "automatic_fallback_model": null,
+  "parity_summary_sha256": "59048e890075a478f3c6ad439064597e4f0c50b064b265f7b64f6f5143322844"
+}

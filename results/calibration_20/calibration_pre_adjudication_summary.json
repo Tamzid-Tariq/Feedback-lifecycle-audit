@@ -1,0 +1,131 @@
+{
+  "status": "CALIBRATION_20_FROZEN_NO_ADJUDICATION_REQUIRED",
+  "frozen_at_utc": "2026-09-27T10:46:15.492831+00:00",
+  "selected_calibration_cases": 20,
+  "annotation_rows_per_annotator": {
+    "A01": 16,
+    "A02": 16
+  },
+  "stage_a_failures_preserved_outside_annotation_exports": [
+    "CAL_001",
+    "CAL_004",
+    "CAL_005",
+    "CAL_016"
+  ],
+  "successful_claim_bearing_cases_annotated": 16,
+  "annotator_ids": [
+    "A01",
+    "A02"
+  ],
+  "decision_fields_compared": [
+    "original_validity",
+    "target_state_t1",
+    "lifecycle_label",
+    "instructional_priority",
+    "leakage_label"
+  ],
+  "substantive_disagreement_count": 0,
+  "substantive_disagreements": {},
+  "non_substantive_variances": {
+    "evidence_ids": {
+      "count": 5,
+      "item_ids": [
+        "CAL_003",
+        "CAL_006",
+        "CAL_010",
+        "CAL_011",
+        "CAL_018"
+      ]
+    },
+    "confidence": {
+      "count": 3,
+      "item_ids": [
+        "CAL_003",
+        "CAL_009",
+        "CAL_020"
+      ]
+    },
+    "short_reason": {
+      "count": 16,
+      "item_ids": [
+        "CAL_002",
+        "CAL_003",
+        "CAL_006",
+        "CAL_007",
+        "CAL_008",
+        "CAL_009",
+        "CAL_010",
+        "CAL_011",
+        "CAL_012",
+        "CAL_013",
+        "CAL_014",
+        "CAL_015",
+        "CAL_017",
+        "CAL_018",
+        "CAL_019",
+        "CAL_020"
+      ]
+    }
+  },
+  "lifecycle_counts": {
+    "A01": {
+      "RETIRE": 9,
+      "UNSURE": 1,
+      "KEEP": 5,
+      "RETRACT": 1
+    },
+    "A02": {
+      "RETIRE": 9,
+      "UNSURE": 1,
+      "KEEP": 5,
+      "RETRACT": 1
+    }
+  },
+  "rubric_version": "v2.0",
+  "rubric_frozen_final": true,
+  "rubric_change_required": false,
+  "adjudication_required": false,
+  "adjudication_performed": false,
+  "interpretation": "A01 and A02 agree on all lifecycle decision fields; no adjudication step is required. Evidence selection and rationale differences are retained as original annotator records.",
+  "original_exports": {
+    "A01_json": {
+      "source_path": "C:\\Users\\User\\Downloads\\Telegram Desktop\\revground_annotations_A01.json",
+      "stored_path": "results\\calibration_20\\annotator_exports\\A01\\revground_annotations_A01.json",
+      "bytes": 17560,
+      "sha256": "643deb7e66ecad9344f2a413d68cf3e6797a04666d72c077ba3360cbc1936ee7",
+      "byte_preserved": true
+    },
+    "A01_csv": {
+      "source_path": "C:\\Users\\User\\Downloads\\Telegram Desktop\\revground_annotations_A01.csv",
+      "stored_path": "results\\calibration_20\\annotator_exports\\A01\\revground_annotations_A01.csv",
+      "bytes": 10058,
+      "sha256": "2193103674d76b5cf615bee531f75445da2fd87cc5ad9453c7ff5a85ef2fb829",
+      "byte_preserved": true
+    },
+    "A02_json": {
+      "source_path": "C:\\Users\\User\\Downloads\\revground_annotations_A02 (1).json",
+      "stored_path": "results\\calibration_20\\annotator_exports\\A02\\revground_annotations_A02 (1).json",
+      "bytes": 19782,
+      "sha256": "008874784b72c3d51872e28d48b30bf1814b11e3a0b140b7bf3e0408b1b36e52",
+      "byte_preserved": true
+    },
+    "A02_csv": {
+      "source_path": "C:\\Users\\User\\Downloads\\revground_annotations_A02 (1).csv",
+      "stored_path": "results\\calibration_20\\annotator_exports\\A02\\revground_annotations_A02 (1).csv",
+      "bytes": 12058,
+      "sha256": "f3b61ff7cdf420c73f51aa7c3f849f5e976742d81578c281f4c7f000a8483de9",
+      "byte_preserved": true
+    }
+  },
+  "frozen_rubric": {
+    "path": "annotation\\calibration_20\\LIFECYCLE_RUBRIC_v2.md",
+    "sha256": "0e77c2270ccb47fb9552a740982df40ac993d810e82cea1cf5ae2321fecba4c5"
+  },
+  "frozen_evidence_packet": {
+    "path": "annotation\\calibration_20\\calibration_20_evidence_frozen_v1.jsonl",
+    "sha256": "c9601e2f350d598c0bc108540c049d3d1cec423f921c9bf05f0975fff2e5bbf9",
+    "rows": 16
+  },
+  "heldout_release_manifest": "manifests/heldout_test_42_release_manifest.json",
+  "main_repository_modified": false
+}

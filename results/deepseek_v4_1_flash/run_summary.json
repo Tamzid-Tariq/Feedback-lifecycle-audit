@@ -1,0 +1,132 @@
+{
+  "status": "FINALIZED",
+  "total_requested": 140,
+  "total_accepted": 137,
+  "total_failed": 3,
+  "runs": {
+    "development_50/condition_B": {
+      "requested": 50,
+      "accepted": 49,
+      "failed": 1,
+      "provider_counts": {
+        "DeepInfra": 15,
+        "Parasail": 10,
+        "Together": 18,
+        "Venice": 1,
+        "Morph": 2,
+        "CoreWeave": 1,
+        "DekaLLM": 1,
+        "AtlasCloud": 1,
+        "Wafer": 1
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 50
+      },
+      "accepted_model_equality": true,
+      "missing_returned_model": [],
+      "errors": [
+        {
+          "item_id": "DEV_024",
+          "error_type": "ProviderResponseError",
+          "http_status": 200
+        }
+      ],
+      "tokens": {
+        "prompt_tokens": 312173,
+        "completion_tokens": 117909,
+        "reasoning_tokens": 107322,
+        "total_tokens": 430082
+      },
+      "mean_latency_ms": 16859
+    },
+    "development_50/condition_C": {
+      "requested": 50,
+      "accepted": 49,
+      "failed": 1,
+      "provider_counts": {
+        "Together": 20,
+        "Parasail": 16,
+        "SiliconFlow": 1,
+        "Wafer": 2,
+        "DeepInfra": 9,
+        "Morph": 1,
+        "InferenceNet": 1
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 50
+      },
+      "accepted_model_equality": true,
+      "missing_returned_model": [],
+      "errors": [
+        {
+          "item_id": "DEV_024",
+          "error_type": "ValueError",
+          "http_status": 200
+        }
+      ],
+      "tokens": {
+        "prompt_tokens": 323433,
+        "completion_tokens": 128975,
+        "reasoning_tokens": 117103,
+        "total_tokens": 452408
+      },
+      "mean_latency_ms": 20300
+    },
+    "stress_20/condition_B": {
+      "requested": 20,
+      "accepted": 19,
+      "failed": 1,
+      "provider_counts": {
+        "DeepInfra": 10,
+        "Parasail": 6,
+        "Together": 1,
+        "CoreWeave": 1,
+        "OpenInference": 1,
+        "Morph": 1
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 20
+      },
+      "accepted_model_equality": true,
+      "missing_returned_model": [],
+      "errors": [
+        {
+          "item_id": "STR_008",
+          "error_type": "ProviderResponseError",
+          "http_status": 200
+        }
+      ],
+      "tokens": {
+        "prompt_tokens": 84810,
+        "completion_tokens": 84303,
+        "reasoning_tokens": 80441,
+        "total_tokens": 169113
+      },
+      "mean_latency_ms": 64152
+    },
+    "stress_20/condition_C": {
+      "requested": 20,
+      "accepted": 20,
+      "failed": 0,
+      "provider_counts": {
+        "Parasail": 5,
+        "Together": 7,
+        "CoreWeave": 1,
+        "DeepInfra": 7
+      },
+      "returned_models": {
+        "deepseek/deepseek-v4.1-flash": 20
+      },
+      "accepted_model_equality": true,
+      "missing_returned_model": [],
+      "errors": [],
+      "tokens": {
+        "prompt_tokens": 89333,
+        "completion_tokens": 51951,
+        "reasoning_tokens": 47764,
+        "total_tokens": 141284
+      },
+      "mean_latency_ms": 23000
+    }
+  }
+}
