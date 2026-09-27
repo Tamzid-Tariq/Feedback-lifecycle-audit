@@ -8,7 +8,7 @@ This file is the compact results index. Development results are diagnostics, the
 - Current reference lifecycle distribution: 21 `KEEP` (42%), 29 `RETIRE` (58%), 0 `RETRACT`, 0 `UNSURE`.
 - Pre-adjudication agreement: original validity 48/50 (96%, κ=0.3243); target state 48/50 (96%, κ=0.9228); lifecycle 48/50 (96%, κ=0.9228); priority 44/50 (88%, κ=0.7608); leakage 45/50 (90%, κ=0).
 - Joint agreement across all five fields: 40/50 (80%). Lifecycle disagreements: `DEV_010` and `DEV_012`.
-- The 10 review rows are recorded with adjudication-review provenance and must not be described as independent expert-human adjudication without qualified approval.
+- The supplied final reference contains 40 consensus carry-forwards and 10 rows with `status=adjudicated` and `provenance=adjudication_review`. The 10 review rows are therefore adjudicated; the provenance is retained to distinguish them from direct A01/A02 consensus.
 
 ## Development model diagnostics
 

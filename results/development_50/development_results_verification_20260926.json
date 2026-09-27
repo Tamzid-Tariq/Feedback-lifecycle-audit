@@ -3,7 +3,7 @@
   "verdict": "substantially_consistent_with_scoped_caveats",
   "gold_source": {
     "source_path": "C:\\Users\\User\\Downloads\\revground_adjudication_final.jsonl",
-    "repository_copy": "annotation/revground_adjudication_final.jsonl",
+    "repository_copy": "annotation/development_50/revground_adjudication_final.jsonl",
     "sha256": "8FBCEBE1E0E200F8D4AE52F30DF597DA086330E20BE3493C80B4E603BCD5B07D",
     "rows": 50,
     "unique_ids": 50,
@@ -38,6 +38,6 @@
     "Local recovery artifacts are present; recovered Qwen B is 49/50 lifecycle-correct because DEV_046 is RETIRE against gold KEEP.",
     "Original Qwen max_tokens differ: B=5000 and C=12000.",
     "GLM 100% refers to lifecycle accuracy, not five-field exact match.",
-    "Older repository status files still say adjudication is pending."
+    "The supplied repository reference is a finalized 50-row adjudication file; pre-adjudication reliability and final-reference provenance are reported separately."
   ]
 }

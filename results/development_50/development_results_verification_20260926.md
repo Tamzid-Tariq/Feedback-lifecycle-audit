@@ -9,7 +9,7 @@ The supplied results are substantially consistent with the local run artifacts w
 ## Reference file
 
 - Source: `C:\Users\User\Downloads\revground_adjudication_final.jsonl`
-- Repository copy: `annotation/revground_adjudication_final.jsonl`
+- Repository copy: `annotation/development_50/revground_adjudication_final.jsonl`
 - SHA-256: `8FBCEBE1E0E200F8D4AE52F30DF597DA086330E20BE3493C80B4E603BCD5B07D`
 - Rows: 50 unique rows, `DEV_001` through `DEV_050`, with no duplicates or missing IDs.
 - Lifecycle: 21 `KEEP`, 29 `RETIRE`, 0 `RETRACT`, 0 `UNSURE`.

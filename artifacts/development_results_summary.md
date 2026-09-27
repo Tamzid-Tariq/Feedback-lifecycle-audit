@@ -30,4 +30,4 @@ The per-item B/C evidence hashes matched for all 50 development cases: `50/50 TR
 
 ## Interpretation boundary
 
-These are development-run outputs, not adjudicated accuracy results. A01/A02 labels remain independent annotations, and adjudication is still required before treating any comparison against human gold as a final result.
+These are development-run outputs evaluated against the supplied finalized 50-row development reference. The historical A01/A02 agreement statistic remains pre-adjudication; these results are diagnostics and do not provide a held-out natural prevalence estimate.

@@ -7,6 +7,7 @@ Use 50 development items and a fresh validation calibration set,data/manifests/c
 Rebuild complete development evidence pairs,annotation/development_50/development_50_evidence_frozen_v1.jsonl,COMPLETE,"Frozen S_t/S_t+1 evidence and claim packets are present"
 Preserve independent annotation exports,annotation/development_50/revground_annotations_A01.json;annotation/development_50/revground_annotations_A02.json,COMPLETE_BYTE_PRESERVED,"Original export hashes are enforced by repository tests"
 Report pre-adjudication reliability,results/development_50/development_50_agreement.csv,COMPLETE_WITH_BOUNDARY,"Lifecycle agreement is 48/50 and kappa 0.9228; adjudication is not reliability"
+Complete Development-50 adjudication,annotation/development_50/revground_adjudication_final.jsonl,COMPLETE_FINAL_REFERENCE,"50 rows: 40 consensus carry-forwards and 10 adjudicated review rows; DEV_010=RETIRE and DEV_012=KEEP"
 Run matched GLM development conditions,results/development_50/development_results_summary.md,COMPLETE_DIAGNOSTIC,"GLM-5.3 B/C both produced 50/50 lifecycle results; no final held-out claim"
 Run Qwen development diagnostics,results/development_50/development_results_verification_20260926.md,COMPLETE_WITH_CAVEATS,"Qwen primary runs and targeted recovery are retained with output-budget and validator caveats"
 Run rare-label stress diagnostic,results/stress_20/stress_20_results_summary.md;annotation/stress_20/synthetic_stress_20_human_review.csv,COMPLETE_SEPARATE,"Qwen C improved RETRACT handling; Stress-20 is not natural prevalence and human review is A02-only"
@@ -17,4 +18,4 @@ Replay calibration compiler/tests,results/calibration_20/calibration_20_build_ma
 Release label-independent held-out natural packages,annotation/heldout_test_50;results/heldout_test_50,RELEASED_FOR_ANNOTATION,"42 successful claim-bearing TEST cases released; no labels, predictions, other annotator outputs, or adjudication information"
 Run DeepSeek substitution diagnostics,results/deepseek_v4_1_flash,COMPLETE_PRIMARY_ONLY,"Development-50 and Stress-20; 140 calls; 137 accepted; no recovery; failures and Stress C decision-rule violation retained"
 Account for TEST-50 language exclusions,results/heldout_test_50/language_qc_eligibility.md;data/qc/language_qc_experiment_impact.json,COMPLETE_WITH_EXCLUSIONS,"50 frozen minus 2 objective exclusions leaves 48 eligible C; six Stage-A failures leave 42 analyzable cases"
-Produce final natural estimates,docs/COMPLETED_VS_PLANNED.md,NOT_DONE,"Requires calibration, adjudication, and held-out test work"
+Produce final natural estimates,docs/COMPLETED_VS_PLANNED.md,NOT_DONE,"Requires held-out natural annotation and final B/C evaluation"

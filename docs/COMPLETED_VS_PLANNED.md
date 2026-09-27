@@ -9,6 +9,7 @@ This file distinguishes verified work from planned or deliberately unrun work. D
 - CodeStream profiling and the problem-disjoint C-language split: 590 development, 191 validation, and 197 test transitions.
 - Development-50 evidence packets and independent A01/A02 annotation exports.
 - Development pre-adjudication agreement: lifecycle 48/50 (96%), Cohen's kappa 0.9228; joint five-field agreement 40/50 (80%).
+- Development-50 adjudication: complete in `annotation/development_50/revground_adjudication_final.jsonl` (50 rows; 40 consensus carry-forwards and 10 adjudicated review rows; SHA-256 `8fbcebe1e0e200f8d4ae52f30df597da086330e20be3493c80b4e603bcd5b07d`).
 - GLM-5.3 Condition B and Condition C development evaluations: 50/50 lifecycle-correct against the current development reference file for both conditions.
 - Qwen3.8-27B development diagnostics: primary B 48 accepted outputs and primary C 49 accepted/operational records, with the documented targeted recovery and validator-abstention caveats.
 - Validation-based Calibration-20 manifest: 20 cases selected deterministically before labels with seed `20260926`.
@@ -29,7 +30,6 @@ This file distinguishes verified work from planned or deliberately unrun work. D
 
 ## Prepared but not empirically complete
 
-- Development disagreement adjudication remains pending qualified supervisor/adjudicator review.
 - The released held-out natural packages are ready for A01/A02 annotation; natural annotation is not yet complete.
 - The final natural TEST-50 B/C evaluation remains locked and unrun for both Qwen and DeepSeek.
 

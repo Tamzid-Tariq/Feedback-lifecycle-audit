@@ -16,7 +16,7 @@ The frozen 50-item development evidence set has been evaluated under both primar
 | C packet validation | Complete; 50/50 passed |
 | C lifecycle decision validation | Complete; 0 violations |
 | Source-language QC | Complete; 978 strict-C rows classified from source syntax only |
-| Adjudicated human gold | Pending |
+| Development adjudication reference | Complete; 50 rows: 40 consensus carry-forwards and 10 adjudicated review rows |
 | Validation-based Calibration-20 Stage A | 20 attempted; 16 usable hints; 4 failures preserved |
 | Calibration-20 Stage-B evidence replay | Complete; 32 locked-runner state replays; 23 compile successes and 9 compile errors |
 | Calibration A01/A02 annotation | Complete for 16/16 eligible rows per annotator; zero substantive disagreements; no adjudication required |
@@ -39,7 +39,7 @@ Both conditions enter the evaluator through the same normalized schema. B is rep
 
 Condition C produced 50 accepted outputs with no errors, no packet abstentions, and no decision-rule violations. Its lifecycle distribution was `KEEP=21`, `RETIRE=29`. The B/C evidence hash comparison matched all 50 items.
 
-These are technical development results only. They do not establish agreement or accuracy against A01/A02 or adjudicated gold labels.
+These are development diagnostics evaluated against the finalized development reference. The historical A01/A02 agreement statistic remains pre-adjudication; these results are not held-out natural prevalence or effect estimates.
 
 ## Source-language QC and eligibility impact
 

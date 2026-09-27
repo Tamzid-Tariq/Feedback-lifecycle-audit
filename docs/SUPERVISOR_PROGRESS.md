@@ -13,6 +13,7 @@
 - Lifecycle Rubric v2.0 used.
 - 50 development cases independently annotated by A01 and A02.
 - Pre-adjudication agreement calculated.
+- Development-50 adjudication completed from the supplied final reference: 40 consensus carry-forwards and 10 adjudicated review rows; final reference SHA-256 `8fbcebe1e0e200f8d4ae52f30df597da086330e20be3493c80b4e603bcd5b07d`.
 - Condition B baseline implementation prepared.
 - Condition B GLM-5.3 development evaluation completed for all 50 cases.
 - Condition C controlled GLM-5.3 audit evaluation completed for all 50 cases.
@@ -35,7 +36,9 @@ Development cases: 50
 Lifecycle agreement: 48/50 (96%)
 Cohen's kappa: 0.9228
 
-Lifecycle disagreements:
+The final adjudication reference is complete: `DEV_010` is `RETIRE`, `DEV_012` is `KEEP`, and the file contains 40 consensus carry-forwards plus 10 adjudicated review rows.
+
+Historical pre-adjudication lifecycle disagreements:
 - DEV_010
 - DEV_012
 
@@ -51,7 +54,7 @@ DEV_029, DEV_038, DEV_048, DEV_049, DEV_050.
 - Condition C: 50/50 accepted outputs, zero packet-validation abstentions, and zero lifecycle decision-rule violations.
 - Condition C lifecycle distribution: KEEP=21, RETIRE=29.
 - Aggregate B/C evaluation uses one shared normalized schema; B is represented with `abstain=false`.
-- These are technical development results, not adjudicated accuracy results.
+- These are technical development diagnostics against the finalized adjudication reference, not held-out natural estimates.
 
 DeepSeek V4.1 Flash used the same frozen B/C settings (`max_tokens=16000`, timeout 360 seconds, fallback/recovery disabled) and completed 100 Development-50 primary calls. B and C each had 49 accepted outputs and 48/50 operational accuracy; B failed on `DEV_024` with a non-string response and C rejected `DEV_024` for an unsupported evidence ID. The complete aggregate, parity audit, sanitized run metadata, and failure taxonomy are in [`results/deepseek_v4_1_flash/`](../results/deepseek_v4_1_flash/).
 
@@ -67,15 +70,13 @@ DeepSeek Stress-20 used the same frozen settings for both conditions. B accepted
 
 ## Current Requirements
 
-1. Supervisor/qualified adjudication of the two Development-50 disagreement cases remains pending.
-2. Rubric v2.0 is frozen after Calibration-20; no calibration adjudication was required.
-3. Complete independent A01/A02 annotation on the released held-out natural packages.
-4. Preserve the 50-case held-out sample and its 42-case claim-bearing cohort without replacement.
-5. Do not run Qwen or DeepSeek B/C on Calibration-20 or held-out TEST yet.
+1. Rubric v2.0 is frozen after Calibration-20; no calibration adjudication was required.
+2. Complete independent A01/A02 annotation on the released held-out natural packages.
+3. Preserve the 50-case held-out sample and its 42-case claim-bearing cohort without replacement.
+4. Do not run Qwen or DeepSeek B/C on Calibration-20 or held-out TEST yet.
 
 ## Next Stage
 
-1. Complete qualified Development-50 adjudication, if authorized.
-2. Annotate the released 42-case held-out natural package independently with A01 and A02.
-3. Compare completed development and calibration outputs under the frozen Rubric v2.0.
-4. Only after annotation gates are complete, authorize final held-out B/C evaluation.
+1. Annotate the released 42-case held-out natural package independently with A01 and A02.
+2. Compare completed development and calibration outputs under the frozen Rubric v2.0.
+3. Only after annotation gates are complete, authorize final held-out B/C evaluation.

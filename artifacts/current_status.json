@@ -21,7 +21,15 @@
     "pre_adjudication_lifecycle_kappa": 0.9228,
     "joint_five_field_agreement": "40/50 (80%)",
     "lifecycle_disagreements": ["DEV_010", "DEV_012"],
-    "adjudication": "pending",
+    "adjudication": "complete_final_reference",
+    "adjudication_reference": {
+      "path": "annotation/development_50/revground_adjudication_final.jsonl",
+      "sha256": "8fbcebe1e0e200f8d4ae52f30df597da086330e20be3493c80b4e603bcd5b07d",
+      "rows": 50,
+      "consensus_carry_forward_rows": 40,
+      "adjudicated_rows": 10,
+      "lifecycle_counts": {"KEEP": 21, "RETIRE": 29, "RETRACT": 0, "UNSURE": 0}
+    },
     "glm_condition_b": {"requests": 50, "end_to_end_lifecycle_result": "50/50"},
     "glm_condition_c": {"requests": 50, "end_to_end_lifecycle_result": "50/50"},
     "qwen_condition_b_primary": {"model": "qwen/qwen3.8-27b", "requests": 50, "accepted": 48, "end_to_end": "48/50"},
@@ -135,8 +143,8 @@
     "accepted_outputs": 137,
     "preserved_primary_failures": 3
   },
-  "pending_gates": ["development adjudication", "held-out TEST-50 natural annotation", "held-out TEST-50 Qwen/DeepSeek B/C evaluation"],
-  "human_gold_claims": 0,
+  "pending_gates": ["held-out TEST-50 natural annotation", "held-out TEST-50 Qwen/DeepSeek B/C evaluation"],
+  "human_gold_claims": 50,
   "method_predictions": {
     "tracked_raw_predictions": 0,
     "verified_aggregate_diagnostics": ["development GLM/Qwen summaries", "Stress-20 Qwen B/C summary", "DeepSeek Development-50 and Stress-20 primary-only summaries"],
@@ -158,5 +166,5 @@
     "stress_deepseek_b": 20,
     "stress_deepseek_c": 20
   },
-  "truthful_summary": "Development A01/A02 exports are preserved; pre-adjudication lifecycle agreement remains 48/50 with kappa 0.9228, and qualified adjudication of DEV_010/DEV_012 remains pending. Source-language QC classified the full 978-row strict-C pool from source syntax only, preserving objective exclusions. Calibration-20 has 20/20 confirmed-C cases, 16 usable Stage-A hints, 16 frozen focal claims, complete locked-runner Stage-B evidence, and A01/A02 annotation complete with zero substantive disagreements; Rubric v2.0 is frozen and no adjudication was required. Held-out TEST-50 Stage A produced 44 usable hints and six preserved failures; two objective language exclusions leave 48 eligible C cases and 42 claim-bearing natural cases, for which label-independent A01/A02 packages are released. DeepSeek V4.1 Flash primary-only Development-50 and Stress-20 diagnostics are recorded with 140 calls, 137 accepted outputs, and 3 preserved failures; Stress C has one retained decision-rule violation on STR_011. No Qwen or DeepSeek B/C Calibration-20 or held-out TEST-50 run has occurred."
+  "truthful_summary": "Development A01/A02 exports are preserved; the historical pre-adjudication lifecycle agreement remains 48/50 with kappa 0.9228, and the supplied 50-row final adjudication reference is complete: 40 consensus carry-forwards plus 10 adjudicated review rows. Source-language QC classified the full 978-row strict-C pool from source syntax only, preserving objective exclusions. Calibration-20 has 20/20 confirmed-C cases, 16 usable Stage-A hints, 16 frozen focal claims, complete locked-runner Stage-B evidence, and A01/A02 annotation complete with zero substantive disagreements; Rubric v2.0 is frozen and no adjudication was required. Held-out TEST-50 Stage A produced 44 usable hints and six preserved failures; two objective language exclusions leave 48 eligible C cases and 42 claim-bearing natural cases, for which label-independent A01/A02 packages are released. DeepSeek V4.1 Flash primary-only Development-50 and Stress-20 diagnostics are recorded with 140 calls, 137 accepted outputs, and 3 preserved failures; Stress C has one retained decision-rule violation on STR_011. No Qwen or DeepSeek B/C Calibration-20 or held-out TEST-50 run has occurred."
 }

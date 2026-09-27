@@ -21,7 +21,7 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Pre-adjudication comparison | Complete |
 | Lifecycle agreement | 48/50 (96%) |
 | Lifecycle Cohen's kappa | 0.9228 |
-| Adjudication | Pending |
+| Adjudication | Complete; final 50-row development reference supplied |
 | Source-language QC | Complete; 978 strict-C rows classified from source syntax only; Development-50 and TEST-50 each have 2 objective exclusions; Calibration-20 has 20/20 confirmed C |
 | Fresh calibration | 20 validation cases selected; 16 annotation-eligible packets and 4 preserved Stage-A failures |
 | Condition B/C development runs | GLM/Qwen history retained; DeepSeek substitution complete; no calibration or held-out Qwen/DeepSeek B/C run |
@@ -34,9 +34,11 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Held-out natural annotation | Packages released for 42 claim-bearing cases; annotation pending |
 | Synthetic Stress-20 | Human review preserved; Qwen B/C results verified and reported separately from natural prevalence |
 
-### Current lifecycle disagreements
+### Historical pre-adjudication lifecycle disagreements
 
 DEV_010 and DEV_012.
+
+The supplied final reference preserves the historical 48/50 pre-adjudication reliability result and resolves those two cases through adjudication. It contains 40 consensus carry-forwards and 10 `adjudication_review` rows.
 
 See [docs/SUPERVISOR_PROGRESS.md](docs/SUPERVISOR_PROGRESS.md) for the current research checkpoint.
 See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-condition run status and retention boundary.
@@ -92,7 +94,7 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 6. Build fixed S_t → S_t+1 execution evidence.
 7. Freeze annotation packets.
 8. Collect two independent development annotations — **complete**.
-9. Adjudicate development disagreements and preserve the historical pre-adjudication result.
+9. Complete Development-50 adjudication and preserve the historical pre-adjudication result.
 10. Complete the validation-based 20-case calibration: 16 usable packets were independently annotated; four Stage-A failures were preserved.
 11. Freeze Rubric v2.0 after calibration; no rubric change was required.
 12. Release the label-independent held-out natural annotation packages for the 42 eligible claim-bearing TEST cases.
