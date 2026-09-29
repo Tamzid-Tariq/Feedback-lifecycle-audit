@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import hashlib
+import http.client
 import json
 import os
 import secrets
@@ -243,6 +244,9 @@ def request_body(
         "temperature": 0,
         "max_tokens": max_tokens,
         "stream": False,
+        # Frozen OpenRouter routing policy: never fall back to another
+        # provider for a request in the controlled evaluator run.
+        "provider": {"allow_fallbacks": False},
     }
 
 
@@ -282,6 +286,14 @@ def call_provider(
         ) from exc
     except urllib.error.URLError as exc:
         raise ProviderResponseError(f"LLM request could not be completed: {exc.reason}") from exc
+    except http.client.IncompleteRead as exc:
+        partial = exc.partial.decode("utf-8", errors="replace") if isinstance(exc.partial, bytes) else ""
+        raise ProviderResponseError(
+            "LLM response transport ended before the full body was received",
+            raw_response=partial,
+        ) from exc
+    except OSError as exc:
+        raise ProviderResponseError(f"LLM response transport failed: {exc}") from exc
     try:
         response_json = json.loads(raw_response)
         choices = response_json["choices"]
@@ -463,6 +475,12 @@ def main() -> None:
     parser.add_argument("--api-key-env", default=DEFAULT_API_KEY_ENV, help="Environment variable holding the API key.")
     parser.add_argument("--timeout", type=float, default=120.0, help="Per-request timeout in seconds.")
     parser.add_argument("--sleep", type=float, default=0.0, help="Seconds between requests.")
+    parser.add_argument(
+        "--post-429-sleep",
+        type=float,
+        default=0.0,
+        help="Minimum seconds before the next unattempted item after a recorded HTTP 429.",
+    )
     parser.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS, help="Maximum completion tokens; GLM-5.3 needs room for reasoning plus JSON.")
     parser.add_argument("--limit", type=int, default=DEFAULT_SMOKE_LIMIT, help="Number of packets from the start; default is the five-case smoke test.")
     parser.add_argument("--item-ids", default=None, help="Optional comma-separated item IDs, in request order.")
@@ -475,8 +493,8 @@ def main() -> None:
     parser.add_argument("--overwrite", action="store_true", help="Replace explicit artifact files if they already exist.")
     parser.add_argument("--dry-run", action="store_true", help="Validate packets and print prompt hashes without calling an LLM.")
     args = parser.parse_args()
-    if args.timeout <= 0 or args.sleep < 0 or args.max_tokens <= 0 or (args.limit is not None and args.limit <= 0):
-        raise SystemExit("--timeout and --max-tokens must be positive; --sleep must be non-negative; --limit must be positive")
+    if args.timeout <= 0 or args.sleep < 0 or args.post_429_sleep < 0 or args.max_tokens <= 0 or (args.limit is not None and args.limit <= 0):
+        raise SystemExit("--timeout and --max-tokens must be positive; pacing values must be non-negative; --limit must be positive")
 
     try:
         packets = read_jsonl(args.input_jsonl)
@@ -634,8 +652,12 @@ def main() -> None:
                 }
             )
             append_jsonl(request_metadata_handle, metadata)
-            if index < total and args.sleep:
-                time.sleep(args.sleep)
+            if index < total:
+                delay = args.sleep
+                if status == 429:
+                    delay = max(delay, args.post_429_sleep)
+                if delay:
+                    time.sleep(delay)
 
     finished_at = utc_now()
     total_latency_ms = sum(request_latencies_ms)
@@ -646,6 +668,8 @@ def main() -> None:
         "finished_at": finished_at,
         "model_requested": args.model,
         "endpoint": args.endpoint,
+        "pacing_seconds_between_completed_requests": args.sleep,
+        "pacing_seconds_after_http_429": args.post_429_sleep,
         "api_key_env": args.api_key_env,
         "input_jsonl": str(args.input_jsonl),
         "prompt_sha256": sha256_text(prompt),

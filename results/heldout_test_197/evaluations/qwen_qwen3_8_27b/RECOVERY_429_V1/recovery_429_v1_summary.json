@@ -1,0 +1,122 @@
+{
+  "status": "RECOVERY_429_V1_COMPLETE_WITH_RECORDED_ERRORS",
+  "finalized_at": "2026-09-28T21:36:07.191875Z",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "model": "qwen/qwen3.8-27b",
+  "recovery_namespace": "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1",
+  "scope": "exactly one recovery attempt for every primary HTTP-429 outcome; no recovery of non-429 primary failures; no retry of recovery failures",
+  "settings": {
+    "model": "qwen/qwen3.8-27b",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+    "max_tokens": 16000,
+    "temperature": 0,
+    "timeout_seconds": 360,
+    "sleep_seconds_between_requests": 20,
+    "post_429_sleep_seconds": 90,
+    "automatic_retry": false,
+    "fallback_disabled": true
+  },
+  "primary_matrix_freeze": {
+    "path": "results/heldout_test_197/evaluations/primary_first_attempt_freeze_summary.json",
+    "sha256": "2f0029b2c859c1bace6653ffff3b8b2defff54b644a754dc92808536f68b112f",
+    "status": "COMPLETE_PRIMARY_FIRST_ATTEMPTS_FROZEN",
+    "frozen_run_count": 4,
+    "requested_primary_attempts": 672
+  },
+  "conditions": {
+    "B": {
+      "primary_http_429_count": 51,
+      "recovery_attempt_count": 51,
+      "accepted_count": 28,
+      "error_count": 23,
+      "http_statuses": {
+        "200": 28,
+        "429": 23
+      },
+      "error_types": {
+        "ProviderResponseError": 23
+      },
+      "exact_primary_429_coverage": true,
+      "one_attempt_per_selected_id": true,
+      "selected_only_from_primary_canonical_ledger": true,
+      "selected_non_429_primary_count": 0,
+      "prompt_sha256_matches_primary": true,
+      "evidence_sha256_matches_primary_per_item": true,
+      "ledger": "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/B_recovery_429_v1_ledger.jsonl",
+      "ledger_sha256": "79985c9b810046d9af8685b6e0d0dc902a7dc7fb59e2fd85edd97c2a15de5269",
+      "run_directory": "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_B",
+      "artifact_sha256": {
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_B/predictions.jsonl": "ee32edae3d9b36c793261e11c4dfaf027e72c83bb43cfb107f763d3d9ef16de2",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_B/raw_responses.jsonl": "04c2cb8c54b96cdd378ed6b8f14bda81fb322337a04bf8154a759214dea710ea",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_B/errors.jsonl": "3572600ed5d71eabe9add876a82dedfaa93baa92d77a35cdecd79027a1965861",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_B/request_metadata.jsonl": "10e6b219f2212d3b49d49c0df0b275bbc8c662f316b7d8bf63758ad4ee4e6e9e",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_B/run_metadata.json": "eb91de96fc02a0b1328e2252c32cd84e2d304d2ab34bf2cd7ff4fbf1b7c21154",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/B_recovery_429_v1_ledger.jsonl": "79985c9b810046d9af8685b6e0d0dc902a7dc7fb59e2fd85edd97c2a15de5269"
+      }
+    },
+    "C": {
+      "primary_http_429_count": 27,
+      "recovery_attempt_count": 27,
+      "accepted_count": 8,
+      "error_count": 19,
+      "http_statuses": {
+        "200": 8,
+        "429": 19
+      },
+      "error_types": {
+        "ProviderResponseError": 19
+      },
+      "exact_primary_429_coverage": true,
+      "one_attempt_per_selected_id": true,
+      "selected_only_from_primary_canonical_ledger": true,
+      "selected_non_429_primary_count": 0,
+      "prompt_sha256_matches_primary": true,
+      "evidence_sha256_matches_primary_per_item": true,
+      "ledger": "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/C_recovery_429_v1_ledger.jsonl",
+      "ledger_sha256": "8fed843cec9e29c8ce7719f5637fd2dc54a95923c95b842420a4e79f8de83fd9",
+      "run_directory": "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_C",
+      "artifact_sha256": {
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_C/predictions.jsonl": "a6e23d455a187ade9b6706cbcd23b6c19868e035c67596203327566436238e21",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_C/raw_responses.jsonl": "f1de776886f26a77d86940dd1903110e1169f892a368960259839c5e5250cd4f",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_C/errors.jsonl": "8e24b63e38aa0143e9a2457cd68407d50051814844c1b8071202c2c50bd27674",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_C/request_metadata.jsonl": "b380072175325b58c0cf5cc275353ed7bca75c897bce6c4db404d4c0e969679e",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/condition_C/run_metadata.json": "a6c5e40f3a009bf8f0e23edad02e80153c67478d260cc8777b3f53c7f24dd330",
+        "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/RECOVERY_429_V1/C_recovery_429_v1_ledger.jsonl": "8fed843cec9e29c8ce7719f5637fd2dc54a95923c95b842420a4e79f8de83fd9"
+      }
+    }
+  },
+  "primary_records_untouched": true,
+  "primary_artifact_hashes_after_recovery": {
+    "B": {
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B/predictions.jsonl": "aaf0e614d3cc56a07c4e1af2698e3b445a2055f242f8154f15c17ebd7260ba06",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B/raw_responses.jsonl": "03a123b26787d47b63b3be926a9f2932a67d79dc41173e5a7f0091521fd283fb",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B/errors.jsonl": "261b4d54404ef21d41c4005e60001995782ca6fd9561250986fb0c81a771d686",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B/request_metadata.jsonl": "29f2e6acaa59059fa5e457178bda20f94e4c590f9bc5ef359214956a2410c025",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B_primary_continuation_unattempted_v1/predictions.jsonl": "770ad6c4ae7e97b982c439555f3739c831f5868549d393c2f10747a0cde9c5ed",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B_primary_continuation_unattempted_v1/raw_responses.jsonl": "5e45bff9b44d393a5fd0ce9bf8bbec045a1c2d48be79d484a020ef5d2a8fb347",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B_primary_continuation_unattempted_v1/errors.jsonl": "9cb7921d6a94f464b6266991067e08c37a22dc1ebe9664ebd9b7f3c0a1268477",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B_primary_continuation_unattempted_v1/request_metadata.jsonl": "6de7c088c0c67010666d5beb906db30257ed7cb41f5a6a41a5021c156c43df79",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B_primary_continuation_unattempted_v1/run_metadata.json": "ec872987a2dd458a68b0a7ac57ea9c5848f316ed482367f1e8475d04b4a66352",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B/primary_first_attempt_ledger.jsonl": "8c16473bbb2d1dad543e8daa51cf22e9a45afb23cf447518083dd32977aa23b6",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_B/primary_first_attempt_freeze.json": "b8bb32ca720afcdab0c967c3b124e362cc8ec94bfc8a3928afae5089821869f8"
+    },
+    "C": {
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_C/predictions.jsonl": "041339daed60c024c4aaaccd42d998ae29fa8b0cbcb7b1ee3c0606c256e9f7c8",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_C/raw_responses.jsonl": "e8152ee0b222d216d2572eb20482597bd5858694622c094724e6e74da9ff28ce",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_C/errors.jsonl": "192e87a0758ff6a4e9b43a675059427ebf2cca245579b82a29467062101abe7c",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_C/request_metadata.jsonl": "e19f27453bb66fe9bc52b17f1a33432a0712af9caef94aa142d60382c7633a39",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_C/run_metadata.json": "b98011c14e710aac19ab1f8c9b0230407531f323a39a7f05c62d1316807f1bc8",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_C/primary_first_attempt_ledger.jsonl": "dd48cc804321e7370bbce58b0e00b6db0dafe7b35945bf2da98001ceb0d7959f",
+      "results/heldout_test_197/evaluations/qwen_qwen3_8_27b/condition_C/primary_first_attempt_freeze.json": "66287cfed0f5c2da9e9b700af2d6c864c989329f4844ee58754d675eb6bc24de"
+    }
+  },
+  "primary_freeze_sha256": {
+    "B": "b8bb32ca720afcdab0c967c3b124e362cc8ec94bfc8a3928afae5089821869f8",
+    "C": "66287cfed0f5c2da9e9b700af2d6c864c989329f4844ee58754d675eb6bc24de"
+  },
+  "primary_checksum_manifest_sha256": {
+    "B": "1cf31356850cac8927c184306053cdabe31795a2c2b0eabd9972106e45165ea7",
+    "C": "7fef0090b1a80c2d12c8110c702b78ae9826233410ed27d2095b3355b8372411"
+  },
+  "human_annotations": "results/heldout_test_197/annotations_frozen_v1"
+}

@@ -1,6 +1,8 @@
 # RevGround Results Highlights
 
-This file is the compact results index. Development results are diagnostics, the stress set is a controlled rare-label experiment, and the calibration/held-out stages are not final prevalence estimates.
+This file is the compact results index. Development results are diagnostics,
+Stress-20 is a controlled rare-label experiment, Calibration-20 freezes the
+rubric, and TEST-168 supplies the final natural held-out estimates.
 
 ## Development-50 human annotation
 
@@ -48,7 +50,29 @@ The stress result is documented separately in [stress_20_results_summary.md](str
 - Calibration-20: 20 validation cases selected deterministically before labels; 16 usable Stage-A hints and 4 preserved failures. A01 and A02 each annotated all 16 eligible rows, with zero substantive disagreements across the five decision fields. `rubric_change_required=false`; no adjudication was required or performed, and Rubric v2.0 is frozen as final.
 - Calibration-20 packet build: 16 focal claims frozen and 32 locked-runner state replays attached, with 450 official test-state evidence entries; four Stage-A failures remain outside the packet.
 - No Qwen B/C calibration run has been performed.
-- Held-out TEST-50 Stage A is complete with 44 usable hints and 6 preserved failures; source QC leaves 42 claim-bearing C cases. Label-independent A01/A02 packages are released for annotation; no Qwen or DeepSeek B/C run has been performed.
+- Historical TEST-50 remains preserved as Batch 1. The full TEST-197 source partition yields 168 claim-bearing packets after nine objective language exclusions and 20 preserved Stage-A failures.
+
+## Final natural TEST-197 / TEST-168 results
+
+- A01 and A02 each annotated all 168 claim-bearing packets.
+- Pre-adjudication lifecycle agreement: 145/168 (86.31%), Cohen kappa 0.7249.
+- Unique core-field disagreements: 24; 23 lifecycle and one priority-only.
+- All 24 disagreement cases were adjudicated from the blind evidence packet and frozen separately from A01/A02.
+- Final lifecycle distribution: 100 `KEEP` (59.52%), 65 `RETIRE` (38.69%), 3 `RETRACT` (1.79%), and 0 `UNSURE`.
+- All four Qwen/DeepSeek B/C primary runs are frozen at 168 first attempts each. `RECOVERY_429_V1` contains exactly one attempt per primary HTTP 429 and does not replace any primary outcome.
+
+Paired common-decision results:
+
+| Model | Paired n | B accuracy | C accuracy | C - B |
+|---|---:|---:|---:|---:|
+| DeepSeek V4.1 Flash | 124 | 117/124 (94.35%) | 119/124 (95.97%) | +1.61 pp |
+| Qwen3.8-27B | 115 | 113/115 (98.26%) | 111/115 (96.52%) | -1.74 pp |
+
+Descriptively, each condition is correct on 230/239 model-case comparisons
+(96.23%). The model-specific directions differ, so the supported interpretation
+is no consistent directional advantage. This is not a statistical equivalence
+claim or a formal pooled estimate. See
+[`heldout_test_197/analysis/verified_test_results.md`](heldout_test_197/analysis/verified_test_results.md).
 
 ## DeepSeek V4.1 Flash substitution diagnostics
 
@@ -58,4 +82,9 @@ The stress result is documented separately in [stress_20_results_summary.md](str
 
 ## Bottom line
 
-The study now has a frozen calibration rubric and released held-out annotation packages. Development supports strong pre-adjudication human lifecycle agreement and shows no GLM B/C lifecycle difference. DeepSeek is documented as a model-substitution diagnostic, not a replacement of the original results. On the separate synthetic rare-label stress set, the verifier-style C condition reduces false KEEP decisions for both Qwen and DeepSeek, while UNSURE handling remains model-dependent. No natural held-out prevalence estimate is available until annotation and final B/C evaluation are complete.
+The study now has a frozen rubric, completed natural held-out annotation and
+adjudication, four frozen TEST-168 primary evaluator runs, isolated 429 recovery,
+and a deterministic no-provider-call verification audit. Natural paired effects
+are small and model-dependent. Stress-20 remains separate evidence that the
+structured condition is most useful when refutation and uncertainty are
+deliberately represented.

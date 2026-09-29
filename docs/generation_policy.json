@@ -131,5 +131,18 @@
     "fallback_or_model_use": "none; labels, annotator results, and model performance are not read by the QC classifier",
     "artifacts": "data/qc/"
   },
-  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-197", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-197"]
+  "heldout_test197_evaluation": {
+    "status": "complete_primary_matrix_and_recovery",
+    "analytic_cohort_n": 168,
+    "models": ["qwen/qwen3.8-27b", "deepseek/deepseek-v4.1-flash"],
+    "conditions": ["B", "C"],
+    "primary_attempts_per_model_condition": 168,
+    "max_tokens": 16000,
+    "temperature": 0,
+    "timeout_seconds": 360,
+    "fallback": false,
+    "automatic_retry": false,
+    "recovery_policy": "RECOVERY_429_V1: exactly one attempt per primary HTTP 429 only; 20 seconds between calls; 90 seconds after another 429"
+  },
+  "not_run": ["Qwen B/C on Calibration-20", "DeepSeek B/C on Calibration-20"]
 }

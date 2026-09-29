@@ -226,10 +226,12 @@ class RepositoryIntegrityTests(unittest.TestCase):
 
     def test_machine_status_preserves_diagnostic_and_gold_boundaries(self) -> None:
         status = json.loads((ROOT / "artifacts" / "current_status.json").read_text(encoding="utf-8"))
-        self.assertEqual(status["human_gold_claims"], 50)
+        self.assertEqual(status["development_human_gold_claims"], 50)
+        self.assertEqual(status["heldout_human_gold_claims"], 168)
         self.assertEqual(status["development"]["adjudication"], "complete_final_reference")
-        self.assertEqual(status["method_predictions"]["tracked_raw_predictions"], 0)
-        self.assertTrue(status["research_results"].startswith("diagnostic_only"))
+        self.assertEqual(status["method_predictions"]["tracked_raw_predictions"], 566)
+        self.assertTrue(status["research_results"].startswith("final_natural_test_complete"))
+        self.assertEqual(status["heldout_test"]["primary_matrix"]["total_first_attempts"], 672)
         self.assertEqual(status["stress_20"]["qwen_b_c"], "complete_verified")
         self.assertEqual(status["calibration_20"]["qwen_b_c"], "not_run")
         self.assertEqual(status["heldout_test_50"]["qwen_b_c"], "not_run")

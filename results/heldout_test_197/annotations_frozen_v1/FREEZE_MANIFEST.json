@@ -1,0 +1,33 @@
+{
+  "status": "FROZEN_HUMAN_ANNOTATION_EXPORTS",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "row_count_per_annotator": 168,
+  "packet_id_set_matches_evidence_frozen_v1": true,
+  "source_exports_copied_byte_for_byte": true,
+  "annotators": {
+    "A01": {
+      "csv": {
+        "file": "A01/revground_annotations_A01 (2).csv",
+        "bytes": 124605,
+        "sha256": "406aa4cf969c49dc6a13ac7a0d445aded1d21646fdeb83b0248cb25234f3d672"
+      },
+      "json": {
+        "file": "A01/revground_annotations_A01 (2).json",
+        "bytes": 197234,
+        "sha256": "e45a9e896f8fb71ea31e9fb908bc331543abe97f5dc0075a9691ce08188b11a6"
+      }
+    },
+    "A02": {
+      "csv": {
+        "file": "A02/revground_annotations_A02 (2).csv",
+        "bytes": 108223,
+        "sha256": "175b2701316c96fa6cd59b2163523513c391d57939b2a45a6917a39355c962b0"
+      },
+      "json": {
+        "file": "A02/revground_annotations_A02 (2).json",
+        "bytes": 176545,
+        "sha256": "51eecdbfe98bf1205d9a7af7a9207d6e245a14d72a3b345f2f6ab96e940e89f3"
+      }
+    }
+  }
+}

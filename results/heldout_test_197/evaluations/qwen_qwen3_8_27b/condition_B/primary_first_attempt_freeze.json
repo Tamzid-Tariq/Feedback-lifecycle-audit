@@ -1,0 +1,63 @@
+{
+  "status": "FROZEN_PRIMARY_FIRST_ATTEMPT",
+  "attempt_class": "PRIMARY_FIRST_ATTEMPT",
+  "frozen_at": "2026-09-28T13:38:23.326937Z",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "condition": "condition_B",
+  "requested_model": "qwen/qwen3.8-27b",
+  "requested_count": 168,
+  "accepted_count": 108,
+  "failed_count": 60,
+  "status_counts": {
+    "error": 60,
+    "accepted": 108
+  },
+  "error_types": {
+    "ProviderResponseError": 57,
+    "ValueError": 2,
+    "IncompleteRead": 1
+  },
+  "http_statuses": {
+    "429": 51,
+    "200": 112,
+    "400": 4
+  },
+  "provider_counts": {
+    "Darkbloom": 112
+  },
+  "returned_models": {
+    "qwen/qwen3.8-27b": 112
+  },
+  "model_mismatch_count": 0,
+  "missing_returned_model_count": 56,
+  "evidence_packet_sha256": "43d03ede21f900ad42f570e61a4832f0ec0ef54e3b5774db93366f0dbc8e0095",
+  "prompt_sha256": "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d",
+  "settings": {
+    "max_tokens": 16000,
+    "temperature": 0,
+    "top_p": null,
+    "timeout_seconds": 360,
+    "fallback_disabled": true,
+    "automatic_retry": false,
+    "retry_policy": "none; failures recorded, no retry calls",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+  },
+  "source_directories": [
+    "qwen_qwen3_8_27b\\condition_B",
+    "qwen_qwen3_8_27b\\condition_B_primary_continuation_unattempted_v1"
+  ],
+  "source_artifact_sha256": {
+    "qwen_qwen3_8_27b\\condition_B\\predictions.jsonl": "aaf0e614d3cc56a07c4e1af2698e3b445a2055f242f8154f15c17ebd7260ba06",
+    "qwen_qwen3_8_27b\\condition_B\\raw_responses.jsonl": "03a123b26787d47b63b3be926a9f2932a67d79dc41173e5a7f0091521fd283fb",
+    "qwen_qwen3_8_27b\\condition_B\\errors.jsonl": "261b4d54404ef21d41c4005e60001995782ca6fd9561250986fb0c81a771d686",
+    "qwen_qwen3_8_27b\\condition_B\\request_metadata.jsonl": "29f2e6acaa59059fa5e457178bda20f94e4c590f9bc5ef359214956a2410c025",
+    "qwen_qwen3_8_27b\\condition_B_primary_continuation_unattempted_v1\\predictions.jsonl": "770ad6c4ae7e97b982c439555f3739c831f5868549d393c2f10747a0cde9c5ed",
+    "qwen_qwen3_8_27b\\condition_B_primary_continuation_unattempted_v1\\raw_responses.jsonl": "5e45bff9b44d393a5fd0ce9bf8bbec045a1c2d48be79d484a020ef5d2a8fb347",
+    "qwen_qwen3_8_27b\\condition_B_primary_continuation_unattempted_v1\\errors.jsonl": "9cb7921d6a94f464b6266991067e08c37a22dc1ebe9664ebd9b7f3c0a1268477",
+    "qwen_qwen3_8_27b\\condition_B_primary_continuation_unattempted_v1\\request_metadata.jsonl": "6de7c088c0c67010666d5beb906db30257ed7cb41f5a6a41a5021c156c43df79",
+    "qwen_qwen3_8_27b\\condition_B_primary_continuation_unattempted_v1\\run_metadata.json": "ec872987a2dd458a68b0a7ac57ea9c5848f316ed482367f1e8475d04b4a66352"
+  },
+  "canonical_ledger_sha256": "8c16473bbb2d1dad543e8daa51cf22e9a45afb23cf447518083dd32977aa23b6",
+  "primary_records_are_not_overwritten_by_recovery": true,
+  "sha256sums_file": "D:\\Thesis for LAK'26\\RevGround-LAK27\\results\\heldout_test_197\\evaluations\\qwen_qwen3_8_27b\\condition_B\\PRIMARY_FIRST_ATTEMPT_SHA256SUMS.txt"
+}

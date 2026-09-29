@@ -1,0 +1,61 @@
+{
+  "status": "COMPLETE_PRIMARY_FIRST_ATTEMPTS_FROZEN",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "expected_run_count": 4,
+  "frozen_run_count": 4,
+  "requested_primary_attempts": 672,
+  "runs": {
+    "deepseek_v4_1_flash\\condition_B": {
+      "requested": 168,
+      "accepted": 71,
+      "failed": 97,
+      "http_429": 90,
+      "http_400": 4,
+      "error_types": {
+        "ProviderResponseError": 97
+      },
+      "freeze_sha256": "5fe83074ec72323ffa68477bdba6a913484ec103a4ad4f35b8d0a1d52cb56039",
+      "sums_sha256": "89e1e2c855cb72213919e79f50d5dea129d595868e9ff1d2a47c5b951e8d59f9"
+    },
+    "deepseek_v4_1_flash\\condition_C": {
+      "requested": 168,
+      "accepted": 111,
+      "failed": 57,
+      "http_429": 53,
+      "http_400": 4,
+      "error_types": {
+        "ProviderResponseError": 57
+      },
+      "freeze_sha256": "b0f5e343cc84252d496436e36f9862fa6734e4b9ed840bd31ed14858e23e35eb",
+      "sums_sha256": "0ac7de14ac94467373f68554ffbe7df43a8a94a60f44e3e23d50a66ba7081a6d"
+    },
+    "qwen_qwen3_8_27b\\condition_B": {
+      "requested": 168,
+      "accepted": 108,
+      "failed": 60,
+      "http_429": 51,
+      "http_400": 4,
+      "error_types": {
+        "ProviderResponseError": 57,
+        "ValueError": 2,
+        "IncompleteRead": 1
+      },
+      "freeze_sha256": "b8bb32ca720afcdab0c967c3b124e362cc8ec94bfc8a3928afae5089821869f8",
+      "sums_sha256": "1cf31356850cac8927c184306053cdabe31795a2c2b0eabd9972106e45165ea7"
+    },
+    "qwen_qwen3_8_27b\\condition_C": {
+      "requested": 168,
+      "accepted": 133,
+      "failed": 35,
+      "http_429": 27,
+      "http_400": 4,
+      "error_types": {
+        "ProviderResponseError": 33,
+        "ValueError": 2
+      },
+      "freeze_sha256": "66287cfed0f5c2da9e9b700af2d6c864c989329f4844ee58754d675eb6bc24de",
+      "sums_sha256": "7fef0090b1a80c2d12c8110c702b78ae9826233410ed27d2095b3355b8372411"
+    }
+  },
+  "recovery_policy": "one separately named RECOVERY_429_V1 attempt only for HTTP 429 after all primary runs; no 400/schema/other retry"
+}

@@ -24,14 +24,18 @@ RevGround studies whether an earlier diagnostic programming hint remains valid a
 | Adjudication | Complete; final 50-row development reference supplied |
 | Source-language QC | Complete; 978 strict-C rows classified from source syntax only; Development-50 and TEST-50 each have 2 objective exclusions; Calibration-20 has 20/20 confirmed C |
 | Fresh calibration | 20 validation cases selected; 16 annotation-eligible packets and 4 preserved Stage-A failures |
-| Condition B/C development runs | GLM/Qwen history retained; DeepSeek substitution complete; no calibration or held-out Qwen/DeepSeek B/C run |
+| Condition B/C development runs | GLM/Qwen history retained; DeepSeek substitution complete |
 | Calibration Stage A | 20 validation cases attempted with `stealth/space-bunny-alpha`; 16 usable hints, 4 preserved failures |
 | Held-out TEST-50 Stage A | Complete; 50 attempts, 44 usable hints, 6 preserved failures; 48 C-eligible after QC and 42 final analyzable |
 | Calibration compiler/test replay | Complete in pinned locked runner; 32 state replays and 450 official test-state entries |
 | Calibration annotation | Complete for 16 eligible rows; zero substantive disagreements; no adjudication required |
 | Rubric v2.0 | Frozen as final after Calibration-20 |
 | DeepSeek V4.1 Flash substitution | Development-50 and Stress-20 complete; 140 primary calls, 137 accepted, 3 preserved failures |
-| Held-out natural preparation | TEST-197 amendment frozen: 188 eligible C, 20 preserved Stage-A failures, 168 claim-bearing packets; isolated A01/A02 packages built, annotation pending |
+| Held-out natural preparation | TEST-197 amendment frozen: 188 eligible C, 20 preserved Stage-A failures, 168 claim-bearing packets |
+| Held-out A01/A02 annotation | Complete: 168 rows each; 24 unique core-field disagreements |
+| Held-out adjudication | Complete and frozen separately: 24/24 disagreement cases |
+| Held-out Qwen/DeepSeek B/C | Complete: four frozen 168-attempt primary runs plus isolated `RECOVERY_429_V1` |
+| Held-out result verification | PASS: all reported TEST-set quantities recomputed from frozen artifacts |
 | Synthetic Stress-20 | Human review preserved; Qwen B/C results verified and reported separately from natural prevalence |
 
 ### Historical pre-adjudication lifecycle disagreements
@@ -73,6 +77,9 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - [DeepSeek V4.1 Flash results](results/deepseek_v4_1_flash/README.md)
 - [Held-out TEST-50 release](results/heldout_test_50/README.md)
 - [Held-out TEST-197 preparation](results/heldout_test_197/README.md)
+- [Held-out TEST-197 verified analysis](results/heldout_test_197/analysis/verified_test_results.md)
+- [Held-out final adjudication](results/heldout_test_197/adjudication_24_final_v1/README.md)
+- [Canonical verified TEST report](docs/reports/README.md)
 - [Synthetic Stress-20 results](results/stress_20/stress_20_results_summary.md)
 - [Source-language QC](data/qc/language_qc_summary.json)
 - [Development QC sensitivity](results/development_50/language_qc_sensitivity.md)
@@ -100,10 +107,10 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 9. Complete Development-50 adjudication and preserve the historical pre-adjudication result.
 10. Complete the validation-based 20-case calibration: 16 usable packets were independently annotated; four Stage-A failures were preserved.
 11. Freeze Rubric v2.0 after calibration; no rubric change was required.
-12. Preserve historical TEST-50 Batch 1, then freeze the TEST-197 full-cohort amendment and prepare the 168-case label-independent natural annotation packages.
-13. Report DeepSeek and Synthetic Stress-20 diagnostics separately from natural prevalence results.
-14. Apply source-language QC before annotation or held-out analysis; preserve objective exclusions.
-15. Keep final Qwen/DeepSeek B/C evaluation on Calibration-20 and held-out TEST-197 outside the completed scope.
+12. Preserve historical TEST-50 Batch 1, freeze the TEST-197 full-cohort amendment, and prepare the 168-case label-independent annotation packages.
+13. Freeze A01/A02 exports, adjudicate only the 24 core-field disagreements from the blind evidence packet, and preserve pre-adjudication reliability separately.
+14. Freeze all four Qwen/DeepSeek primary B/C runs, then apply exactly one separately named recovery attempt to each primary HTTP 429.
+15. Recompute final natural prevalence and paired model-condition results from the frozen artifacts; keep Calibration-20 model evaluation outside the completed scope.
 
 ## Important Scope
 

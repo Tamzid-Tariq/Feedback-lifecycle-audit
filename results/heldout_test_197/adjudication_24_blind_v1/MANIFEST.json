@@ -1,0 +1,20 @@
+{
+  "status": "READY_FOR_BLIND_QUALIFIED_ADJUDICATION",
+  "case_count": 24,
+  "selected_item_ids_sha256": "53f32abbb90f0b75c4372fba321d8a5de104acda9f22c8b1eb97446bf612a44c",
+  "source_evidence": "../evidence_frozen_v1.jsonl",
+  "source_evidence_sha256": "43d03ede21f900ad42f570e61a4832f0ec0ef54e3b5774db93366f0dbc8e0095",
+  "packet_prepared_without_method_predictions_all_true": true,
+  "human_annotation_values_included": false,
+  "disagreement_field_metadata_included": false,
+  "model_outputs_included": false,
+  "html_script_syntax_check_passed": true,
+  "output_sha256": {
+    "RevGround_Adjudicator_24_BLIND.html": "48612f90fdf6a552221951357c624f5725eaba034e7a8b4f9ded9d57ff85354b",
+    "adjudication_evidence_24.json": "95e8a4c6ca70c9525dac771f261cc55259563774709ecf50e7acc728471d12db",
+    "adjudication_evidence_24.jsonl": "f3276ebb47950e99f3a75b4db9ad05a966213cda023adc5b8e51f958f02d2ce3",
+    "adjudication_return_template_24.json": "1203973fd95d7fc043c67018390b8401aa79256faa4fa0f04ff423e08a284bd2",
+    "adjudication_return_schema.json": "b0fb0c9832e948eef3a1f7243c5a2510bea10556154c40a2c3e5cea66fe37c4a",
+    "README.md": "6db1f6910b9f2fbbe1c628736dc1763af8f8557262426cc6c5acb3f6edf71d50"
+  }
+}

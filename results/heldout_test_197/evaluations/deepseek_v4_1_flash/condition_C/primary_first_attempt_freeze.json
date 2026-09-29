@@ -1,0 +1,54 @@
+{
+  "status": "FROZEN_PRIMARY_FIRST_ATTEMPT",
+  "attempt_class": "PRIMARY_FIRST_ATTEMPT",
+  "frozen_at": "2026-09-28T09:43:52.228055Z",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "condition": "condition_C",
+  "requested_model": "deepseek/deepseek-v4.1-flash",
+  "requested_count": 168,
+  "accepted_count": 111,
+  "failed_count": 57,
+  "status_counts": {
+    "error": 57,
+    "accepted": 111
+  },
+  "error_types": {
+    "ProviderResponseError": 57
+  },
+  "http_statuses": {
+    "429": 53,
+    "200": 111,
+    "400": 4
+  },
+  "provider_counts": {
+    "InferenceNet": 12,
+    "Wafer": 99
+  },
+  "returned_models": {
+    "deepseek/deepseek-v4.1-flash": 111
+  },
+  "model_mismatch_count": 0,
+  "missing_returned_model_count": 57,
+  "evidence_packet_sha256": "43d03ede21f900ad42f570e61a4832f0ec0ef54e3b5774db93366f0dbc8e0095",
+  "prompt_sha256": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe",
+  "settings": {
+    "max_tokens": 16000,
+    "temperature": 0,
+    "top_p": null,
+    "timeout_seconds": 360,
+    "fallback_disabled": true,
+    "automatic_retry": false,
+    "retry_policy": "none; failures recorded, no retry calls",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+  },
+  "primary_records_are_not_overwritten_by_recovery": true,
+  "artifact_sha256": {
+    "predictions.jsonl": "b1aa5f0f25f88bccad2d0b9eb54b2bb951057fd5eb060e9a4b1e1d1c1a981e15",
+    "raw_responses.jsonl": "dc74a48df9f9055553682591ca5fee81d73e1259b372eb80f074caa242a50cc0",
+    "errors.jsonl": "2c8d16c970b4c292f8b67a637f806e614d26a5fe74b5b330a5d281b8dffa55ac",
+    "request_metadata.jsonl": "4322453b0c6a4aea2e2d544ddd65c6dace33e3cd497ddc1700f74fe33fc08514",
+    "run_metadata.json": "bf919a26a6f8079fa6e941a4265e42774d5199d40f4f1ffa158908fa3a9f818b",
+    "primary_first_attempt_ledger.jsonl": "af7105692da209c1ce2751062203029918df64f7b19275e206b3662f8155d5e7"
+  },
+  "sha256sums_file": "D:\\Thesis for LAK'26\\RevGround-LAK27\\results\\heldout_test_197\\evaluations\\deepseek_v4_1_flash\\condition_C\\PRIMARY_FIRST_ATTEMPT_SHA256SUMS.txt"
+}

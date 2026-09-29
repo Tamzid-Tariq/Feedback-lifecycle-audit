@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RevGround Blind Adjudication - 24 Cases</title>
+<style>
+:root { color-scheme:light; --ink:#172033; --muted:#5d6678; --line:#d8dde7; --paper:#fff; --bg:#f4f6f9; --accent:#164e9b; --soft:#eef5ff; --warn:#fff7df; --ok:#eaf7ef; }
+* { box-sizing:border-box; }
+body { font-family:Arial,sans-serif; margin:0; background:var(--bg); color:var(--ink); line-height:1.45; }
+header { position:sticky; top:0; z-index:10; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; box-shadow:0 1px 4px #0001; }
+main { max-width:1180px; margin:16px auto; padding:0 16px 80px; }
+.toolbar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.toolbar .spacer { flex:1; }
+.card { background:var(--paper); border:1px solid var(--line); border-radius:9px; padding:16px; margin:12px 0; }
+.focus { background:var(--soft); border-color:#a9c7ef; }
+.notice { background:var(--warn); border-color:#ead188; }
+.blind { background:var(--ok); border-color:#a9d6b7; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f2f4f7; padding:12px; border-radius:7px; overflow:auto; margin:8px 0; max-height:540px; }
+code,pre,.id { font-family:Consolas,"Courier New",monospace; }
+button,select,input { font:inherit; padding:7px 10px; }
+button { cursor:pointer; }
+button:disabled { cursor:not-allowed; opacity:.5; }
+fieldset { margin:14px 0; border:1px solid var(--line); border-radius:7px; }
+legend { font-weight:700; }
+label.choice { display:inline-block; margin:5px 16px 5px 0; }
+textarea { width:100%; min-height:120px; font:inherit; padding:8px; }
+.small { font-size:.84rem; color:var(--muted); }
+.meta { display:flex; flex-wrap:wrap; gap:8px 18px; }
+.id { overflow-wrap:anywhere; }
+.evidence-list { max-height:300px; overflow:auto; padding:10px; border:1px solid var(--line); background:#fafbfc; }
+.evidence-list label { display:block; margin:4px 0; }
+.test { border:1px solid var(--line); border-radius:7px; margin:8px 0; background:#fff; }
+.test summary,details.rubric summary { cursor:pointer; padding:10px; font-weight:700; }
+.test-body { padding:0 10px 10px; }
+.status { font-weight:700; }
+.message-label { margin-top:8px; font-weight:700; }
+blockquote { border-left:4px solid var(--accent); margin:8px 0; padding:8px 12px; background:#fff; }
+h2,h3 { margin-top:0; }
+table { border-collapse:collapse; width:100%; }
+th,td { border-bottom:1px solid var(--line); padding:7px; text-align:left; vertical-align:top; }
+th { background:#f2f4f7; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } header { position:static; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="toolbar">
+    <b>RevGround blind adjudication - 24 cases</b>
+    <span id="progress" class="small">Loading...</span>
+    <button id="prev" type="button" onclick="move(-1)">Previous</button>
+    <button id="next" type="button" onclick="move(1)">Next</button>
+    <label>Case <select id="jump" onchange="jumpTo(this.value)"></select></label>
+    <span class="spacer"></span>
+    <label>Adjudicator ID <input id="adjudicator-id" type="text" size="16" oninput="saveAdjudicatorId()"></label>
+    <button type="button" onclick="exportJSON()">Export JSON</button>
+    <button type="button" onclick="exportJSONL()">Export JSONL</button>
+    <button type="button" onclick="document.getElementById('import-file').click()">Import</button>
+    <input id="import-file" type="file" accept=".json,.jsonl,application/json" hidden onchange="importRows(this)">
+  </div>
+  <div class="small">Work is saved locally in this browser. Export is enabled only after all 24 decisions are complete and logically consistent.</div>
+</header>
+<main>
+  <div class="card blind">
+    <b>Blinded packet.</b> Review each case de novo using only the evidence displayed here. No A01/A02 decisions, per-field disagreement metadata, or method outputs are included.
+  </div>
+  <div class="card notice">
+    <b>Decision rule:</b> SUPPORTED + PRESENT = KEEP; SUPPORTED + RESOLVED = RETIRE; REFUTED + NOT_APPLICABLE = RETRACT; supported-but-indeterminate or indeterminate-at-origin = UNSURE. Instructional priority is separate from lifecycle.
+  </div>
+  <details class="card rubric">
+    <summary>Rubric and reason-code reference</summary>
+    <p>Judge the exact focal claim at S_t, then map the same target into S_t+1. A failing test proves a failure, not necessarily the claimed cause. Code movement alone does not prove resolution. Select only evidence IDs actually used.</p>
+    <table>
+      <thead><tr><th>Reason code</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td class="id">ORIGINAL_DIAGNOSIS_FALSE</td><td>Evidence refutes the original diagnosis.</td></tr>
+        <tr><td class="id">TARGET_PERSISTS</td><td>The same faulty behavior remains, even if relocated.</td></tr>
+        <tr><td class="id">TARGET_RESOLVED</td><td>Claim-specific evidence shows the target is resolved.</td></tr>
+        <tr><td class="id">EVIDENCE_INCOMPLETE</td><td>The available evidence does not decide the claim.</td></tr>
+        <tr><td class="id">EVIDENCE_CONFLICT</td><td>Admissible evidence points in different directions.</td></tr>
+        <tr><td class="id">TARGET_MAPPING_AMBIGUOUS</td><td>The claim cannot be reliably mapped across revisions.</td></tr>
+        <tr><td class="id">CLAIM_SCOPE_AMBIGUOUS</td><td>The wording or quantifier is unclear.</td></tr>
+        <tr><td class="id">NON_DIAGNOSTIC</td><td>The focal text does not state a factual diagnostic claim.</td></tr>
+      </tbody>
+    </table>
+  </details>
+  <div id="case"></div>
+</main>
+<script>
+let cases = [];
+let idx = 0;
+const storagePrefix = "revground_test197_adjudication_24_blind_v1_";
+const adjudicatorStorageKey = storagePrefix + "adjudicator_id";
+const selectedIdsSha256 = "__SELECTED_IDS_SHA256__";
+const unsureReasonCodes = new Set(["EVIDENCE_INCOMPLETE","EVIDENCE_CONFLICT","TARGET_MAPPING_AMBIGUOUS","CLAIM_SCOPE_AMBIGUOUS","NON_DIAGNOSTIC"]);
+
+function esc(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+}
+function saved(itemId) {
+  try { return JSON.parse(localStorage.getItem(storagePrefix + itemId)) || {}; }
+  catch (_) { return {}; }
+}
+function adjudicatorId() { return (document.getElementById("adjudicator-id")?.value || "").trim(); }
+function saveAdjudicatorId() {
+  localStorage.setItem(adjudicatorStorageKey, adjudicatorId());
+  updateProgress();
+}
+function radio(name, value, label, selected) {
+  return `<label class="choice"><input type="radio" name="${name}" value="${esc(value)}" ${selected === value ? "checked" : ""} onchange="saveCurrent()"> ${esc(label)}</label>`;
+}
+function currentValue(name) {
+  return document.querySelector(`input[name="${name}"]:checked`)?.value || "";
+}
+function collectCurrent() {
+  const item = cases[idx];
+  return {
+    item_id:item.item_id,
+    original_validity:currentValue("original"),
+    target_state_t1:currentValue("target"),
+    lifecycle_label:currentValue("lifecycle"),
+    instructional_priority:currentValue("priority"),
+    confidence:Number(currentValue("confidence")) || null,
+    reason_code:document.getElementById("reason-code")?.value || "",
+    evidence_ids:[...document.querySelectorAll('input[name="evidence"]:checked')].map(node => node.value),
+    adjudication_reason:document.getElementById("adjudication-reason")?.value.trim() || "",
+    adjudicator_id:adjudicatorId()
+  };
+}
+function saveCurrent() {
+  if (!cases.length || !document.getElementById("adjudication-reason")) return;
+  const row = collectCurrent();
+  localStorage.setItem(storagePrefix + row.item_id, JSON.stringify(row));
+  updateProgress();
+}
+function expectedLifecycle(row) {
+  if (row.original_validity === "REFUTED" && row.target_state_t1 === "NOT_APPLICABLE") return "RETRACT";
+  if (row.original_validity === "SUPPORTED" && row.target_state_t1 === "PRESENT") return "KEEP";
+  if (row.original_validity === "SUPPORTED" && row.target_state_t1 === "RESOLVED") return "RETIRE";
+  if (row.original_validity === "SUPPORTED" && row.target_state_t1 === "INDETERMINATE") return "UNSURE";
+  if (row.original_validity === "INDETERMINATE" && row.target_state_t1 === "INDETERMINATE") return "UNSURE";
+  return "";
+}
+function reasonMatches(row) {
+  if (!row.reason_code || !row.lifecycle_label) return false;
+  if (row.lifecycle_label === "RETRACT") return row.reason_code === "ORIGINAL_DIAGNOSIS_FALSE";
+  if (row.lifecycle_label === "KEEP") return row.reason_code === "TARGET_PERSISTS";
+  if (row.lifecycle_label === "RETIRE") return row.reason_code === "TARGET_RESOLVED";
+  if (row.lifecycle_label === "UNSURE") return unsureReasonCodes.has(row.reason_code);
+  return false;
+}
+function missing(row, item) {
+  const fields = [];
+  for (const [key,label] of [
+    ["original_validity","original validity"], ["target_state_t1","target state"],
+    ["lifecycle_label","lifecycle label"], ["instructional_priority","instructional priority"],
+    ["confidence","confidence"], ["reason_code","reason code"],
+    ["adjudication_reason","adjudication reason"], ["adjudicator_id","adjudicator ID"]
+  ]) if (!row[key]) fields.push(label);
+  if (!row.evidence_ids?.length) fields.push("at least one evidence ID");
+  if (row.evidence_ids?.some(id => !item.all_evidence_ids.includes(id))) fields.push("only evidence IDs from this packet");
+  const expected = expectedLifecycle(row);
+  if (row.original_validity && row.target_state_t1 && row.lifecycle_label && row.lifecycle_label !== expected) fields.push("a lifecycle label consistent with original validity and target state");
+  if (row.reason_code && row.lifecycle_label && !reasonMatches(row)) fields.push("a reason code consistent with lifecycle");
+  return fields;
+}
+function normalizedRow(item) {
+  const row = saved(item.item_id);
+  return {
+    item_id:item.item_id,
+    original_validity:row.original_validity || "",
+    target_state_t1:row.target_state_t1 || "",
+    lifecycle_label:row.lifecycle_label || "",
+    instructional_priority:row.instructional_priority || "",
+    confidence:row.confidence || null,
+    reason_code:row.reason_code || "",
+    evidence_ids:Array.isArray(row.evidence_ids) ? row.evidence_ids : [],
+    adjudication_reason:row.adjudication_reason || "",
+    adjudicator_id:adjudicatorId()
+  };
+}
+function isComplete(item) { return missing(normalizedRow(item), item).length === 0; }
+function message(value) { return value === "" || value == null ? "(empty)" : value; }
+function renderCompiler(label, compiler) {
+  if (!compiler) return `<div><h3>${esc(label)}</h3><p>No compiler record.</p></div>`;
+  return `<div><h3>${esc(label)}</h3>
+    <div><b>Evidence ID:</b> <span class="id">${esc(compiler.evidence_id)}</span></div>
+    <div><b>Status:</b> <span class="status">${esc(compiler.status)}</span> - <b>exit:</b> ${esc(compiler.exit_code)} - <b>timed out:</b> ${esc(compiler.timed_out)}</div>
+    <div class="small">${esc(compiler.compiler)}</div>
+    <div class="message-label">Compiler stdout</div><pre>${esc(message(compiler.stdout))}</pre>
+    <div class="message-label">Compiler stderr</div><pre>${esc(message(compiler.stderr))}</pre></div>`;
+}
+function renderRun(label, run) {
+  if (!run) return `<div><b>${esc(label)}</b><p>No execution record.</p></div>`;
+  return `<div><b>${esc(label)}</b>
+    <div><b>Evidence ID:</b> <span class="id">${esc(run.evidence_id)}</span></div>
+    <div><b>Status:</b> <span class="status">${esc(run.status)}</span> - <b>exit:</b> ${esc(run.exit_code)} - <b>timed out:</b> ${esc(run.timed_out)}</div>
+    ${run.runtime_error ? `<div><b>Runtime error:</b> ${esc(run.runtime_error)}</div>` : ""}
+    <div class="message-label">stdout</div><pre>${esc(message(run.stdout))}</pre>
+    <div class="message-label">stderr</div><pre>${esc(message(run.stderr))}</pre></div>`;
+}
+function renderTests(item) {
+  if (!item.tests?.length) return "<p>No official tests are present in this fixed packet.</p>";
+  return item.tests.map(test => `<details class="test">
+    <summary>${esc(test.test_case_id)} - earlier ${esc(test.earlier?.status)} - later ${esc(test.later?.status)}</summary>
+    <div class="test-body">
+      <div><b>Official evidence ID:</b> <span class="id">${esc(test.official_evidence_id)}</span></div>
+      <div class="grid"><div><b>Input</b><pre>${esc(message(test.input))}</pre></div><div><b>Expected output</b><pre>${esc(message(test.expected_output))}</pre></div></div>
+      <div class="grid">${renderRun("Earlier S_t", test.earlier)}${renderRun("Later S_t+1", test.later)}</div>
+    </div></details>`).join("");
+}
+function renderStoredTrace(label, trace) {
+  if (!trace) return `<div><b>${esc(label)}:</b> no stored trace.</div>`;
+  return `<div><b>${esc(label)}:</b> <span class="id">${esc(trace.evidence_id)}</span><pre>${esc(JSON.stringify({final_verdict:trace.final_verdict, verdict_sequence_trace:trace.verdict_sequence_trace}, null, 2))}</pre></div>`;
+}
+function renderEvidenceChoices(item, selected) {
+  const chosen = new Set(selected || []);
+  return item.all_evidence_ids.map(id => `<label><input type="checkbox" name="evidence" value="${esc(id)}" ${chosen.has(id) ? "checked" : ""} onchange="saveCurrent()"> <span class="id">${esc(id)}</span></label>`).join("");
+}
+function reasonOptions(selected) {
+  const options = [
+    "", "ORIGINAL_DIAGNOSIS_FALSE", "TARGET_PERSISTS", "TARGET_RESOLVED",
+    "EVIDENCE_INCOMPLETE", "EVIDENCE_CONFLICT", "TARGET_MAPPING_AMBIGUOUS",
+    "CLAIM_SCOPE_AMBIGUOUS", "NON_DIAGNOSTIC"
+  ];
+  return options.map(value => `<option value="${value}" ${value === selected ? "selected" : ""}>${value || "Select reason code"}</option>`).join("");
+}
+function render() {
+  const item = cases[idx];
+  const row = normalizedRow(item);
+  document.getElementById("case").innerHTML = `
+    <div class="card"><h2>${esc(item.item_id)} - ${esc(item.problem_id)}</h2>
+      <div class="meta small"><span>Language: ${esc(item.language)}</span><span>Earlier attempt: ${esc(item.earlier?.attempt_number)}</span><span>Later attempt: ${esc(item.later?.attempt_number)}</span></div>
+      <div class="small"><b>Packet:</b> <span class="id">${esc(item.packet_id)}</span><br><b>Packet SHA-256:</b> <span class="id">${esc(item.packet_sha256)}</span></div>
+    </div>
+    <section class="card"><h3>1. Problem specification</h3><pre>${esc(item.problem_statement)}</pre></section>
+    <section class="card focus"><h3>2. Exact focal claim</h3><blockquote>${esc(item.focal_claim?.text)}</blockquote>
+      <div class="small">Source: ${esc(item.focal_claim?.source_field)}; offsets ${esc(item.focal_claim?.start)}-${esc(item.focal_claim?.end)} (end exclusive).</div>
+    </section>
+    <section class="card"><h3>3. Earlier source S_t</h3><div class="small id">source:${esc(item.item_id)}:S_t - SHA-256 ${esc(item.earlier?.source_sha256)}</div><pre><code>${esc(item.earlier?.source)}</code></pre></section>
+    <section class="card"><h3>4. Later source S_t+1</h3><div class="small id">source:${esc(item.item_id)}:S_t+1 - SHA-256 ${esc(item.later?.source_sha256)}</div><pre><code>${esc(item.later?.source)}</code></pre></section>
+    <section class="card"><h3>5. Code diff</h3><div class="small id">diff:${esc(item.item_id)}</div><pre>${esc(message(item.code_diff))}</pre></section>
+    <section class="card"><h3>6. Fixed execution evidence</h3>
+      <h3>Compiler</h3><div class="grid">${renderCompiler("Earlier S_t",item.compiler?.earlier)}${renderCompiler("Later S_t+1",item.compiler?.later)}</div>
+      <h3>Official tests and outputs</h3>${renderTests(item)}
+      <h3>Stored judge traces</h3><div class="grid">${renderStoredTrace("Earlier S_t",item.stored_judge_traces?.earlier)}${renderStoredTrace("Later S_t+1",item.stored_judge_traces?.later)}</div>
+      <h3>Claim-relevant trace</h3>${item.claim_relevant_trace ? `<pre>${esc(JSON.stringify(item.claim_relevant_trace,null,2))}</pre>` : "<p>No separate claim-relevant trace is present. Do not infer one; use INDETERMINATE/UNSURE if the fixed evidence cannot decide the claim.</p>"}
+    </section>
+    <section class="card"><h3>7. Adjudication</h3>
+      <fieldset><legend>Original validity at S_t</legend>
+        ${radio("original","SUPPORTED","SUPPORTED",row.original_validity)}
+        ${radio("original","REFUTED","REFUTED",row.original_validity)}
+        ${radio("original","INDETERMINATE","INDETERMINATE",row.original_validity)}
+      </fieldset>
+      <fieldset><legend>Target state at S_t+1</legend>
+        ${radio("target","PRESENT","PRESENT - same target persists",row.target_state_t1)}
+        ${radio("target","RESOLVED","RESOLVED - same target is fixed",row.target_state_t1)}
+        ${radio("target","INDETERMINATE","INDETERMINATE",row.target_state_t1)}
+        ${radio("target","NOT_APPLICABLE","NOT_APPLICABLE - original claim refuted",row.target_state_t1)}
+      </fieldset>
+      <fieldset><legend>Lifecycle label</legend>
+        ${radio("lifecycle","KEEP","KEEP",row.lifecycle_label)}${radio("lifecycle","RETIRE","RETIRE",row.lifecycle_label)}
+        ${radio("lifecycle","RETRACT","RETRACT",row.lifecycle_label)}${radio("lifecycle","UNSURE","UNSURE",row.lifecycle_label)}
+      </fieldset>
+      <fieldset><legend>Instructional priority at S_t+1</legend>
+        ${radio("priority","HIGH","HIGH",row.instructional_priority)}${radio("priority","LOW","LOW",row.instructional_priority)}${radio("priority","UNKNOWN","UNKNOWN",row.instructional_priority)}
+      </fieldset>
+      <fieldset><legend>Confidence</legend>${[1,2,3,4,5].map(value => radio("confidence",String(value),String(value),String(row.confidence || ""))).join("")}<div class="small">1 = very uncertain; 5 = very confident.</div></fieldset>
+      <fieldset><legend>Reason code</legend><select id="reason-code" onchange="saveCurrent()">${reasonOptions(row.reason_code)}</select></fieldset>
+      <fieldset><legend>Evidence IDs actually used</legend><div class="evidence-list">${renderEvidenceChoices(item,row.evidence_ids)}</div></fieldset>
+      <label for="adjudication-reason"><b>Adjudication reason</b></label><textarea id="adjudication-reason" oninput="saveCurrent()">${esc(row.adjudication_reason)}</textarea>
+    </section>`;
+  document.getElementById("prev").disabled = idx === 0;
+  document.getElementById("next").disabled = idx === cases.length - 1;
+  rebuildJump();
+  updateProgress();
+}
+function rebuildJump() {
+  const select = document.getElementById("jump");
+  select.innerHTML = cases.map((item,index) => `<option value="${index}" ${index === idx ? "selected" : ""}>${esc(item.item_id)}${isComplete(item) ? " [complete]" : ""}</option>`).join("");
+}
+function updateProgress() {
+  if (!cases.length) return;
+  const complete = cases.filter(isComplete).length;
+  document.getElementById("progress").textContent = `${idx + 1}/${cases.length} - ${complete} complete`;
+}
+function move(delta) { saveCurrent(); idx = Math.max(0,Math.min(cases.length - 1,idx + delta)); render(); window.scrollTo(0,0); }
+function jumpTo(value) { saveCurrent(); idx = Number(value); render(); window.scrollTo(0,0); }
+function validatedRows() {
+  saveCurrent();
+  const rows = cases.map(normalizedRow);
+  const badIndex = rows.findIndex((row,index) => missing(row,cases[index]).length);
+  if (badIndex >= 0) {
+    idx = badIndex; render();
+    alert(`${rows[badIndex].item_id} is not export-ready: ${missing(rows[badIndex],cases[badIndex]).join(", ")}.`);
+    return null;
+  }
+  return rows;
+}
+function download(name,text,type) {
+  const blob = new Blob([text],{type});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob); link.download = name; link.click();
+  setTimeout(() => URL.revokeObjectURL(link.href),1000);
+}
+function safeAdjudicatorId() { return adjudicatorId().replace(/[^A-Za-z0-9._-]+/g,"_") || "adjudicator"; }
+function exportJSON() {
+  const rows = validatedRows(); if (!rows) return;
+  download(`revground_adjudication_24_${safeAdjudicatorId()}.json`,JSON.stringify(rows,null,2),"application/json;charset=utf-8");
+}
+function exportJSONL() {
+  const rows = validatedRows(); if (!rows) return;
+  download(`revground_adjudication_24_${safeAdjudicatorId()}.jsonl`,rows.map(row => JSON.stringify(row)).join("\n") + "\n","application/x-ndjson;charset=utf-8");
+}
+async function importRows(input) {
+  const file = input.files?.[0]; if (!file) return;
+  try {
+    const text = await file.text();
+    const trimmed = text.trim();
+    const rows = trimmed.startsWith("[") ? JSON.parse(trimmed) : trimmed.split(/\r?\n/).filter(Boolean).map(JSON.parse);
+    if (!Array.isArray(rows)) throw new Error("The import must be a JSON array or JSONL records.");
+    const byId = new Map(cases.map(item => [item.item_id,item]));
+    for (const row of rows) {
+      const item = byId.get(row.item_id);
+      if (!item) throw new Error(`Unexpected item_id: ${row.item_id}`);
+      const clean = normalizedRow(item);
+      for (const key of ["original_validity","target_state_t1","lifecycle_label","instructional_priority","confidence","reason_code","adjudication_reason"]) clean[key] = row[key] ?? clean[key];
+      clean.evidence_ids = Array.isArray(row.evidence_ids) ? row.evidence_ids.filter(id => item.all_evidence_ids.includes(id)) : [];
+      localStorage.setItem(storagePrefix + item.item_id, JSON.stringify(clean));
+    }
+    if (rows[0]?.adjudicator_id) {
+      document.getElementById("adjudicator-id").value = rows[0].adjudicator_id;
+      saveAdjudicatorId();
+    }
+    render();
+    alert(`Imported ${rows.length} row(s).`);
+  } catch (error) {
+    alert(`Import failed: ${error.message}`);
+  } finally {
+    input.value = "";
+  }
+}
+window.addEventListener("beforeunload",saveCurrent);
+
+const embeddedPacketGzipBase64 = "__EMBEDDED_PACKET_GZIP_BASE64__";
+async function loadEmbeddedCases() {
+  try {
+    if (!("DecompressionStream" in window)) throw new Error("This browser lacks DecompressionStream; use a current Chrome or Edge browser.");
+    const bytes = Uint8Array.from(atob(embeddedPacketGzipBase64), char => char.charCodeAt(0));
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+    const text = await new Response(stream).text();
+    cases = text.split(/\r?\n/).filter(Boolean).map(JSON.parse);
+    if (cases.length !== 24 || new Set(cases.map(item => item.item_id)).size !== 24) throw new Error("Embedded packet failed the 24-case uniqueness check.");
+    if (!cases.every(item => item.packet_prepared_without_method_predictions === true)) throw new Error("Embedded packet failed the prediction-blinding check.");
+    document.getElementById("adjudicator-id").value = localStorage.getItem(adjudicatorStorageKey) || "";
+    render();
+  } catch (error) {
+    document.getElementById("case").innerHTML = `<div class="card notice"><b>Packet load failed:</b> ${esc(error.message)}</div>`;
+  }
+}
+loadEmbeddedCases();
+</script>
+</body>
+</html>

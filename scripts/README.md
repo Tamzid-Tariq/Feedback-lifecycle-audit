@@ -1,6 +1,8 @@
 # Reproduction Entry Points
 
-Run commands from the repository root. Raw data and new run outputs are intentionally ignored by Git.
+Run commands from the repository root. Original raw CodeStream data and scratch
+run outputs are ignored by Git; explicitly frozen result ledgers are retained
+under `results/`.
 
 ## 1. Profile and split
 
@@ -54,3 +56,24 @@ python scripts/compute_agreement.py
 ```
 
 This reads the two frozen A01/A02 JSON exports and regenerates the agreement table, lifecycle confusion matrix, and all-field disagreement index. It never modifies either input export.
+
+## 7. Verify final held-out TEST results
+
+```bash
+python scripts/audit_heldout_test197_results.py
+python scripts/audit_heldout_test197_results.py --write
+```
+
+The audit makes no provider calls. It validates the frozen annotations and
+adjudication, combines accepted primary outputs only with accepted
+`RECOVERY_429_V1` outputs, and recomputes the complete natural TEST result.
+
+## 8. Rebuild the canonical TEST report
+
+```bash
+python scripts/build_test197_verified_report.py
+python scripts/build_test197_verified_pdf.py
+```
+
+Both builders read the verified JSON. The DOCX is the editable report; the PDF
+is the canonical reader copy.

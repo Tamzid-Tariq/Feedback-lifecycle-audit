@@ -1,0 +1,59 @@
+{
+  "status": "FROZEN_PRIMARY_FIRST_ATTEMPT",
+  "attempt_class": "PRIMARY_FIRST_ATTEMPT",
+  "frozen_at": "2026-09-28T18:07:17.058072Z",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "condition": "condition_C",
+  "requested_model": "qwen/qwen3.8-27b",
+  "requested_count": 168,
+  "accepted_count": 133,
+  "failed_count": 35,
+  "status_counts": {
+    "error": 35,
+    "accepted": 133
+  },
+  "error_types": {
+    "ProviderResponseError": 33,
+    "ValueError": 2
+  },
+  "http_statuses": {
+    "429": 27,
+    "200": 137,
+    "400": 4
+  },
+  "provider_counts": {
+    "Darkbloom": 47,
+    "Wafer": 70,
+    "Reka": 20
+  },
+  "returned_models": {
+    "qwen/qwen3.8-27b": 137
+  },
+  "model_mismatch_count": 0,
+  "missing_returned_model_count": 31,
+  "evidence_packet_sha256": "43d03ede21f900ad42f570e61a4832f0ec0ef54e3b5774db93366f0dbc8e0095",
+  "prompt_sha256": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe",
+  "settings": {
+    "max_tokens": 16000,
+    "temperature": 0,
+    "top_p": null,
+    "timeout_seconds": 360,
+    "fallback_disabled": true,
+    "automatic_retry": false,
+    "retry_policy": "none; failures recorded, no retry calls",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+  },
+  "source_directories": [
+    "qwen_qwen3_8_27b\\condition_C"
+  ],
+  "source_artifact_sha256": {
+    "qwen_qwen3_8_27b\\condition_C\\predictions.jsonl": "041339daed60c024c4aaaccd42d998ae29fa8b0cbcb7b1ee3c0606c256e9f7c8",
+    "qwen_qwen3_8_27b\\condition_C\\raw_responses.jsonl": "e8152ee0b222d216d2572eb20482597bd5858694622c094724e6e74da9ff28ce",
+    "qwen_qwen3_8_27b\\condition_C\\errors.jsonl": "192e87a0758ff6a4e9b43a675059427ebf2cca245579b82a29467062101abe7c",
+    "qwen_qwen3_8_27b\\condition_C\\request_metadata.jsonl": "e19f27453bb66fe9bc52b17f1a33432a0712af9caef94aa142d60382c7633a39",
+    "qwen_qwen3_8_27b\\condition_C\\run_metadata.json": "b98011c14e710aac19ab1f8c9b0230407531f323a39a7f05c62d1316807f1bc8"
+  },
+  "canonical_ledger_sha256": "dd48cc804321e7370bbce58b0e00b6db0dafe7b35945bf2da98001ceb0d7959f",
+  "primary_records_are_not_overwritten_by_recovery": true,
+  "sha256sums_file": "D:\\Thesis for LAK'26\\RevGround-LAK27\\results\\heldout_test_197\\evaluations\\qwen_qwen3_8_27b\\condition_C\\PRIMARY_FIRST_ATTEMPT_SHA256SUMS.txt"
+}

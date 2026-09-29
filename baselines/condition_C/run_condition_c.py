@@ -301,6 +301,7 @@ def main() -> None:
     parser.add_argument("--api-key-env", default=DEFAULT_API_KEY_ENV)
     parser.add_argument("--timeout", type=float, default=120.0)
     parser.add_argument("--sleep", type=float, default=0.0)
+    parser.add_argument("--post-429-sleep", type=float, default=0.0)
     parser.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS)
     parser.add_argument("--limit", type=int, default=DEFAULT_SMOKE_LIMIT)
     parser.add_argument("--item-ids", default=None)
@@ -313,8 +314,8 @@ def main() -> None:
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
-    if args.timeout <= 0 or args.sleep < 0 or args.max_tokens <= 0 or (args.limit is not None and args.limit <= 0):
-        raise SystemExit("--timeout and --max-tokens must be positive; --sleep must be non-negative; --limit must be positive")
+    if args.timeout <= 0 or args.sleep < 0 or args.post_429_sleep < 0 or args.max_tokens <= 0 or (args.limit is not None and args.limit <= 0):
+        raise SystemExit("--timeout and --max-tokens must be positive; pacing values must be non-negative; --limit must be positive")
 
     try:
         packets = condition_b.read_jsonl(args.input_jsonl)
@@ -510,8 +511,12 @@ def main() -> None:
             )
             condition_b.append_jsonl(metadata_handle, metadata)
             print(f"  {outcome} ({latency_ms} ms)", flush=True)
-            if index < len(projected) and args.sleep:
-                time.sleep(args.sleep)
+            if index < len(projected):
+                delay = args.sleep
+                if status == 429:
+                    delay = max(delay, args.post_429_sleep)
+                if delay:
+                    time.sleep(delay)
 
     finished_at = condition_b.utc_now()
     total_latency_ms = sum(request_latencies_ms)
@@ -523,6 +528,8 @@ def main() -> None:
         "finished_at": finished_at,
         "model_requested": args.model,
         "endpoint": args.endpoint,
+        "pacing_seconds_between_completed_requests": args.sleep,
+        "pacing_seconds_after_http_429": args.post_429_sleep,
         "api_key_env": args.api_key_env,
         "input_jsonl": str(args.input_jsonl),
         "prompt_sha256": condition_b.sha256_text(prompt),

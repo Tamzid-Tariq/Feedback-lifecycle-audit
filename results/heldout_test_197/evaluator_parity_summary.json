@@ -1,0 +1,102 @@
+{
+  "status": "PASS_NO_PROVIDER_CALLS",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "packet_count": 168,
+  "packet_file": "D:\\Thesis for LAK'26\\RevGround-LAK27\\results\\heldout_test_197\\evidence_frozen_v1.jsonl",
+  "packet_file_sha256": "43d03ede21f900ad42f570e61a4832f0ec0ef54e3b5774db93366f0dbc8e0095",
+  "models": {
+    "qwen": "qwen/qwen3.8-27b",
+    "deepseek": "deepseek/deepseek-v4.1-flash"
+  },
+  "conditions": [
+    "B",
+    "C"
+  ],
+  "development_exclusions_and_stage_a_failures_not_called": true,
+  "evidence_parity": "168/168",
+  "evidence_sha256_B_equals_C": true,
+  "request_construction_provider_calls": 0,
+  "prompts": {
+    "B": "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d",
+    "C": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe"
+  },
+  "settings": {
+    "max_tokens": 16000,
+    "temperature": 0,
+    "top_p": null,
+    "timeout_seconds": 360,
+    "fallback_disabled": true,
+    "automatic_retry": false,
+    "retry_policy": "none; failures recorded, no retry calls",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+  },
+  "model_condition_matrix": [
+    {
+      "model": "qwen/qwen3.8-27b",
+      "condition": "B",
+      "packet_count": 168,
+      "evidence_parity_with_other_condition": true,
+      "evidence_parity_with_frozen_packet_projection": true,
+      "prompt_sha256": "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d",
+      "max_tokens": 16000,
+      "temperature": 0,
+      "top_p": null,
+      "timeout_seconds": 360,
+      "fallback_disabled": true,
+      "automatic_retry": false,
+      "retry_policy": "none; failures recorded, no retry calls",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "model": "qwen/qwen3.8-27b",
+      "condition": "C",
+      "packet_count": 168,
+      "evidence_parity_with_other_condition": true,
+      "evidence_parity_with_frozen_packet_projection": true,
+      "prompt_sha256": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe",
+      "max_tokens": 16000,
+      "temperature": 0,
+      "top_p": null,
+      "timeout_seconds": 360,
+      "fallback_disabled": true,
+      "automatic_retry": false,
+      "retry_policy": "none; failures recorded, no retry calls",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "condition": "B",
+      "packet_count": 168,
+      "evidence_parity_with_other_condition": true,
+      "evidence_parity_with_frozen_packet_projection": true,
+      "prompt_sha256": "ed1b78941a4e56b5f6068c6d2c7339ce8301bc27292906454dd69bf8a6918c9d",
+      "max_tokens": 16000,
+      "temperature": 0,
+      "top_p": null,
+      "timeout_seconds": 360,
+      "fallback_disabled": true,
+      "automatic_retry": false,
+      "retry_policy": "none; failures recorded, no retry calls",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "condition": "C",
+      "packet_count": 168,
+      "evidence_parity_with_other_condition": true,
+      "evidence_parity_with_frozen_packet_projection": true,
+      "prompt_sha256": "e4a38fe03e77ef3be05652cfe71043d2be879b997921ce53520b6110014910fe",
+      "max_tokens": 16000,
+      "temperature": 0,
+      "top_p": null,
+      "timeout_seconds": 360,
+      "fallback_disabled": true,
+      "automatic_retry": false,
+      "retry_policy": "none; failures recorded, no retry calls",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+    }
+  ],
+  "artifacts": {
+    "per_item_csv": "D:\\Thesis for LAK'26\\RevGround-LAK27\\results\\heldout_test_197\\evaluator_parity.csv"
+  }
+}

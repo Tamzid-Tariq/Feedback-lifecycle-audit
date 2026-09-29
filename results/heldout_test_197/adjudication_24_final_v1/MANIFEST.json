@@ -1,0 +1,25 @@
+{
+  "status": "FINAL_ADJUDICATION_FROZEN_AND_VALIDATED",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "case_count": 24,
+  "source_disagreement_count": 24,
+  "exact_disagreement_coverage": true,
+  "required_fields_complete": true,
+  "evidence_ids_valid": true,
+  "json_jsonl_semantically_identical": true,
+  "adjudicator_ids": [
+    "03"
+  ],
+  "source_blind_packet": "../adjudication_24_blind_v1",
+  "source_blind_packet_unchanged": true,
+  "files": {
+    "adjudication_final_24.json": {
+      "bytes": 23054,
+      "sha256": "aad31c4df3f4d720776933cbae2a71d02516311dacf235f377ba40c30a532b09"
+    },
+    "adjudication_final_24.jsonl": {
+      "bytes": 20480,
+      "sha256": "43fa177e7143121cb1aa70a504e17916812f360d05ed6c32cc9169d1a9b95f55"
+    }
+  }
+}

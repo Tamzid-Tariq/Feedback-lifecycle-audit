@@ -1,0 +1,81 @@
+{
+  "status": "RECOVERY_429_V1_COMPLETE_WITH_RECORDED_ERRORS",
+  "finalized_at": "2026-09-28T12:59:52.743107Z",
+  "dataset": "heldout_test_197_final_claim_bearing_cohort",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "recovery_namespace": "results\\heldout_test_197\\evaluations\\deepseek_v4_1_flash\\RECOVERY_429_V1",
+  "scope": "exactly one recovery attempt for every primary HTTP-429 outcome; no retry for recovery errors",
+  "settings": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+    "max_tokens": 16000,
+    "temperature": 0,
+    "timeout_seconds": 360,
+    "sleep_seconds_between_requests": 20,
+    "post_429_sleep_seconds": 90,
+    "automatic_retry": false,
+    "fallback_disabled": true
+  },
+  "conditions": {
+    "B": {
+      "primary_http_429_count": 90,
+      "recovery_attempt_count": 90,
+      "accepted_count": 83,
+      "error_count": 7,
+      "http_statuses": {
+        "401": 2,
+        "200": 84,
+        "429": 4
+      },
+      "error_types": {
+        "ProviderResponseError": 7
+      },
+      "exact_primary_429_coverage": true,
+      "one_attempt_per_selected_id": true,
+      "ledger": "results\\heldout_test_197\\evaluations\\deepseek_v4_1_flash\\RECOVERY_429_V1\\B_recovery_429_v1_ledger.jsonl",
+      "ledger_sha256": "21296f17a33c041d6f883cbb63237f29f5a9c91c7a17eef8a5a58fc25c89d6d1",
+      "source_directories": [
+        "results\\heldout_test_197\\evaluations\\deepseek_v4_1_flash\\RECOVERY_429_V1\\condition_B",
+        "results\\heldout_test_197\\evaluations\\deepseek_v4_1_flash\\RECOVERY_429_V1\\condition_B_remaining_after_auth_v1"
+      ]
+    },
+    "C": {
+      "primary_http_429_count": 53,
+      "recovery_attempt_count": 53,
+      "accepted_count": 24,
+      "error_count": 29,
+      "http_statuses": {
+        "200": 24,
+        "429": 29
+      },
+      "error_types": {
+        "ProviderResponseError": 29
+      },
+      "exact_primary_429_coverage": true,
+      "one_attempt_per_selected_id": true,
+      "ledger": "results\\heldout_test_197\\evaluations\\deepseek_v4_1_flash\\RECOVERY_429_V1\\C_recovery_429_v1_ledger.jsonl",
+      "ledger_sha256": "3caab08a71bacbb3503d4f9a717fbd4f8ffd7a0991c6e0642a4bcc07f2b3e7b9",
+      "source_directories": [
+        "results\\heldout_test_197\\evaluations\\deepseek_v4_1_flash\\RECOVERY_429_V1\\condition_C"
+      ]
+    }
+  },
+  "primary_records_untouched": true,
+  "primary_artifact_hashes_after_recovery": {
+    "B": {
+      "predictions.jsonl": "02e6c32e14e6e664edfe234b48a1bf1e1dea8c8e098ce42141dc222cfb2906af",
+      "raw_responses.jsonl": "2752c735d0afe05966a987847e840116537d29f65c888288f034dfabbc136c9b",
+      "errors.jsonl": "93e632bf337c6615fdb7ae30d017226407f59abed4588f2b5818fba929d7e598",
+      "request_metadata.jsonl": "849abfeb8e1b117b1e5ef25031376a314de693d2eff0f8c7579cbc1295c64fa7",
+      "run_metadata.json": "d8d567ed0ef1581e0c357de4708d31c5dc506cc7e1476edca87651bb4ee9a7ae"
+    },
+    "C": {
+      "predictions.jsonl": "b1aa5f0f25f88bccad2d0b9eb54b2bb951057fd5eb060e9a4b1e1d1c1a981e15",
+      "raw_responses.jsonl": "dc74a48df9f9055553682591ca5fee81d73e1259b372eb80f074caa242a50cc0",
+      "errors.jsonl": "2c8d16c970b4c292f8b67a637f806e614d26a5fe74b5b330a5d281b8dffa55ac",
+      "request_metadata.jsonl": "4322453b0c6a4aea2e2d544ddd65c6dace33e3cd497ddc1700f74fe33fc08514",
+      "run_metadata.json": "bf919a26a6f8079fa6e941a4265e42774d5199d40f4f1ffa158908fa3a9f818b"
+    }
+  },
+  "human_annotations": "results/heldout_test_197/annotations_frozen_v1"
+}

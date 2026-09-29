@@ -1,3 +1,17 @@
 results/heldout_test_197/*.jsonl filter=lfs diff=lfs merge=lfs -text
 results/heldout_test_197/*.jsonl.gz filter=lfs diff=lfs merge=lfs -text
 annotation/heldout_test_197/*/*.jsonl filter=lfs diff=lfs merge=lfs -text
+
+# Frozen experimental exports and ledgers are hash-addressed artifacts. Keep
+# their bytes unchanged on every platform, including Windows checkouts with
+# core.autocrlf enabled.
+results/heldout_test_197/** -text
+docs/reports/** -text
+
+# Binary deliverables must never pass through line-ending normalization or a
+# text diff driver inherited from a system-level attributes file.
+*.pdf binary
+*.docx binary
+*.png binary
+*.zip binary
+*.gz binary

@@ -1,195 +1,221 @@
 {
-  "as_of": "2026-09-27",
-  "checkpoint_commit": "7e6e595",
-  "annotation_layout": {
-    "status": "reorganized_non_destructively",
-    "common": "annotation/common",
-    "development_50": "annotation/development_50",
-    "calibration_20": "annotation/calibration_20",
-    "stress_20": "annotation/stress_20",
-    "heldout_test_50": "annotation/heldout_test_50",
-    "development_a01_a02_exports_preserved": true
+  "as_of": "2026-09-29",
+  "status": "FINAL_TEST_RESULTS_COMPLETE_AND_VERIFIED",
+  "study_scope": {
+    "development": "diagnostic",
+    "calibration": "rubric_freeze",
+    "stress_20": "controlled_rare_label_diagnostic",
+    "heldout_test": "final_natural_analysis"
   },
-  "stage5_split": "complete_and_verified",
-  "development_record_rebuild": "complete_and_verified",
-  "stage6_protocol": "S_t_only; failures preserved; no automatic retries or fallback for Stage A",
+  "development_human_gold_claims": 50,
+  "heldout_human_gold_claims": 168,
+  "research_results": "final_natural_test_complete_and_verified; development and Stress-20 remain diagnostic-only",
+  "method_predictions": {
+    "tracked_raw_predictions": 566,
+    "scope": "accepted primary or RECOVERY_429_V1 outputs preserved across DeepSeek and Qwen conditions B and C"
+  },
   "development": {
-    "selected_cases": 50,
-    "a01_annotation": "complete",
-    "a02_annotation": "complete",
+    "adjudication": "complete_final_reference"
+  },
+  "development_50": {
+    "annotation": "complete",
+    "adjudication": "complete_final_reference",
     "pre_adjudication_lifecycle_agreement": "48/50 (96%)",
     "pre_adjudication_lifecycle_kappa": 0.9228,
-    "joint_five_field_agreement": "40/50 (80%)",
-    "lifecycle_disagreements": ["DEV_010", "DEV_012"],
-    "adjudication": "complete_final_reference",
-    "adjudication_reference": {
-      "path": "annotation/development_50/revground_adjudication_final.jsonl",
-      "sha256": "8fbcebe1e0e200f8d4ae52f30df597da086330e20be3493c80b4e603bcd5b07d",
-      "rows": 50,
-      "consensus_carry_forward_rows": 40,
-      "adjudicated_rows": 10,
-      "lifecycle_counts": {"KEEP": 21, "RETIRE": 29, "RETRACT": 0, "UNSURE": 0}
-    },
-    "glm_condition_b": {"requests": 50, "end_to_end_lifecycle_result": "50/50"},
-    "glm_condition_c": {"requests": 50, "end_to_end_lifecycle_result": "50/50"},
-    "qwen_condition_b_primary": {"model": "qwen/qwen3.8-27b", "requests": 50, "accepted": 48, "end_to_end": "48/50"},
-    "qwen_condition_c_primary": {"model": "qwen/qwen3.8-27b", "requests": 50, "accepted": 49, "end_to_end": "46/50"},
-    "qwen_targeted_recovery_calls": 3,
-    "qwen_primary_overlap": "48 cases; lifecycle agreement 46/48",
-    "qwen_evidence_sha_match": "50/50",
-    "qwen_original_budget_caveat": "Primary B=5000 and C=12000 max tokens; later runs use identical settings"
-  },
-  "source_language_qc": {
-    "status": "complete",
-    "protocol": "source syntax only from code_t and code_t1; lifecycle labels, annotator results, and model performance excluded",
-    "strict_c_pool_n": 978,
-    "status_counts": {"CONFIRMED_C": 954, "NON_C_CPP": 13, "NON_C_JAVA": 9, "AMBIGUOUS": 2},
-    "objective_exclusions_total": 24,
-    "development_50": {
-      "objective_exclusions": ["DEV_010", "DEV_012"],
-      "historical_lifecycle_agreement": "48/50 (96%)",
-      "historical_lifecycle_kappa": 0.9228,
-      "sensitivity_eligible_n": 48,
-      "sensitivity_lifecycle_agreement": "48/48 (100%)",
-      "sensitivity_lifecycle_kappa": 1.0
-    },
-    "calibration_20": {
-      "objective_exclusions": [],
-      "confirmed_c": 20,
-      "annotation": "complete_16_of_16_no_substantive_disagreements"
-    },
-    "heldout_test_50_historical_batch1": {
-      "frozen_n": 50,
-      "objective_exclusions": ["726478f13ad8e011c4a0cfa2", "bda05da230eecfb67fa3a104"],
-      "eligible_confirmed_c_n": 48,
-      "stage_a_failures_among_eligible_n": 6,
-      "final_analyzable_n": 42,
-      "qwen_b_c": "not_run"
-    },
-    "heldout_test_197_final": {
-      "protocol_amendment": "test197_full_eligible_cohort_v1",
-      "source_partition_cases": 197,
-      "historical_batch1_preserved": true,
-      "remaining_batch2_cases": 147,
-      "objective_language_exclusions": 9,
-      "eligible_confirmed_c_n": 188,
-      "stage_a_provider_calls": 190,
-      "stage_a_accepted": 170,
-      "stage_a_failures_preserved": 20,
-      "successful_c_claim_bearing_n": 168,
-      "profile": {"cases": 168, "problems": 3, "trajectories": 49, "participants": 42},
-      "model": "stealth/space-bunny-alpha",
-      "max_tokens": 512,
-      "timeout_seconds": 90,
-      "fallback_disabled": true,
-      "automatic_retries": false,
-      "replacement_used": false,
-      "focal_claim_extractor": "first_explicit_diagnostic_assertion_v1",
-      "locked_runner_replay": "complete_for_168_final_packets",
-      "qwen_b_c": "not_run",
-      "deepseek_b_c": "not_run",
-      "packages": "isolated_A01_A02_built_not_distributed"
-    },
-    "artifacts": "data/qc/"
+    "final_gold": {
+      "KEEP": 21,
+      "RETIRE": 29,
+      "RETRACT": 0,
+      "UNSURE": 0
+    }
   },
   "calibration_20": {
-    "source_partition": "validation",
     "selected_cases": 20,
-    "selection_seed": 20260926,
-    "selection_created_before_labels": true,
-    "model": "stealth/space-bunny-alpha",
-    "provider": "OpenRouter",
-    "max_tokens": 512,
-    "timeout_seconds": 90,
-    "prompt_sha256": "3916584eb94f1ffa7749bbc94a2b51e1584a9d2eca97d1f197780ee8d956eaee",
-    "stage_a_provider_calls": 20,
-    "stage_a_usable_hints": 16,
-    "stage_a_failures": 4,
-    "stage_a_fallback_disabled": true,
-    "stage_a_automatic_retries": false,
-    "focal_claim_extractor": "first_explicit_diagnostic_assertion_v1",
-    "frozen_packet_rows": 16,
-    "compiler_test_replay": "complete_locked_runner",
-    "execution_runner": {"image": "revground-c-runner:2.0", "image_id": "sha256:155ed15997f15e46a478c4041ae738b696551779107a7ac5b4018e46f034b70a", "state_replays": 32, "official_test_state_entries": 450},
-    "human_annotation": "complete_16_of_16_no_substantive_disagreements",
-    "rubric_version": "v2.0",
-    "rubric_frozen_final": true,
-    "rubric_change_required": false,
-    "adjudication_required": false,
-    "adjudication_performed": false,
+    "usable_packets": 16,
+    "preserved_stage_a_failures": 4,
     "a01_rows": 16,
     "a02_rows": 16,
+    "substantive_disagreements": 0,
+    "rubric_version": "v2.0",
+    "rubric_frozen_final": true,
+    "model_b_c_evaluation": "not_run",
     "qwen_b_c": "not_run"
   },
   "stress_20": {
-    "source": "synthetic cases derived from development packets",
-    "annotation": "A_02 human review complete; not A01/A02 consensus or adjudicated gold",
-    "human_review_rows": 20,
-    "human_review_lifecycle_counts": {"RETRACT": 10, "UNSURE": 10},
-    "model": "qwen/qwen3.8-27b",
-    "provider": "OpenRouter",
-    "max_tokens": 16000,
-    "timeout_seconds": 360,
-    "fallback_disabled": true,
-    "same_provider_and_routing_policy": true,
-    "same_retry_policy": true,
     "qwen_b_c": "complete_verified",
-    "condition_b": {"requests": 20, "outputs": "19/20", "operational_accuracy": "14/20 (70.0%)"},
-    "condition_c": {"requests": 20, "outputs": "20/20", "operational_accuracy": "16/20 (80.0%)"},
-    "paired_comparison": {"common_cases": 19, "lifecycle_agreement": "17/19 (89.5%)", "b_correct": "14/19", "c_correct": "16/19"},
-    "evidence_sha_match": "20/20",
     "reported_separately_from_natural_prevalence": true
   },
   "heldout_test_50": {
-    "annotation": "packages_released_pending_annotation",
-    "stage_a": {"model": "stealth/space-bunny-alpha", "requests": 50, "usable_hints": 44, "failures": 6, "fallback_disabled": true, "automatic_retries": false},
     "qwen_b_c": "not_run",
-    "claim_bearing_annotation_n": 42,
-    "test_access": "source-QC complete; A01/A02 packages released for 42 claim-bearing cases; Qwen and DeepSeek evaluation remains locked and not performed"
+    "note": "legacy planned sample superseded by the completed natural TEST-168 analytic cohort"
   },
-  "deepseek_v4_1_flash": {
-    "model": "deepseek/deepseek-v4.1-flash",
-    "provider": "OpenRouter",
-    "settings": {"max_tokens": 16000, "timeout_seconds": 360, "fallback": false, "recovery_pass": false, "same_provider_and_routing_policy": true, "same_retry_policy": true},
-    "development_50": {
-      "condition_b": {"attempted": 50, "accepted": 49, "operational_accuracy": "48/50 (96%)", "failure_ids": ["DEV_024"]},
-      "condition_c": {"attempted": 50, "accepted": 49, "operational_accuracy": "48/50 (96%)", "failure_ids": ["DEV_024"], "validator_failures": 1},
-      "evidence_parity": "50/50",
-      "status": "complete_primary_only"
+  "heldout_test": {
+    "source_partition_name": "TEST-197",
+    "analytic_cohort_name": "TEST-168",
+    "source_partition_cases": 197,
+    "confirmed_c": 188,
+    "objective_language_exclusions": 9,
+    "stage_a_calls": 190,
+    "stage_a_accepted": 170,
+    "stage_a_failures_preserved": 20,
+    "claim_bearing_packets": 168,
+    "profile": {
+      "cases": 168,
+      "problems": 3,
+      "trajectories": 49,
+      "participants": 42
     },
-    "stress_20": {
-      "condition_b": {"attempted": 20, "accepted": 19, "operational_accuracy": "9/20 (45%)", "failure_ids": ["STR_008"]},
-      "condition_c": {"attempted": 20, "accepted": 20, "operational_accuracy": "15/20 (75%)", "explicit_model_abstentions": 6, "decision_rule_violations": 1, "decision_rule_violation_ids": ["STR_011"]},
-      "evidence_parity": "20/20",
-      "status": "complete_primary_only"
+    "human_annotation": {
+      "status": "complete_frozen",
+      "a01_rows": 168,
+      "a02_rows": 168,
+      "agreement": {
+        "original_validity": {
+          "count": 161,
+          "kappa": 0.2170439414114521
+        },
+        "target_state_t1": {
+          "count": 145,
+          "kappa": 0.7249038872276805
+        },
+        "lifecycle_label": {
+          "count": 145,
+          "kappa": 0.7249038872276805
+        },
+        "instructional_priority": {
+          "count": 144,
+          "kappa": 0.711670480549199
+        },
+        "all_four_core_fields": 144
+      },
+      "unique_core_field_disagreements": 24,
+      "lifecycle_disagreements": 23,
+      "priority_only_disagreements": 1
     },
-    "primary_calls": 140,
-    "accepted_outputs": 137,
-    "preserved_primary_failures": 3
+    "adjudication": {
+      "status": "complete_frozen_separately",
+      "cases": 24,
+      "adjudicator_ids": [
+        "03"
+      ],
+      "required_fields_complete": true,
+      "evidence_ids_valid": true,
+      "a01_a02_unchanged": true,
+      "path": "results/heldout_test_197/adjudication_24_final_v1"
+    },
+    "final_gold": {
+      "KEEP": 100,
+      "RETIRE": 65,
+      "RETRACT": 3,
+      "UNSURE": 0
+    },
+    "primary_matrix": {
+      "status": "COMPLETE_PRIMARY_FIRST_ATTEMPTS_FROZEN",
+      "run_count": 4,
+      "attempts_per_run": 168,
+      "total_first_attempts": 672
+    },
+    "recovery_429_v1": {
+      "policy": "exactly_one_attempt_per_primary_http_429; no_non_429_recovery; no_retry; no_fallback",
+      "pacing_seconds_between_calls": 20,
+      "pacing_seconds_after_http_429": 90,
+      "deepseek": {
+        "B": {
+          "attempted": 90,
+          "accepted": 83,
+          "errors": 7
+        },
+        "C": {
+          "attempted": 53,
+          "accepted": 24,
+          "errors": 29
+        }
+      },
+      "qwen": {
+        "B": {
+          "attempted": 51,
+          "accepted": 28,
+          "errors": 23
+        },
+        "C": {
+          "attempted": 27,
+          "accepted": 8,
+          "errors": 19
+        }
+      },
+      "primary_records_untouched": true
+    },
+    "post_recovery_results": {
+      "deepseek": {
+        "B": {
+          "usable_outputs": 154,
+          "non_abstaining_decisions": 154,
+          "correct": 146,
+          "accuracy_percent": 94.81
+        },
+        "C": {
+          "usable_outputs": 135,
+          "explicit_abstentions": 3,
+          "non_abstaining_decisions": 132,
+          "correct": 127,
+          "accuracy_percent": 96.21
+        },
+        "paired": {
+          "n": 124,
+          "B_correct": 117,
+          "C_correct": 119,
+          "C_minus_B_percentage_points": 1.61
+        }
+      },
+      "qwen": {
+        "B": {
+          "usable_outputs": 136,
+          "non_abstaining_decisions": 136,
+          "correct": 133,
+          "accuracy_percent": 97.79
+        },
+        "C": {
+          "usable_outputs": 141,
+          "explicit_abstentions": 4,
+          "non_abstaining_decisions": 137,
+          "correct": 132,
+          "accuracy_percent": 96.35
+        },
+        "paired": {
+          "n": 115,
+          "B_correct": 113,
+          "C_correct": 111,
+          "C_minus_B_percentage_points": -1.74
+        }
+      },
+      "cross_model_descriptive": {
+        "model_case_comparisons": 239,
+        "B_correct": 230,
+        "C_correct": 230,
+        "accuracy_percent_each_condition": 96.23,
+        "interpretation": "no_consistent_directional_advantage_observed",
+        "formal_equivalence_claim": false
+      }
+    },
+    "verification": {
+      "status": "PASS_ALL_REPORTED_TEST_RESULTS_RECOMPUTED",
+      "provider_calls": 0,
+      "machine_readable": "results/heldout_test_197/analysis/verified_test_results.json",
+      "reader_facing": "results/heldout_test_197/analysis/verified_test_results.md",
+      "report_pdf": "docs/reports/RevGround_TEST197_Verified_Results_20260929.pdf",
+      "report_docx": "docs/reports/RevGround_TEST197_Verified_Results_20260929.docx"
+    }
   },
-  "pending_gates": ["held-out TEST-197 natural A01/A02 annotation", "held-out TEST-197 Qwen/DeepSeek B/C evaluation"],
-  "human_gold_claims": 50,
-  "method_predictions": {
-    "tracked_raw_predictions": 0,
-    "verified_aggregate_diagnostics": ["development GLM/Qwen summaries", "Stress-20 Qwen B/C summary", "DeepSeek Development-50 and Stress-20 primary-only summaries"],
-    "raw_per_run_outputs": "retained in the local audit workspace"
-  },
-  "research_results": "diagnostic_only; no natural prevalence, held-out effect estimate, or learner-outcome result",
-  "known_provider_request_inventory": {
-    "development_glm_b": 50,
-    "development_glm_c": 50,
-    "development_qwen_b_primary": 50,
-    "development_qwen_c_primary": 50,
-    "development_qwen_targeted_recovery": 3,
-    "calibration_stage_a": 20,
-    "heldout_test_stage_a_historical_batch1": 50,
-    "heldout_test_stage_a_final_batch2": 140,
-    "stress_qwen_b": 20,
-    "stress_qwen_c": 20,
-    "development_deepseek_b": 50,
-    "development_deepseek_c": 50,
-    "stress_deepseek_b": 20,
-    "stress_deepseek_c": 20
-  },
-  "truthful_summary": "Development A01/A02 exports are preserved; the historical pre-adjudication lifecycle agreement remains 48/50 with kappa 0.9228, and the supplied 50-row final adjudication reference is complete: 40 consensus carry-forwards plus 10 adjudication_review rows. Source-language QC classified the full 978-row strict-C pool from source syntax only, preserving objective exclusions. Calibration-20 has 20/20 confirmed-C cases, 16 usable Stage-A hints, 16 frozen focal claims, complete locked-runner Stage-B evidence, and A01/A02 annotation complete with zero substantive disagreements; Rubric v2.0 is frozen and no adjudication was required. The final natural TEST-197 amendment preserves historical TEST-50 Batch 1, retains all 197 TEST transitions, records 188 confirmed-C cases and 9 language exclusions, runs 190 frozen Stage-A calls with 20 preserved failures, and yields 168 claim-bearing packets across 3 problems, 49 trajectories, and 42 participants. Isolated A01/A02 packages are built without labels or model predictions. DeepSeek V4.1 Flash primary-only Development-50 and Stress-20 diagnostics are recorded with 140 calls, 137 accepted outputs, and 3 preserved failures; Stress C has one retained decision-rule violation on STR_011. No Qwen or DeepSeek B/C Calibration-20 or held-out TEST-197 run has occurred."
+  "pending_gates": [],
+  "deliberately_not_run": [
+    "Qwen B/C on Calibration-20",
+    "DeepSeek B/C on Calibration-20"
+  ],
+  "claim_boundaries": [
+    "No learner outcome or learning-gain claim",
+    "No deployed-tutor-effectiveness claim",
+    "No formal pooled estimator across model-specific paired subsets",
+    "No equivalence or proven-null claim",
+    "Stress-20 is not natural prevalence"
+  ]
 }

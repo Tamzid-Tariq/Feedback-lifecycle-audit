@@ -65,8 +65,24 @@
       "partition": "synthetic stress-20",
       "settings": {"max_tokens": 16000, "timeout_seconds": 360, "fallback": false, "recovery_pass": false, "same_provider_and_routing_policy": true, "same_retry_policy": true},
       "outcome": "40 primary calls; B 19/20 accepted and 9/20 operationally correct; C 20/20 accepted and 15/20 operationally correct; STR_008 failure and STR_011 decision-rule violation preserved"
+    },
+    {
+      "role": "Final natural TEST-168 Condition B and C",
+      "model": "qwen/qwen3.8-27b",
+      "provider": "OpenRouter",
+      "partition": "TEST-197 source partition; 168 claim-bearing analytic packets",
+      "settings": {"max_tokens": 16000, "temperature": 0, "timeout_seconds": 360, "fallback": false, "automatic_retry": false},
+      "outcome": "336 frozen primary first attempts plus RECOVERY_429_V1 on 51 B and 27 C primary HTTP-429 outcomes"
+    },
+    {
+      "role": "Final natural TEST-168 Condition B and C",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "OpenRouter",
+      "partition": "TEST-197 source partition; 168 claim-bearing analytic packets",
+      "settings": {"max_tokens": 16000, "temperature": 0, "timeout_seconds": 360, "fallback": false, "automatic_retry": false},
+      "outcome": "336 frozen primary first attempts plus RECOVERY_429_V1 on 90 B and 53 C primary HTTP-429 outcomes"
     }
   ],
-  "not_run": ["Qwen B/C on Calibration-20", "Qwen B/C on held-out TEST-197", "DeepSeek B/C on Calibration-20", "DeepSeek B/C on held-out TEST-197"],
-  "interpretation_boundary": "These runs are development/calibration/stress diagnostics. No natural held-out prevalence or deployed-tutor effectiveness estimate is available."
+  "not_run": ["Qwen B/C on Calibration-20", "DeepSeek B/C on Calibration-20"],
+  "interpretation_boundary": "Natural TEST-168 prevalence and paired model-condition estimates are complete and descriptive. No learner outcome, deployed-tutor effectiveness, formal pooled, equivalence, or proven-null claim is supported."
 }

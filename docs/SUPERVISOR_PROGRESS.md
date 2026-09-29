@@ -34,6 +34,11 @@
 - Stage-A Batch 2 used only `stealth/space-bunny-alpha` under the frozen prompt/settings: 140 calls, 126 accepted hints, and 14 preserved failures, with no retries, fallback, or replacement. Combined with Batch 1, 190 calls yielded 170 accepted hints, 20 failures, and 168 successful C claim-bearing cases.
 - Final claim-bearing profile: 168 cases, 3 problems, 49 trajectories, and 42 participants. All 126 new cases were replayed in the locked Docker C runner (252 state replays); the final evidence packet SHA-256 is recorded in `results/heldout_test_197/final_packet_manifest.json` and `SHA256SUMS.txt`.
 - Isolated A01/A02 TEST-197 packages were built over identical packet bytes and contain no reference labels, model predictions, other-annotator outputs, or adjudication information.
+- TEST-168 A01/A02 annotation is complete with 168 rows per annotator. The four core fields agree jointly on 144/168 cases; 24 unique disagreements were identified, including 23 lifecycle disagreements and one priority-only disagreement.
+- Qualified blind adjudication is complete for all 24 disagreement cases. The returned JSON/JSONL is frozen separately from the unchanged blind packet and A01/A02 exports; final gold is 100 KEEP, 65 RETIRE, 3 RETRACT, and 0 UNSURE.
+- The Qwen and DeepSeek primary B/C matrix is complete and frozen: four runs, 168 first attempts each, 672 total. Primary files were not overwritten.
+- Qwen and DeepSeek `RECOVERY_429_V1` are complete with recorded errors. Every primary HTTP 429 received exactly one recovery attempt; no non-429 primary failure was recovered.
+- The deterministic final audit recomputed all reported TEST-set metrics from frozen artifacts with zero provider calls and passed.
 
 ## Annotation Results
 
@@ -76,12 +81,13 @@ DeepSeek Stress-20 used the same frozen settings for both conditions. B accepted
 ## Current Requirements
 
 1. Rubric v2.0 is frozen after Calibration-20; no calibration adjudication was required.
-2. Complete independent A01/A02 annotation on the isolated TEST-197 packages.
-3. Preserve historical TEST-50 Batch 1 and the 197-row final cohort without replacement.
-4. Do not run Qwen or DeepSeek B/C on Calibration-20 or held-out TEST-197 yet.
+2. Preserve historical TEST-50 Batch 1 and the 197-row source cohort without replacement.
+3. Preserve A01/A02, blind adjudication, final adjudication, primary attempts, and recovery as separate immutable namespaces.
+4. Keep Calibration-20 Qwen/DeepSeek B/C evaluation outside the completed scope unless separately authorized.
+5. Report natural paired effects descriptively; do not claim equivalence or a proven null effect.
 
 ## Next Stage
 
-1. Annotate the prepared 168-case held-out natural package independently with A01 and A02.
-2. Compare completed development and calibration outputs under the frozen Rubric v2.0.
-3. Only after annotation gates are complete, authorize final held-out B/C evaluation.
+1. Integrate the verified TEST tables and figures into the manuscript.
+2. Add paired uncertainty estimates only if a formal inferential claim is needed.
+3. Maintain the repository hashes and retention boundaries during manuscript revision.
