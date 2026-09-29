@@ -354,10 +354,10 @@ def main() -> None:
 
     annotation_dir = base / "annotations_frozen_v1"
     annotation_paths = {
-        "A01_json": annotation_dir / "A01" / "revground_annotations_A01 (2).json",
-        "A02_json": annotation_dir / "A02" / "revground_annotations_A02 (2).json",
-        "A01_csv": annotation_dir / "A01" / "revground_annotations_A01 (2).csv",
-        "A02_csv": annotation_dir / "A02" / "revground_annotations_A02 (2).csv",
+        "A01_json": annotation_dir / "A01" / "feedback-lifecycle-audit_annotations_A01 (2).json",
+        "A02_json": annotation_dir / "A02" / "feedback-lifecycle-audit_annotations_A02 (2).json",
+        "A01_csv": annotation_dir / "A01" / "feedback-lifecycle-audit_annotations_A01 (2).csv",
+        "A02_csv": annotation_dir / "A02" / "feedback-lifecycle-audit_annotations_A02 (2).csv",
     }
     a01 = index_unique(read_json(annotation_paths["A01_json"]), "A01")
     a02 = index_unique(read_json(annotation_paths["A02_json"]), "A02")

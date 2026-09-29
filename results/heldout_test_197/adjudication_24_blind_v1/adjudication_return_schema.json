@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "RevGround held-out TEST-197 blind adjudication return",
+  "title": "Feedback-lifecycle-audit held-out TEST-197 blind adjudication return",
   "type": "array",
   "minItems": 24,
   "maxItems": 24,

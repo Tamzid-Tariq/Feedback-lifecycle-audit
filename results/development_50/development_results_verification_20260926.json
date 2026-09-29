@@ -3,7 +3,7 @@
   "verdict": "substantially_consistent_with_scoped_caveats",
   "gold_source": {
     "source_path": "C:\\Users\\User\\Downloads\\revground_adjudication_final.jsonl",
-    "repository_copy": "annotation/development_50/revground_adjudication_final.jsonl",
+    "repository_copy": "annotation/development_50/feedback-lifecycle-audit_adjudication_final.jsonl",
     "sha256": "8FBCEBE1E0E200F8D4AE52F30DF597DA086330E20BE3493C80B4E603BCD5B07D",
     "rows": 50,
     "unique_ids": 50,

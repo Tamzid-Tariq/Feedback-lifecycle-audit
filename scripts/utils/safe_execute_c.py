@@ -114,7 +114,7 @@ def compile_source(source: str | Path, image: str = IMAGE, timeout: int = HOST_T
     tests instead of calling this function and recompiling per test.
     """
     source_path = Path(source).resolve()
-    with temporary_directory(prefix="revground_compile_") as directory:
+    with temporary_directory(prefix="feedback-lifecycle-audit_compile_") as directory:
         isolated = Path(directory) / "program.c"
         shutil.copyfile(source_path, isolated)
         command = base_args(image)[:-1] + [
@@ -192,9 +192,9 @@ def run_state(
     if host_timeout < 1 or program_timeout < 1:
         raise ValueError("timeouts must be positive")
     source_path = Path(source).resolve()
-    container_name = f"revground-state-{uuid.uuid4().hex}"
+    container_name = f"feedback-lifecycle-audit-state-{uuid.uuid4().hex}"
     started = False
-    with temporary_directory(prefix="revground_state_") as directory:
+    with temporary_directory(prefix="feedback-lifecycle-audit_state_") as directory:
         isolated = Path(directory) / "program.c"
         shutil.copyfile(source_path, isolated)
         try:

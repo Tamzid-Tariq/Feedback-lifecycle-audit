@@ -5,7 +5,7 @@ Condition C is a controlled extension of Condition B. It imports Condition B's f
 The added stages are:
 
 1. deterministic packet validation before a provider call;
-2. an explicit RevGround lifecycle-audit prompt;
+2. an explicit Feedback-lifecycle-audit lifecycle-audit prompt;
 3. post-LLM decision validation against the lifecycle table;
 4. selective abstention with `UNSURE` when evidence is unusable, insufficient, conflicting, or the returned lifecycle is inconsistent.
 

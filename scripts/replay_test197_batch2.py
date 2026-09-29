@@ -31,7 +31,7 @@ def main() -> None:
         raise SystemExit(f"Output already exists; refusing to overwrite: {args.output}")
     resolved_image_id = image_id(args.image)
     results: list[dict] = []
-    with temporary_directory(prefix="revground_test197_replay_") as directory:
+    with temporary_directory(prefix="feedback-lifecycle-audit_test197_replay_") as directory:
         work_dir = Path(directory)
 
         def one(record: dict) -> dict:

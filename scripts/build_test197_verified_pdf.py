@@ -186,7 +186,7 @@ def page_furniture(canvas, doc):
     canvas.saveState()
     canvas.setFont("Helvetica", 7.8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(0.72 * inch, 10.48 * inch, "RevGround | Held-out TEST verification")
+    canvas.drawString(0.72 * inch, 10.48 * inch, "Feedback-lifecycle-audit | Held-out TEST verification")
     canvas.drawRightString(7.78 * inch, 0.48 * inch, f"Page {doc.page}")
     canvas.setStrokeColor(colors.HexColor("#D9DDE2"))
     canvas.setLineWidth(0.5)
@@ -203,15 +203,15 @@ def build(result: dict, output: Path, figure_dir: Path) -> None:
         rightMargin=1 * inch,
         topMargin=0.9 * inch,
         bottomMargin=0.72 * inch,
-        title="RevGround TEST-197 / TEST-168 Verified Results",
-        author="RevGround",
+        title="Feedback-lifecycle-audit TEST-197 / TEST-168 Verified Results",
+        author="Feedback-lifecycle-audit",
         subject="Frozen held-out annotation and evaluator verification",
     )
     story = []
     story.extend([
         Spacer(1, 0.16 * inch),
         p("VERIFIED RESULTS REPORT", st["kicker"]),
-        p("RevGround Held-out TEST-197 / TEST-168", st["title"]),
+        p("Feedback-lifecycle-audit Held-out TEST-197 / TEST-168", st["title"]),
         p("Human reliability, adjudicated lifecycle prevalence, and B/C evaluator comparison", st["subtitle"]),
     ])
     metadata = [
@@ -353,7 +353,7 @@ def main() -> None:
     args = parser.parse_args()
     root = args.repo.resolve()
     input_path = args.input or root / "results" / "heldout_test_197" / "analysis" / "verified_test_results.json"
-    output = args.output or root / "docs" / "reports" / "RevGround_TEST197_Verified_Results_20260929.pdf"
+    output = args.output or root / "docs" / "reports" / "Feedback-lifecycle-audit_TEST197_Verified_Results_20260929.pdf"
     result = json.loads(input_path.read_text(encoding="utf-8"))
     if result.get("status") != "PASS_ALL_REPORTED_TEST_RESULTS_RECOMPUTED":
         raise SystemExit("Refusing to build PDF from an unverified result")

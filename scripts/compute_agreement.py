@@ -174,8 +174,8 @@ def write_agreement_csv(a01: dict[str, dict[str, Any]], a02: dict[str, dict[str,
 
 
 def main() -> None:
-    a01 = load_export(ANNOTATION_DIR / "revground_annotations_A01.json", "A01")
-    a02 = load_export(ANNOTATION_DIR / "revground_annotations_A02.json", "A02")
+    a01 = load_export(ANNOTATION_DIR / "feedback-lifecycle-audit_annotations_A01.json", "A01")
+    a02 = load_export(ANNOTATION_DIR / "feedback-lifecycle-audit_annotations_A02.json", "A02")
     if set(a01) != set(a02):
         raise ValueError("A01 and A02 exports do not cover the same item IDs")
     write_agreement_csv(a01, a02)

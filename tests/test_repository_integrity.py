@@ -36,16 +36,16 @@ class RepositoryIntegrityTests(unittest.TestCase):
             "docs/study_design.md", "docs/data_and_sampling.md", "data/README.md",
             "annotation/common/annotation_schema.json", "annotation/common/annotation_schema_v1.json",
             "annotation/common/LIFECYCLE_RUBRIC_v2.md", "annotation/common/ANNOTATOR_TRAINING_AND_BLINDING.md",
-            "annotation/development_50/revground_annotations_A01.json", "annotation/development_50/revground_annotations_A02.json",
+            "annotation/development_50/feedback-lifecycle-audit_annotations_A01.json", "annotation/development_50/feedback-lifecycle-audit_annotations_A02.json",
             "annotation/development_50/disagreement_cases.csv", "annotation/development_50/adjudication_cases.json",
             "annotation/development_50/pre_adjudication_summary.md",
-            "annotation/development_50/RevGround_Adjudicator.html",
-            "annotation/development_50/tools/RevGround_Annotator_A01.html",
-            "annotation/development_50/tools/RevGround_Annotator_A02.html",
+            "annotation/development_50/Feedback-lifecycle-audit_Adjudicator.html",
+            "annotation/development_50/tools/Feedback-lifecycle-audit_Annotator_A01.html",
+            "annotation/development_50/tools/Feedback-lifecycle-audit_Annotator_A02.html",
             "annotation/calibration_20/calibration_20_evidence_frozen_v1.jsonl",
             "annotation/calibration_20/LIFECYCLE_RUBRIC_v2.md",
-            "annotation/calibration_20/tools/RevGround_Annotator_A01.html",
-            "annotation/calibration_20/tools/RevGround_Annotator_A02.html",
+            "annotation/calibration_20/tools/Feedback-lifecycle-audit_Annotator_A01.html",
+            "annotation/calibration_20/tools/Feedback-lifecycle-audit_Annotator_A02.html",
             "annotation/stress_20/README.md", "annotation/heldout_test_50/README.md",
             "results/README.md", "results/development_50/README.md", "results/calibration_20/README.md",
             "results/stress_20/README.md", "results/stress_20/stress_20_results_summary.md", "results/RESULTS_HIGHLIGHTS.md", "results/heldout_test_50/README.md",
@@ -128,11 +128,11 @@ class RepositoryIntegrityTests(unittest.TestCase):
 
     def test_development_exports_are_byte_preserved_after_reorganization(self) -> None:
         self.assertEqual(
-            hashlib.sha256((ROOT / "annotation" / "development_50" / "revground_annotations_A01.json").read_bytes()).hexdigest(),
+            hashlib.sha256((ROOT / "annotation" / "development_50" / "feedback-lifecycle-audit_annotations_A01.json").read_bytes()).hexdigest(),
             "76bb53c99bca14615550f12a1b670b4b05810364c8d7c54c882e477ac3ff7e6a",
         )
         self.assertEqual(
-            hashlib.sha256((ROOT / "annotation" / "development_50" / "revground_annotations_A02.json").read_bytes()).hexdigest(),
+            hashlib.sha256((ROOT / "annotation" / "development_50" / "feedback-lifecycle-audit_annotations_A02.json").read_bytes()).hexdigest(),
             "f888018f61ee4a97f08c12795e0ac7bae6edd98ca0c3ebb0f5802faa39ad9822",
         )
 
@@ -160,7 +160,7 @@ class RepositoryIntegrityTests(unittest.TestCase):
                 self.assertIn(packet["compiler"][state]["status"], {"compile_success", "compile_error", "infra_timeout"})
 
         for annotator in ("A01", "A02"):
-            page = ROOT / "annotation" / "calibration_20" / "tools" / f"RevGround_Annotator_{annotator}.html"
+            page = ROOT / "annotation" / "calibration_20" / "tools" / f"Feedback-lifecycle-audit_Annotator_{annotator}.html"
             text = page.read_text(encoding="utf-8")
             self.assertIn("const cases = [", text)
             self.assertNotRegex(text, r"model_requested|model_returned|provider_raw_response|predicted_label|system_prediction")
@@ -188,9 +188,9 @@ class RepositoryIntegrityTests(unittest.TestCase):
     def test_annotator_pages_embed_the_same_packets_but_use_separate_storage(self) -> None:
         pages = []
         for annotator in ("A01", "A02"):
-            text = (ROOT / "annotation" / "development_50" / "tools" / f"RevGround_Annotator_{annotator}.html").read_text(encoding="utf-8")
+            text = (ROOT / "annotation" / "development_50" / "tools" / f"Feedback-lifecycle-audit_Annotator_{annotator}.html").read_text(encoding="utf-8")
             self.assertIn(f'const annotatorId = "{annotator}"', text)
-            self.assertIn("revground_annotation_v2_${annotatorId}_", text)
+            self.assertIn("feedback-lifecycle-audit_annotation_v2_${annotatorId}_", text)
             self.assertNotRegex(text, r"model_requested|model_returned|provider_raw_response|predicted_label|system_prediction")
             pages.append(re.sub(r"A0[12]", "ANN", text))
         self.assertEqual(pages[0], pages[1])

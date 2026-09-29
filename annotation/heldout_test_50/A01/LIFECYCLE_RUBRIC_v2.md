@@ -1,5 +1,5 @@
 
-# RevGround lifecycle rubric v2.0
+# Feedback-lifecycle-audit lifecycle rubric v2.0
 
 ## Unit of analysis
 One focal diagnostic claim from one unedited retrospective hint, audited from submission S_t to the next authentic submission S_t+1. Preserve the hint, exact claim span, target, time and scope. Questions, general encouragement and advice with no factual diagnosis are screened as non-diagnostic and retained in the flow denominator.

@@ -1,6 +1,6 @@
 # Condition B: matched-evidence LLM baseline
 
-This is the evidence-aware baseline for the RevGround comparison. It sends a fixed prompt and a whitelist projection of each frozen evidence packet to GLM-5.3 through an OpenAI-compatible GLM endpoint. It does not read annotation exports, adjudication data, expected lifecycle labels, or RevGround decision rules.
+This is the evidence-aware baseline for the Feedback-lifecycle-audit comparison. It sends a fixed prompt and a whitelist projection of each frozen evidence packet to GLM-5.3 through an OpenAI-compatible GLM endpoint. It does not read annotation exports, adjudication data, expected lifecycle labels, or Feedback-lifecycle-audit decision rules.
 
 The input is the frozen development packet file at `../../annotation/development_50_evidence_frozen_v1.jsonl`. A bare run is intentionally limited to the first five development cases as a smoke test. Full development execution requires an explicit larger `--limit`.
 

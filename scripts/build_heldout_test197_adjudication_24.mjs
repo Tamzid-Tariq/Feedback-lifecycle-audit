@@ -13,13 +13,13 @@ const frozenDir = path.join(heldoutDir, "annotations_frozen_v1");
 const evidencePath = path.join(heldoutDir, "evidence_frozen_v1.jsonl");
 const outputDir = path.join(heldoutDir, "adjudication_24_blind_v1");
 const internalAuditPath = path.join(heldoutDir, "adjudication_24_blind_v1_BUILD_AUDIT.json");
-const htmlTemplatePath = path.join(scriptsDir, "RevGround_Adjudicator_24_BLIND.template.html");
+const htmlTemplatePath = path.join(scriptsDir, "Feedback-lifecycle-audit_Adjudicator_24_BLIND.template.html");
 
 const sourceFiles = {
-  A01_csv: path.join(frozenDir, "A01", "revground_annotations_A01 (2).csv"),
-  A01_json: path.join(frozenDir, "A01", "revground_annotations_A01 (2).json"),
-  A02_csv: path.join(frozenDir, "A02", "revground_annotations_A02 (2).csv"),
-  A02_json: path.join(frozenDir, "A02", "revground_annotations_A02 (2).json"),
+  A01_csv: path.join(frozenDir, "A01", "feedback-lifecycle-audit_annotations_A01 (2).csv"),
+  A01_json: path.join(frozenDir, "A01", "feedback-lifecycle-audit_annotations_A01 (2).json"),
+  A02_csv: path.join(frozenDir, "A02", "feedback-lifecycle-audit_annotations_A02 (2).csv"),
+  A02_json: path.join(frozenDir, "A02", "feedback-lifecycle-audit_annotations_A02 (2).json"),
 };
 const coreFields = [
   "original_validity",
@@ -165,7 +165,7 @@ const returnTemplate = selectedEvidence.map((record) => ({
 
 const returnSchema = {
   $schema: "https://json-schema.org/draft/2020-12/schema",
-  title: "RevGround held-out TEST-197 blind adjudication return",
+  title: "Feedback-lifecycle-audit held-out TEST-197 blind adjudication return",
   type: "array",
   minItems: 24,
   maxItems: 24,
@@ -212,9 +212,9 @@ const embeddedScript = html.match(/<script>([\s\S]*)<\/script>/);
 assert(embeddedScript, "Generated HTML is missing its script block");
 new Function(embeddedScript[1]);
 
-const readme = `# RevGround blind adjudication packet — 24 cases
+const readme = `# Feedback-lifecycle-audit blind adjudication packet — 24 cases
 
-Open \`RevGround_Adjudicator_24_BLIND.html\` in a current Chrome or Edge browser.
+Open \`Feedback-lifecycle-audit_Adjudicator_24_BLIND.html\` in a current Chrome or Edge browser.
 The tool is self-contained, saves unfinished work in that browser, validates the
 decision table, and exports the required 24-row JSON or JSONL return.
 
@@ -244,7 +244,7 @@ auditability.
 `;
 
 const outputFiles = {
-  "RevGround_Adjudicator_24_BLIND.html": html,
+  "Feedback-lifecycle-audit_Adjudicator_24_BLIND.html": html,
   "adjudication_evidence_24.json": evidenceJson,
   "adjudication_evidence_24.jsonl": evidenceJsonl,
   "adjudication_return_template_24.json": templateJson,

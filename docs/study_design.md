@@ -2,7 +2,7 @@
 
 ## Bounded contribution
 
-RevGround audits the lifecycle status of an earlier diagnostic programming
+Feedback-lifecycle-audit audits the lifecycle status of an earlier diagnostic programming
 claim across an authentic adjacent code revision, using fixed claim-specific
 evidence and independently adjudicated human labels.
 

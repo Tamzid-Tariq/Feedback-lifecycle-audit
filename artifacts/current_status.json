@@ -202,8 +202,8 @@
       "provider_calls": 0,
       "machine_readable": "results/heldout_test_197/analysis/verified_test_results.json",
       "reader_facing": "results/heldout_test_197/analysis/verified_test_results.md",
-      "report_pdf": "docs/reports/RevGround_TEST197_Verified_Results_20260929.pdf",
-      "report_docx": "docs/reports/RevGround_TEST197_Verified_Results_20260929.docx"
+      "report_pdf": "docs/reports/Feedback-lifecycle-audit_TEST197_Verified_Results_20260929.pdf",
+      "report_docx": "docs/reports/Feedback-lifecycle-audit_TEST197_Verified_Results_20260929.docx"
     }
   },
   "pending_gates": [],

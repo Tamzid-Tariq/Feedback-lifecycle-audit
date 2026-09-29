@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RevGround Blind Adjudication - 24 Cases</title>
+<title>Feedback-lifecycle-audit Blind Adjudication - 24 Cases</title>
 <style>
 :root { color-scheme:light; --ink:#172033; --muted:#5d6678; --line:#d8dde7; --paper:#fff; --bg:#f4f6f9; --accent:#164e9b; --soft:#eef5ff; --warn:#fff7df; --ok:#eaf7ef; }
 * { box-sizing:border-box; }
@@ -47,7 +47,7 @@ th { background:#f2f4f7; }
 <body>
 <header>
   <div class="toolbar">
-    <b>RevGround blind adjudication - 24 cases</b>
+    <b>Feedback-lifecycle-audit blind adjudication - 24 cases</b>
     <span id="progress" class="small">Loading...</span>
     <button id="prev" type="button" onclick="move(-1)">Previous</button>
     <button id="next" type="button" onclick="move(1)">Next</button>
@@ -90,7 +90,7 @@ th { background:#f2f4f7; }
 <script>
 let cases = [];
 let idx = 0;
-const storagePrefix = "revground_test197_adjudication_24_blind_v1_";
+const storagePrefix = "feedback-lifecycle-audit_test197_adjudication_24_blind_v1_";
 const adjudicatorStorageKey = storagePrefix + "adjudicator_id";
 const selectedIdsSha256 = "53f32abbb90f0b75c4372fba321d8a5de104acda9f22c8b1eb97446bf612a44c";
 const unsureReasonCodes = new Set(["EVIDENCE_INCOMPLETE","EVIDENCE_CONFLICT","TARGET_MAPPING_AMBIGUOUS","CLAIM_SCOPE_AMBIGUOUS","NON_DIAGNOSTIC"]);
@@ -307,11 +307,11 @@ function download(name,text,type) {
 function safeAdjudicatorId() { return adjudicatorId().replace(/[^A-Za-z0-9._-]+/g,"_") || "adjudicator"; }
 function exportJSON() {
   const rows = validatedRows(); if (!rows) return;
-  download(`revground_adjudication_24_${safeAdjudicatorId()}.json`,JSON.stringify(rows,null,2),"application/json;charset=utf-8");
+  download(`feedback-lifecycle-audit_adjudication_24_${safeAdjudicatorId()}.json`,JSON.stringify(rows,null,2),"application/json;charset=utf-8");
 }
 function exportJSONL() {
   const rows = validatedRows(); if (!rows) return;
-  download(`revground_adjudication_24_${safeAdjudicatorId()}.jsonl`,rows.map(row => JSON.stringify(row)).join("\n") + "\n","application/x-ndjson;charset=utf-8");
+  download(`feedback-lifecycle-audit_adjudication_24_${safeAdjudicatorId()}.jsonl`,rows.map(row => JSON.stringify(row)).join("\n") + "\n","application/x-ndjson;charset=utf-8");
 }
 async function importRows(input) {
   const file = input.files?.[0]; if (!file) return;

@@ -252,7 +252,7 @@ def set_page_and_furniture(doc: Document) -> None:
         section.header_distance = Inches(0.492)
         section.footer_distance = Inches(0.492)
         header = section.header.paragraphs[0]
-        header.text = "RevGround | Held-out TEST verification"
+        header.text = "Feedback-lifecycle-audit | Held-out TEST verification"
         header.alignment = WD_ALIGN_PARAGRAPH.LEFT
         for run in header.runs:
             set_run_font(run, 8.5, MUTED)
@@ -315,7 +315,7 @@ def build_report(result: dict, output_path: Path, figure_dir: Path) -> None:
     set_run_font(run, 10, BLUE, bold=True)
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(4)
-    run = p.add_run("RevGround Held-out TEST-197 / TEST-168")
+    run = p.add_run("Feedback-lifecycle-audit Held-out TEST-197 / TEST-168")
     set_run_font(run, 23, NAVY, bold=True)
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(14)
@@ -493,7 +493,7 @@ def main() -> None:
     args = parser.parse_args()
     root = args.repo.resolve()
     input_path = args.input or root / "results" / "heldout_test_197" / "analysis" / "verified_test_results.json"
-    output_path = args.output or root / "docs" / "reports" / "RevGround_TEST197_Verified_Results_20260929.docx"
+    output_path = args.output or root / "docs" / "reports" / "Feedback-lifecycle-audit_TEST197_Verified_Results_20260929.docx"
     result = json.loads(input_path.read_text(encoding="utf-8"))
     if result.get("status") != "PASS_ALL_REPORTED_TEST_RESULTS_RECOMPUTED":
         raise SystemExit("Refusing to build report from an unverified result")

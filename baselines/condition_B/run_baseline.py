@@ -3,7 +3,7 @@
 
 The runner projects only the fields admitted by Condition B from a frozen
 evidence packet. It never reads human annotations, adjudications, expected
-lifecycle labels, or any RevGround decision procedure.
+lifecycle labels, or any Feedback-lifecycle-audit decision procedure.
 """
 from __future__ import annotations
 

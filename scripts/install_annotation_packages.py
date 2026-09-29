@@ -20,13 +20,13 @@ def main() -> None:
     calibration.joinpath("tools").mkdir(parents=True, exist_ok=True)
     shutil.copy2(common / "LIFECYCLE_RUBRIC_v2.md", calibration / "LIFECYCLE_RUBRIC_v2.md")
     for annotator in ("A01", "A02"):
-        source = dev / "tools" / f"RevGround_Annotator_{annotator}.html"
+        source = dev / "tools" / f"Feedback-lifecycle-audit_Annotator_{annotator}.html"
         text = source.read_text(encoding="utf-8-sig")
         replacement = f"const cases = {safe_cases};\nconst annotatorId"
         text = re.sub(r"const cases = .*?;\nconst annotatorId", lambda _match: replacement, text, count=1, flags=re.DOTALL)
-        text = text.replace("RevGround Human Annotation", "RevGround Validation Calibration Annotation")
-        text = text.replace("revground_annotation_v2_", "revground_calibration_20_annotation_v2_")
-        calibration.joinpath("tools", f"RevGround_Annotator_{annotator}.html").write_text(text, encoding="utf-8")
+        text = text.replace("Feedback-lifecycle-audit Human Annotation", "Feedback-lifecycle-audit Validation Calibration Annotation")
+        text = text.replace("feedback-lifecycle-audit_annotation_v2_", "feedback-lifecycle-audit_calibration_20_annotation_v2_")
+        calibration.joinpath("tools", f"Feedback-lifecycle-audit_Annotator_{annotator}.html").write_text(text, encoding="utf-8")
     # Calibration packages must contain no adjudication, predictions, raw
     # provider responses, request metadata, or other-annotator exports.
     allowed = {"LIFECYCLE_RUBRIC_v2.md", "calibration_20_evidence_frozen_v1.jsonl", "tools"}

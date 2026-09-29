@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RevGround — Development Pilot Adjudication</title>
+<title>Feedback-lifecycle-audit — Development Pilot Adjudication</title>
 <style>
 :root { color-scheme: light; --ink:#172033; --muted:#5d6678; --line:#d8dde7; --paper:#fff; --bg:#f4f6f9; --accent:#164e9b; --soft:#eef5ff; --warn:#fff7df; --good:#e9f7ef; }
 * { box-sizing:border-box; }
@@ -50,13 +50,13 @@ h2,h3 { margin-top:0; }
 <body>
 <header>
   <div class="toolbar">
-    <b>REVGROUND — DEVELOPMENT PILOT ADJUDICATION</b>
+    <b>FEEDBACK-LIFECYCLE-AUDIT — DEVELOPMENT PILOT ADJUDICATION</b>
     <span id="progress" class="small"></span>
     <button id="prev" type="button" onclick="move(-1)">Previous</button>
     <button id="next" type="button" onclick="move(1)">Next</button>
     <label>Case <select id="jump" onchange="jumpTo(this.value)"></select></label>
     <span class="spacer"></span>
-    <button type="button" onclick="exportJSON()">Export revground_adjudication.json</button>
+    <button type="button" onclick="exportJSON()">Export feedback-lifecycle-audit_adjudication.json</button>
   </div>
   <div class="small">Decisions are saved locally in this browser. The frozen A01/A02 exports are read-only and are never overwritten.</div>
 </header>
@@ -64,7 +64,7 @@ h2,h3 { margin-top:0; }
   <div class="card notice">
     <div class="grid">
       <div><b>Development cases:</b> 50<br><b>Independent annotators:</b> 2<br><b>Lifecycle agreement:</b> 96%</div>
-      <div><b>Lifecycle disagreements:</b> 2<br><b>Rubric:</b> v2.0<br><b>Export:</b> <span class="id">revground_adjudication.json</span></div>
+      <div><b>Lifecycle disagreements:</b> 2<br><b>Rubric:</b> v2.0<br><b>Export:</b> <span class="id">feedback-lifecycle-audit_adjudication.json</span></div>
     </div>
   </div>
   <div class="toolbar">
@@ -76,7 +76,7 @@ h2,h3 { margin-top:0; }
   <div id="case"></div>
 </main>
 <script>
-const storagePrefix = "revground_adjudication_v2_";
+const storagePrefix = "feedback-lifecycle-audit_adjudication_v2_";
 const rubricVersion = "v2.0";
 const fieldDefinitions = [
   ["original_validity", "Original validity"],
@@ -232,7 +232,7 @@ function fieldDefaults() {
 function exportJSON() {
   const payload = {rubric_version:rubricVersion, export_type:"pre-adjudication development-pilot decisions", generated_at:new Date().toISOString(), cases:savedRows()};
   const blob = new Blob([JSON.stringify(payload, null, 2)], {type:"application/json;charset=utf-8"});
-  const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "revground_adjudication.json"; link.click();
+  const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "feedback-lifecycle-audit_adjudication.json"; link.click();
   setTimeout(() => URL.revokeObjectURL(link.href), 1000);
 }
 function rebuildJump() {

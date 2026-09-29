@@ -1,6 +1,6 @@
-# RevGround blind adjudication packet — 24 cases
+# Feedback-lifecycle-audit blind adjudication packet — 24 cases
 
-Open `RevGround_Adjudicator_24_BLIND.html` in a current Chrome or Edge browser.
+Open `Feedback-lifecycle-audit_Adjudicator_24_BLIND.html` in a current Chrome or Edge browser.
 The tool is self-contained, saves unfinished work in that browser, validates the
 decision table, and exports the required 24-row JSON or JSONL return.
 

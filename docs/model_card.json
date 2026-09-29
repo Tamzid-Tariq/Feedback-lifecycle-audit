@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "status_date": "2026-09-27",
-  "scope": "Models and provider settings actually used in RevGround diagnostics",
+  "scope": "Models and provider settings actually used in Feedback-lifecycle-audit diagnostics",
   "credentials": "No credentials are stored in the repository",
   "runs": [
     {

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "RevGround independent human annotation export v2.0",
+  "title": "Feedback-lifecycle-audit independent human annotation export v2.0",
   "type": "array",
   "items": {
     "type": "object",

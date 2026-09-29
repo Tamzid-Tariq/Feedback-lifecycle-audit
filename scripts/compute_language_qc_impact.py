@@ -70,8 +70,8 @@ def main() -> None:
     )
 
     annotation_dir = repo / "annotation" / "development_50"
-    a01 = {row["item_id"]: row for row in json.loads((annotation_dir / "revground_annotations_A01.json").read_text(encoding="utf-8"))}
-    a02 = {row["item_id"]: row for row in json.loads((annotation_dir / "revground_annotations_A02.json").read_text(encoding="utf-8"))}
+    a01 = {row["item_id"]: row for row in json.loads((annotation_dir / "feedback-lifecycle-audit_annotations_A01.json").read_text(encoding="utf-8"))}
+    a02 = {row["item_id"]: row for row in json.loads((annotation_dir / "feedback-lifecycle-audit_annotations_A02.json").read_text(encoding="utf-8"))}
     eligible_dev = sorted(set(a01) - set(development_exclusions))
     sensitivity: dict[str, Any] = {"n": len(eligible_dev), "excluded_item_ids": development_exclusions}
     for field in FIELDS:

@@ -2,7 +2,7 @@
   "status": "PASS_NO_PROVIDER_CALLS",
   "dataset": "heldout_test_197_final_claim_bearing_cohort",
   "packet_count": 168,
-  "packet_file": "D:\\Thesis for LAK'26\\RevGround-LAK27\\results\\heldout_test_197\\evidence_frozen_v1.jsonl",
+  "packet_file": "D:\\Thesis for LAK'26\\Feedback-lifecycle-audit\\results\\heldout_test_197\\evidence_frozen_v1.jsonl",
   "packet_file_sha256": "43d03ede21f900ad42f570e61a4832f0ec0ef54e3b5774db93366f0dbc8e0095",
   "models": {
     "qwen": "qwen/qwen3.8-27b",
@@ -97,6 +97,6 @@
     }
   ],
   "artifacts": {
-    "per_item_csv": "D:\\Thesis for LAK'26\\RevGround-LAK27\\results\\heldout_test_197\\evaluator_parity.csv"
+    "per_item_csv": "D:\\Thesis for LAK'26\\Feedback-lifecycle-audit\\results\\heldout_test_197\\evaluator_parity.csv"
   }
 }

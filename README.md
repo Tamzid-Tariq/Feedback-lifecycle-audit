@@ -1,6 +1,6 @@
-# RevGround: Auditing Programming Feedback Across Code Revisions
+# Feedback-lifecycle-audit: Auditing Programming Feedback Across Code Revisions
 
-RevGround studies whether an earlier diagnostic programming hint remains valid after a learner's next authentic code revision.
+Feedback-lifecycle-audit studies whether an earlier diagnostic programming hint remains valid after a learner's next authentic code revision.
 
 
 ## Research Questions
@@ -90,7 +90,7 @@ See [docs/EXPERIMENT_STATUS.md](docs/EXPERIMENT_STATUS.md) for the model-conditi
 - [Sampling plan](data/sampling_plan.json)
 - [Generation policy](docs/generation_policy.json)
 - [Model card](docs/model_card.json)
-- [Development adjudicator packet](annotation/development_50/RevGround_Adjudicator.html)
+- [Development adjudicator packet](annotation/development_50/Feedback-lifecycle-audit_Adjudicator.html)
 - [Reproduction entry points](scripts/)
 - [Machine-readable status](artifacts/current_status.json)
 

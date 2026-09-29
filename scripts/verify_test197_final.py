@@ -83,7 +83,7 @@ def main() -> None:
     for annotator in ("A01", "A02"):
         package = root / "annotation/heldout_test_197" / annotator
         names = sorted(path.name for path in package.iterdir() if path.is_file())
-        if names != ["LIFECYCLE_RUBRIC_v2.md", f"RevGround_Annotator_{annotator}.html", "heldout_test197_evidence_frozen_v1.jsonl"]:
+        if names != [f"Feedback-lifecycle-audit_Annotator_{annotator}.html", "LIFECYCLE_RUBRIC_v2.md", "heldout_test197_evidence_frozen_v1.jsonl"]:
             raise SystemExit(f"isolated package file set mismatch: {annotator}: {names}")
         if sha256_file(package / "heldout_test197_evidence_frozen_v1.jsonl") != sha256_file(root / "results/heldout_test_197/evidence_frozen_v1.jsonl"):
             raise SystemExit(f"package packet mismatch: {annotator}")
@@ -111,7 +111,7 @@ def main() -> None:
         "package_files": package_files,
     }
     out = root / "results/heldout_test_197/integrity_summary.json"
-    out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    out.write_bytes((json.dumps(result, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
     print(json.dumps(result, indent=2))
 
 

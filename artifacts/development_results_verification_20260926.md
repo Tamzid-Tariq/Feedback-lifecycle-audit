@@ -1,4 +1,4 @@
-# RevGround development-results verification
+# Feedback-lifecycle-audit development-results verification
 
 Verification date: 2026-09-26
 
@@ -9,7 +9,7 @@ The supplied results are substantially consistent with the local run artifacts w
 ## Reference file
 
 - Source: `C:\Users\User\Downloads\revground_adjudication_final.jsonl`
-- Repository copy: `annotation/revground_adjudication_final.jsonl`
+- Repository copy: `annotation/feedback-lifecycle-audit_adjudication_final.jsonl`
 - SHA-256: `8FBCEBE1E0E200F8D4AE52F30DF597DA086330E20BE3493C80B4E603BCD5B07D`
 - Rows: 50 unique rows, `DEV_001` through `DEV_050`, with no duplicates or missing IDs.
 - Lifecycle: 21 `KEEP`, 29 `RETIRE`, 0 `RETRACT`, 0 `UNSURE`.
@@ -20,7 +20,7 @@ The 10 review rows are `DEV_004`, `DEV_007`, `DEV_010`, `DEV_012`, `DEV_027`, `D
 
 ## A01/A02 checks
 
-The reported pre-adjudication agreement values reproduce from `Annotation/revground_annotations_A01.json` and `Annotation/revground_annotations_A02.json`:
+The reported pre-adjudication agreement values reproduce from `Annotation/feedback-lifecycle-audit_annotations_A01.json` and `Annotation/feedback-lifecycle-audit_annotations_A02.json`:
 
 | Construct | Agreement | Raw agreement | Cohen kappa |
 |---|---:|---:|---:|

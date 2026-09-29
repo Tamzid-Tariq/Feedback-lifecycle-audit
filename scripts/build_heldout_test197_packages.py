@@ -33,7 +33,7 @@ def main() -> None:
         output.mkdir(parents=True, exist_ok=True)
         packet_target = output / "heldout_test197_evidence_frozen_v1.jsonl"
         rubric_target = output / "LIFECYCLE_RUBRIC_v2.md"
-        html_target = output / f"RevGround_Annotator_{annotator}.html"
+        html_target = output / f"Feedback-lifecycle-audit_Annotator_{annotator}.html"
         packet_target.write_bytes(packet_bytes)
         shutil.copy2(args.rubric, rubric_target)
         html = template_path.read_text(encoding="utf-8")

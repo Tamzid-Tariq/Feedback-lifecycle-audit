@@ -3,10 +3,10 @@
 This directory contains the publication-facing held-out TEST report generated
 from `results/heldout_test_197/analysis/verified_test_results.json`.
 
-- `RevGround_TEST197_Verified_Results_20260929.pdf` is the canonical reader
+- `Feedback-lifecycle-audit_TEST197_Verified_Results_20260929.pdf` is the canonical reader
   copy. All six pages were rendered to PNG and visually inspected for clipping,
   overlap, table breakage, missing glyphs, and figure placement.
-- `RevGround_TEST197_Verified_Results_20260929.docx` is the editable copy. It
+- `Feedback-lifecycle-audit_TEST197_Verified_Results_20260929.docx` is the editable copy. It
   passed the structural accessibility audit with zero findings.
 - `figures/` contains the two previously missing paired-comparison figures as
   standalone high-resolution PNG files.

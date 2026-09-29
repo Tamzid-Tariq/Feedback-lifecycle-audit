@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run Condition C: the Condition B evidence packet with RevGround auditing."""
+"""Run Condition C: the Condition B evidence packet with Feedback-lifecycle-audit auditing."""
 from __future__ import annotations
 
 import argparse

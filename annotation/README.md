@@ -1,4 +1,4 @@
-# RevGround annotation layout
+# Feedback-lifecycle-audit annotation layout
 
 The annotation tree is partitioned by study phase while shared rubric material is kept in `common/`.
 

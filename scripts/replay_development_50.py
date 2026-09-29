@@ -207,7 +207,7 @@ def main() -> None:
         raise SystemExit(f"Output already exists; do not overwrite execution evidence: {args.output}")
     resolved_image_id = image_id(args.image)
     results: list[dict[str, Any]] = []
-    with temporary_directory(prefix="revground_development_replay_") as directory:
+    with temporary_directory(prefix="feedback-lifecycle-audit_development_replay_") as directory:
         work_dir = Path(directory)
         def one(record: dict[str, Any]) -> dict[str, Any]:
             return replay_record(record, work_dir, args.image, resolved_image_id)
