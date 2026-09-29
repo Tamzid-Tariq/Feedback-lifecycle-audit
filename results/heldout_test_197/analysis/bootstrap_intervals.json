@@ -1,0 +1,49 @@
+{
+  "method": "percentile cluster bootstrap",
+  "resamples": 10000,
+  "seed": 20260929,
+  "provider_calls": 0,
+  "resolution_among_supported": {
+    "resolved": 65,
+    "supported": 165,
+    "percent": 39.39,
+    "ci95_trajectory": [
+      30.37,
+      51.79
+    ],
+    "ci95_participant": [
+      30.12,
+      52.31
+    ]
+  },
+  "paired_c_minus_b": {
+    "deepseek_v4_1_flash": {
+      "paired_n": 124,
+      "b_correct": 117,
+      "c_correct": 119,
+      "c_minus_b_pp": 1.61,
+      "ci95_trajectory": [
+        0.0,
+        3.91
+      ],
+      "ci95_participant": [
+        0.0,
+        3.92
+      ]
+    },
+    "qwen_qwen3_8_27b": {
+      "paired_n": 115,
+      "b_correct": 113,
+      "c_correct": 111,
+      "c_minus_b_pp": -1.74,
+      "ci95_trajectory": [
+        -4.2,
+        0.0
+      ],
+      "ci95_participant": [
+        -4.29,
+        0.0
+      ]
+    }
+  }
+}
